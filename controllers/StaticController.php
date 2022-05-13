@@ -1,5 +1,5 @@
 <?php
-namespace app\modules\graduation\controllers;
+namespace app\modules\hospice\controllers;
 
 use Yii;
 use yii\base\InvalidParamException;

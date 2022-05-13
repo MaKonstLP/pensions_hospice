@@ -1,12 +1,12 @@
 <?php
-namespace app\modules\graduation\controllers;
+namespace app\modules\hospice\controllers;
 
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\helpers\Html;
-use frontend\modules\graduation\models\ElasticItems;
+use frontend\modules\hospice\models\ElasticItems;
 
 class FormController extends Controller
 {

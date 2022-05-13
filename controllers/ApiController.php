@@ -1,11 +1,11 @@
 <?php
-namespace app\modules\graduation\controllers;
+namespace app\modules\hospice\controllers;
 
 use Yii;
 use yii\web\Controller;
 use common\controllers\ApiController as BaseApiController;
 use common\models\api\MapAll;
-use frontend\modules\graduation\models\ElasticItems;
+use frontend\modules\hospice\models\ElasticItems;
 use common\models\Filter;
 use common\models\Slices;
 use frontend\components\ParamsFromQuery;

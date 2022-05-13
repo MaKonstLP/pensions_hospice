@@ -1,5 +1,5 @@
 <?php
-namespace app\modules\graduation\controllers;
+namespace app\modules\hospice\controllers;
 
 use Yii;
 use yii\base\InvalidParamException;
@@ -8,9 +8,9 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\elastic\RestaurantElastic;
-use frontend\modules\graduation\components\Breadcrumbs;
+use frontend\modules\hospice\components\Breadcrumbs;
 use common\models\elastic\ItemsWidgetElastic;
-use frontend\modules\graduation\models\ElasticItems;
+use frontend\modules\hospice\models\ElasticItems;
 use common\models\Seo;
 
 class ItemController extends Controller

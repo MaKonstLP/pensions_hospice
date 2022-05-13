@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\modules\graduation\components;
+namespace frontend\modules\hospice\components;
 
 use Yii;
 

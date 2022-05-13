@@ -1,11 +1,11 @@
 <?php
-namespace app\modules\graduation\controllers;
+namespace app\modules\hospice\controllers;
 
 use common\models\blog\BlogPost;
 use common\models\blog\BlogTag;
 use common\models\Seo;
 use common\models\Pages;
-use frontend\modules\graduation\components\Breadcrumbs;
+use frontend\modules\hospice\components\Breadcrumbs;
 use yii\data\ActiveDataProvider;
 use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;

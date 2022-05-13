@@ -1,5 +1,5 @@
 <?php
-namespace app\modules\graduation\controllers;
+namespace app\modules\hospice\controllers;
 
 use Yii;
 use common\models\GorkoApiTest;
@@ -8,7 +8,7 @@ use common\models\Restaurants;
 use common\models\Rooms;
 use common\models\Pages;
 use common\models\SubdomenPages;
-use frontend\modules\graduation\models\ElasticItems;
+use frontend\modules\hospice\models\ElasticItems;
 use yii\web\Controller;
 use common\components\AsyncRenewRestaurants;
 

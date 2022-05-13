@@ -4,7 +4,7 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use frontend\modules\graduation\assets\AppAsset;
+use frontend\modules\hospice\assets\AppAsset;
 use common\models\Subdomen;
 
 AppAsset::register($this);
@@ -333,7 +333,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <a href="tel:+78462057845">8 (846) 205-78-45</a>
                         <div class="header_city_select _grey_link">
 
-                            <span><?=Yii::$app->params['subdomen_name']?></span>
 
                         </div>
                     </div>

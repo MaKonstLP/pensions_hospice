@@ -1,5 +1,5 @@
 <?php
-namespace app\modules\graduation\controllers;
+namespace app\modules\hospice\controllers;
 
 use Yii;
 use yii\base\InvalidArgumentException;
@@ -10,8 +10,9 @@ use common\models\Pages;
 use common\models\Filter;
 use common\models\Slices;
 use common\models\elastic\ItemsFilterElastic;
-use frontend\modules\graduation\models\ElasticItems;
+use frontend\modules\hospice\models\ElasticItems;
 use common\models\Seo;
+use common\models\PansionMain;
 
 class SiteController extends Controller
 {
@@ -22,8 +23,8 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        //ElasticItems::refreshIndex();
-        //exit;
+
+        $test = PansionMain::find()->with('cities')->all();
 
         $filter_model = Filter::find()->with('items')->where(['active' => 1])->orderBy(['sort' => SORT_ASC])->all();
         $slices_model = Slices::find()->all();
@@ -37,15 +38,12 @@ class SiteController extends Controller
 
         $elastic_model = new ElasticItems;
         $items = new ItemsFilterElastic([], 10, 1, false, 'restaurants', $elastic_model);
-        $mainWidget = $this->renderPartial('//components/generic/profitable_offer.twig', [
-            'items' => $items->items,
-            'city_rod' => Yii::$app->params['subdomen_rod'],
-        ]);
+
 
         return $this->render('index.twig', [
             'filter' => $filter,
             'count' => $items->total,
-            'mainWidget' => $mainWidget,
+            // 'mainWidget' => $mainWidget,
             'seo' => $seo,
             'subid' => isset(Yii::$app->params['subdomen_id']) ? Yii::$app->params['subdomen_id'] : false
         ]);

@@ -1,5 +1,5 @@
 <?php
-namespace app\modules\graduation\controllers;
+namespace app\modules\hospice\controllers;
 
 use Yii;
 use yii\base\InvalidParamException;
@@ -9,17 +9,17 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use frontend\widgets\FilterWidget;
 use frontend\widgets\PaginationWidget;
-// use frontend\modules\graduation\widgets\PaginationWidget;
+// use frontend\modules\hospice\widgets\PaginationWidget;
 use frontend\components\ParamsFromQuery;
 use frontend\components\QueryFromSlice;
-use frontend\modules\graduation\components\Breadcrumbs;
+use frontend\modules\hospice\components\Breadcrumbs;
 use common\models\Pages;
 use frontend\components\RoomsFilter;
 use common\models\Filter;
 use common\models\Slices;
 use common\models\GorkoApi;
 use common\models\elastic\ItemsFilterElastic;
-use frontend\modules\graduation\models\ElasticItems;
+use frontend\modules\hospice\models\ElasticItems;
 use common\models\Seo;
 
 
