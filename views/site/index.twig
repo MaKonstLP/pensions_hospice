@@ -1,12 +1,254 @@
 <div data-page-type="index">
 
+     <section class="home-banner">
+            <div class="container">
+                <div class="free-consultation">
+                    <div class="free-consultation-left">
+                        <div class="consultation-title">Бесплатная консультация</div>
+                        <div class="consultation-desc">
+                            Ответим на все вопросы о том, как оформить пациента в хоспис
+                        </div>
+                    </div>
+                    <div class="free-consultation-center">
+                        <img src="./image/logo-white.png" alt="logo">
+                    </div>
+                    <div class="free-consultation-right">
+                        <form action="/" class="consultation-form">
+                            <div class="form-title">Есть вопросы?</div>
+                            <div class="form-input">
+                                <input type="text" name="consultation" id="consultation-form" placeholder="Email/телефон">
+                            </div>
+                            <div class="form-accept">
+                                <div class="form-accept-check">
+                                    <input type="checkbox" id="form-accept-check">
+                                    <label class="form-accept-desc" for="form-accept-check">Я согласен с условиями обработки персональных данных</label>
+                                </div>
+                            </div>
+                            <div class="form-submit">
+                                <button class="btn">Отправить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-content">
+            <div class="container">
+                <div class="sidebar">
+                    <div class="filter-wrap">
+                        <form action="/">
+                            <div class="filter-item filter-price">
+                                <div class="filter-title">Цена (за сутки)</div>
+                                <div class="filter-items">
+                                    <label>
+                                        <input type="radio" name="filter-price" value="500">
+                                        <span>до 500 руб.</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="filter-price" value="1000">
+                                        <span>до 1000 руб.</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="filter-price" value="1100">
+                                        <span>до 1100 руб.</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="filter-price" value="1200">
+                                        <span>до 1200 руб.</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="filter-price" value="1300">
+                                        <span>до 1300 руб.</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="filter-item filter-zabolevanie">
+                                <div class="filter-title">Заболевание/осложнение</div>
+                                <div class="filter-items">
+                                    <label>
+                                        <input type="checkbox" name="filter-zabolevanie" value="insult">
+                                        <span>Инсульт</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-zabolevanie" value="infarkt">
+                                        <span>Инфаркт</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-zabolevanie" value="onkologiya">
+                                        <span>Онкология</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-zabolevanie" value="parkinson">
+                                        <span>Паркинсон</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-zabolevanie" value="alcgeimer">
+                                        <span>Альцгеймер</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-zabolevanie" value="demenciya">
+                                        <span>Деменция</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-zabolevanie" value="psiho-zabolevaniya">
+                                        <span>Психические заболевания</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-zabolevanie" value="sahar-diabet">
+                                        <span>Сахарный диабет</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-zabolevanie" value="perelom-bedra">
+                                        <span>Перелом шейки бедра</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="filter-item filter-pacient-type">
+                                <div class="filter-title">Больные</div>
+                                <div class="filter-items">
+                                    <label>
+                                    <input type="checkbox" name="filter-pacient-type" value="kolyasochniki">
+                                    <span>Колясочники</span>
+                                </label>
+                                    <label>
+                                    <input type="checkbox" name="filter-pacient-type" value="hodyachie">
+                                    <span>Ходячие</span>
+                                </label>
+                                    <label>
+                                    <input type="checkbox" name="filter-pacient-type" value="legachie">
+                                    <span>Лежачие</span>
+                                </label>
+                                    <label>
+                                    <input type="checkbox" name="filter-pacient-type" value="tyagelobolnie">
+                                    <span>Тяжелобольные</span>
+                                </label>
+                                    <label>
+                                    <input type="checkbox" name="filter-pacient-type" value="children">
+                                    <span>Дети и подростки</span>
+                                </label>
+                                </div>
+                            </div>
+                            <div class="filter-item filter-city">
+                                <div class="filter-title">Город</div>
+                                <div class="filter-city-select">
+                                    Москва и область
+                                </div>
+                                <div class="filter-city-popup">
+                                    <label>
+                                        <input type="checkbox" name="filter-city" value="moscow-and-region">
+                                        <span>Москва и область</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-city" value="andreevka">
+                                        <span>Андреевка</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-city" value="balashiha">
+                                        <span>Балашиха</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-city" value="balashiha">
+                                        <span>Барвиха</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-city" value="balashiha">
+                                        <span>Бронницы</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-city" value="balashiha">
+                                        <span>Видное</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-city" value="balashiha">
+                                        <span>Бутово</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-city" value="balashiha">
+                                        <span>Люберцы</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-city" value="balashiha">
+                                        <span>Воронеж</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-city" value="balashiha">
+                                        <span>Казань</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-city" value="balashiha">
+                                        <span>Реутов</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-city" value="balashiha">
+                                        <span>Одинцово</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="filter-city" value="balashiha">
+                                        <span>Королев</span>
+                                    </label>
+                                    <div class="filter-city-btns">
+                                        <button class="btn">Выбрать</button>
+                                        <a href="#">Сбросить</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-item filter-region">
+                                <div class="filter-title">Направление</div>
+                                <div class="filter-items">
+                                    <label>
+                                            <input type="checkbox" name="filter-region" value="sever">
+                                            <span>Север</span>
+                                        </label>
+                                    <label>
+                                            <input type="checkbox" name="filter-region" value="yug">
+                                            <span>Юг</span>
+                                        </label>
+                                    <label>
+                                            <input type="checkbox" name="filter-region" value="vostok">
+                                            <span>Восток</span>
+                                        </label>
+                                    <label>
+                                            <input type="checkbox" name="filter-region" value="zapad">
+                                            <span>Запад</span>
+                                        </label>
+                                </div>
+                            </div>
+                            <div class="filter-item filter-hospis-type">
+                                <div class="filter-title">Тип</div>
+                                <div class="filter-items">
+                                    <label>
+                                        <input type="radio" name="filter-hospis-type" value="gosudarstvennie">
+                                        <span class="hospis-type-text">Государственные</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="filter-hospis-type" value="chastnie">
+                                        <span class="hospis-type-text">Частные</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="filter-item filter-btns">
+                                <div class="filter-search">
+                                    <button class="btn">Найти</button>
+                                </div>
+                                <div class="filter-reset">
+                                    <a href="#">Сбросить</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="home-listing"></div>
+            </div>
+        </section>
+
 	
-	<div class="top_slider_wrapper">
+	{# <div class="top_slider_wrapper">
 
         <div class="top_slider">
             <div class="swiper-container swiper_top">
 
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper"> #}
 
                     {# {% for image in item.restaurant_images %}
                         <div class="swiper-slide">
@@ -16,7 +258,7 @@
 
 					<!-- УДАЛИТЬ ЭТОТ БЛОК НАЧАЛО -->
 
-					<div class="swiper-slide">
+					{# <div class="swiper-slide">
 						<img src="/image/test_slider_pic.png" alt="ТЕСТ"/>
 					</div>
 
@@ -34,23 +276,23 @@
 
 					<div class="swiper-slide">
 						<img src="/image/test_slider_pic.png" alt="ТЕСТ"/>
-					</div>
+					</div> #}
 
 					<!-- УДАЛИТЬ ЭТОТ БЛОК КОНЕЦ -->
-
+{# 
                 </div>
                 <div class="top-swiper-button-prev"></div>
                 <div class="top-swiper-button-next"></div>
                 <div class="top-swiper-pagination swiper-pagination"></div>
             </div>
-        </div>
+        </div> #}
 
 		{# {{ this.render('//components/generic/restaurant_title.twig', {'seo':seo}) | raw }} #}
 
 
 		<!-- УДАЛИТЬ ЭТОТ БЛОК НАЧАЛО -->
 
-		<div class="content_block" data-listing-title>
+		{# <div class="content_block" data-listing-title>
 			
 			<div class="title">
 
@@ -59,7 +301,7 @@
 				<div class="title_desc">
 					<p>Где провести выпускной в 2020 году? Здесь вы можете легко подобрать и заказать площадку для выпускного вечера 11 и 9 классов в Санкт-Петербурге.</p>
 					<p>В случае непогоды по периметру заакрываются шторы, которые не пропускают воду и ветер, и предоставляются газовые и электронные обогреватели. Понтон содержит отдельный подъезд и личную парковку на 20 машиномест, собственно что выделяет ему превосходство перед другими площадками.</p>
-				</div>
+				</div> #}
 
 				<!-- <h1>TEST TITLE</h1> -->
 
@@ -68,47 +310,47 @@
 					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque tenetur non aspernatur obcaecati quisquam nesciunt blanditiis temporibus. Dolorum placeat accusantium, repellat quibusdam eos in! Nulla quo repudiandae sint dolor asperiores commodi quidem nostrum odit aut neque i</p>
 				</div> -->
 			
-			</div>
+			{# </div>
 
-		</div>
+		</div> #}
 
 		<!-- УДАЛИТЬ ЭТОТ БЛОК КОНЕЦ -->
 
 
 
-    </div>
+    {# </div>
 
 	<div class="show_filter_button">
 		<p>Фильтр заведений</p>
-	</div>
+	</div> #}
 
-	<div class="listing_and_filter_wrapper">
+	{# <div class="listing_and_filter_wrapper">
 
-		<div class="filter_wrapper">
-			{{filter | raw }}
-		</div>
+		<div class="filter_wrapper"> #}
+			{# {{filter | raw }} #}
+		{# </div> #}
 
-		<div class="items_list_listing" data-listing-wrapper>
+		{# <div class="items_list_listing" data-listing-wrapper>
 			<div class="items_list" data-listing-list>
 
 				{{ this.render('//components/generic/listing.twig', {'items':items, 'img_alt':seo.img_alt}) | raw }}
 
 			</div>
 		</div>
-	</div>
+	</div> #}
 
-	<div class="content_block listing_paragraph" data-listing-text-top>
+	{# <div class="content_block listing_paragraph" data-listing-text-top>
 		<div class="seo_text" data-seo-text>
 			{{seo.text_bottom | raw }}
 			<div class="seo_text_control" data-seo-control>
 				<p class="_link">Показать полностью</p>
 			</div>
 		</div>
-	</div>
+	</div> #}
 
-	<div class="content_block form_booking_wrapper">
+	{# <div class="content_block form_booking_wrapper">
 
         {{ this.render('//components/generic/form_booking1.twig', {'items':other_rooms}) | raw }}
 
-    </div>
+    </div> #}
 </div>

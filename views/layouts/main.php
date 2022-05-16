@@ -32,9 +32,75 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <?php $this->beginBody() ?>
 
-    <div class="main_wrap">
+    
+
+    <div class="wrap">
         
-        <header>
+    <section class="header">
+            <div class="container">
+                <header>
+                    <div class="header-top">
+                        <div class="header-choose-city">
+                            <span>Ваш город</span>
+                            <a href="#">Москва</a>
+                        </div>
+                    </div>
+                    <div class="header-middle">
+                        <div class="header-middle-nav">
+                            <nav>
+                                <ul class="header-middle-menu">
+                                    <li><a href="#">Цены</a></li>
+                                    <li><a href="#">Лицензии</a></li>
+                                    <li><a href="#">О нас</a></li>
+                                    <li><a href="#">Контакты</a></li>
+                                    <li><a href="#">Информация</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="header-middle-logo">
+                            <img src="./image/logo-blue.png" alt="logo">
+                        </div>
+                        <div class="header-middle-contacts">
+                            <div class="middle-contacts-phone">
+                                <span>8 800 000 000</span>
+                                <span>Звоните бесплатно 24/7</span>
+                            </div>
+                            <div class="middle-contacts-call">
+                                <button class="btn">Заказать звонок</button>
+                            </div>
+                            <div class="middle-contacts-socials">
+                                <a href="#">mail@mail.ru</a>
+                                <div>
+                                    <div class="socials-whatsapp">
+                                        <a href="#">
+                                            <img src="./image/socials/wathsapp.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="socials-telegramm">
+                                        <a href="#">
+                                            <img src="./image/socials/telegramm.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-bottom">
+                        <nav>
+                            <ul class="header-bottom-menu">
+                                <li><a href="#">Паллиативные центры</a></li>
+                                <li><a href="#">Хосписы</a></li>
+                                <li><a href="#">Стационары</a></li>
+                                <li><a href="#">Геронтологические центры</a></li>
+                                <li><a href="#">Гериатрические центры</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+            </div>
+        </section>
+
+        <!-- <header>
             <div class="header_wrap">
 
                 <div class="header_menu">
@@ -44,12 +110,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="header_logo_img"></div>
                         <div class="header_logo_text">
                             
-                                <div>Выпускной <?php echo date('Y') + 1 ?></div>
+                                <div>Выпускной <?php //echo date('Y') + 1 ?></div>
                                 <div>Подбор площадки для выпускного вечера</div>
                             
                         </div>
                         
-                    </a>
+                    </a> -->
                     
                     <!-- <div class="city_select_search_wrapper _hide">
                         
@@ -113,7 +179,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     </div> -->
 
-                    <div class="city_select_search_wrapper _hide">
+                    <!-- <div class="city_select_search_wrapper _hide">
                         
                         <p class="back_to_header_menu">
                             <span>Назад в меню</span>
@@ -314,16 +380,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="header_menu_wrapper">
 
-                        <a class="header_menu_item <?if(!empty($this->params['menu']) and $this->params['menu'] == 'banketnye-zaly')echo '_active';?>" href="/ploshhadki/">Банкетные&ensp; залы</a>
-                        <a class="header_menu_item <?if(!empty($this->params['menu']) and $this->params['menu'] == 'restorany')echo '_active';?>" href="/ploshhadki/">Рестораны</a>
-                        <a class="header_menu_item <?if(!empty($this->params['menu']) and $this->params['menu'] == 'restorany')echo '_active';?>" href="/ploshhadki/">Лофт</a>
-                        <a class="header_menu_item <?if(!empty($this->params['menu']) and $this->params['menu'] == 'restorany')echo '_active';?>" href="/ploshhadki/">11 класс</a>
-                        <a class="header_menu_item <?if(!empty($this->params['menu']) and $this->params['menu'] == 'restorany')echo '_active';?>" href="/ploshhadki/">9 класс</a>
-                        <a class="header_menu_item <?if(!empty($this->params['menu']) and $this->params['menu'] == 'blog')echo '_active';?>" href="/blog/">Идеи для выпускного</a>
-                        <!-- <div class="header_callback_button">
+                        <a class="header_menu_item <?//if(!empty($this->params['menu']) and $this->params['menu'] == 'banketnye-zaly')echo '_active';?>" href="/ploshhadki/">Банкетные&ensp; залы</a>
+                        <a class="header_menu_item <?//if(!empty($this->params['menu']) and $this->params['menu'] == 'restorany')echo '_active';?>" href="/ploshhadki/">Рестораны</a>
+                        <a class="header_menu_item <?//if(!empty($this->params['menu']) and $this->params['menu'] == 'restorany')echo '_active';?>" href="/ploshhadki/">Лофт</a>
+                        <a class="header_menu_item <?//if(!empty($this->params['menu']) and $this->params['menu'] == 'restorany')echo '_active';?>" href="/ploshhadki/">11 класс</a>
+                        <a class="header_menu_item <?//if(!empty($this->params['menu']) and $this->params['menu'] == 'restorany')echo '_active';?>" href="/ploshhadki/">9 класс</a>
+                        <a class="header_menu_item <?//if(!empty($this->params['menu']) and $this->params['menu'] == 'blog')echo '_active';?>" href="/blog/">Идеи для выпускного</a>
+                        <div class="header_callback_button">
                             <p>Подобрать зал</p>
                         </div> -->
-                    </div>
+                    <!-- </div>
 
 						  <div class="header_callback_button">
 							  <p>Подобрать зал</p>
@@ -349,47 +415,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
 
                 <div class="header_form_popup _hide">
-                    <div class="content_block form_booking_wrapper">
+                    <div class="content_block form_booking_wrapper"> -->
+                  
+                    
 
-                    {{ this.render('//components/generic/form_booking1.twig', {'items':other_rooms}) | raw }}
+                
 
-                    </div>
+                    <!-- </div>
                 </div>
 
             </div>
-        </header>
+        </header>  -->
 
         <div class="content_wrap">
             <?= $content ?>
         </div>
 
-        <footer>
-            <div class="footer_container">
-                <div class="footer_wrap">
-                    <div class="footer_row">
-                        <div class="footer_block _left">
-                            <div class="footer_phone">
-                                <a href="tel:+78462057845">8 (846) 205-78-45</a>
-                            </div>
-                            <div class="footer_callback_button">
-                                <p>Подобрать зал в Санкт-Петербурге</p>
-                            </div>
+        <section class="footer">
+            <div class="container">
+                <footer>
+                    <div class="footer-top">
+                        <div class="footer-logo">
+                            <img src="./image/logo-blue.png" alt="logo">
                         </div>
-                        <div class="footer_block _right">
-                            <div class="footer_logo"></div>
-                            <div class="footer_block_logo_text">
-                                <div>Выпускной <?php echo date('Y') - 1 ?></div>
-                                <div>Подбор площадки для выпускного вечера</div>
+                        <div class="footer-menu-wrap">
+                            <ul class="footer-menu">
+                                <div class="footer-menu-col-1">
+                                    <li><a href="#">Паллиативные центры</a></li>
+                                    <li><a href="#">Хосписы</a></li>
+                                </div>
+                                <div class="footer-menu-col-2">
+                                    <li><a href="#">Геронтологические центры</a></li>
+                                    <li><a href="#">Гериатрические центры</a></li>
+                                </div>
+                                <div class="footer-menu-col-3">
+                                    <li><a href="#">Стационары</a></li>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="footer-contacts">
+                            <div class="footer-phone">
+                                <span>8 800 000 000</span>
+                                <span>Звоните бесплатно 24/7</span>
                             </div>
-                            <div class="footer_block_copyright">
-                                <span>© Выпускной <?php echo date('Y') - 1 ?></span>
-                                <a href="/privacy/" class="footer_pc _link"><p>Политика конфиденциальности</p></a>
+                            <div class="footer-call">
+                                <button class="btn">Связаться с нами</button>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="footer-bottom">
+                        <p>© 2022. Cеть пансионатов для пожилых</p>
+                    </div>
+                </footer>
             </div>
-        </footer>
+        </section>
 
     </div> 
 
