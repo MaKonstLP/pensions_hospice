@@ -1,67 +1,115 @@
-.main_top{
-    width: 100%;
-    margin: auto auto;
+// .main_top{
+//     width: 100%;
+//     margin: auto auto;
+//     display: flex;
+//     align-items: center;
+//     @include for-notdesc{
+//         flex-direction: column;
+//         padding: 0px 15px;
+//     }
+//     @include for-pad{
+//         margin: 0 auto 35px;
+//     }
+//     @include for-mobile{
+//         margin: 32px auto 20px;
+//     }
+//     h1{
+//     	width: 564px;
+//     	text-align: center;
+//         font-weight: 600;
+//         font-size: 48px;
+//         line-height: 60px;
+//         color: black;
+//         @include for-notdesc{
+//             text-align: center;
+//             margin-right: 0px;
+//             width: 100%;
+//         }
+//         @include for-mobile{
+//             font-size: 36px;
+//             line-height: 40px;
+//         }
+//     }
+//     .main_top_desc{
+//     	width: 705px;
+//         font-weight: 600;
+//         font-size: 20px;
+//         line-height: 30px;
+//         margin-top: 20px;
+//         @include for-notdesc{
+//             text-align: center;
+//             width: 100%;
+//         }
+//         @include for-mobile{
+//             margin-top: 10px;
+//         }
+// 	    p{
+// 		    font-weight: 600;
+//             font-size: 20px;
+//             line-height: 30px;
+//             @include for-mobile{
+//                 font-size: 20px;
+//                 line-height: 29px;
+//             }
+// 		}
+// 	}
+// }
+.best-hospises {
+    padding-top: 90px;
+}
+
+.best-hospises-title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.best-hospises-title h2 {
+    font-family: 'Inter-Bold';
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 120%;
+}
+
+.best-hospises-list {
     display: flex;
-    align-items: center;
-
-    @include for-notdesc{
-        flex-direction: column;
-        padding: 0px 15px;
+    justify-content: space-between;
+    max-width: 1660px;
+    .listing-list-item {
+        max-width: 820px;
+        max-height: 350px;
+        margin-bottom: 90px;
     }
-
-    @include for-pad{
-        margin: 0 auto 35px;
+    .list-item-title a {
+        font-size: 26px;
     }
-
-    @include for-mobile{
-        margin: 32px auto 20px;
+    .list-item-desc p {
+        font-size: 16px;
     }
-
-    h1{
-    	width: 564px;
-    	text-align: center;
-        font-weight: 600;
-        font-size: 48px;
-        line-height: 60px;
-        color: black;
-
-        @include for-notdesc{
-            text-align: center;
-            margin-right: 0px;
-            width: 100%;
+    .list-item-price {
+        font-size: 26px;
+    }
+    .list-item-price-comment {
+        font-size: 18px;
+    }
+    .list-item-btns {
+        max-width: 310px;
+        height: 43px;
+        button {
+            height: 43px;
+            font-size: 16px;
         }
-
-        @include for-mobile{
-            font-size: 36px;
-            line-height: 40px;
+        button:first-child {
+            width: 50%;
+            max-width: 170px;
+        }
+        button:last-child {
+            width: 50%;
+            max-width: 126px;
         }
     }
-
-    .main_top_desc{
-    	width: 705px;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 30px;
-        margin-top: 20px;
-
-        @include for-notdesc{
-            text-align: center;
-            width: 100%;
-        }
-
-        @include for-mobile{
-            margin-top: 10px;
-        }
-
-	    p{
-		    font-weight: 600;
-            font-size: 20px;
-            line-height: 30px;
-
-            @include for-mobile{
-                font-size: 20px;
-                line-height: 29px;
-            }
-		}
-	}
+    .slide-recommended {
+        font-size: 16px;
+        max-width: 192px;
+        padding: 15px;
+    }
 }
