@@ -117,10 +117,8 @@ export default class Filter {
             data: data,
             success: function(response) {
                 if (response) {
-                    //console.log(response);
                     self.resolve('/ploshhadki/' + response);
                 } else {
-                    //console.log(response);
                     self.resolve(self.filterListingHref());
                 }
             },
@@ -184,7 +182,6 @@ export default class Filter {
         } else {
             delete this.state[blockType];
         }
-        //console.log(this.state);
     }
 
     inputStateRefresh(type, val) {

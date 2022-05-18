@@ -6,7 +6,7 @@ export default class YaMapAll {
         let self = this;
         var fired = false;
         this.filter = filter;
-        console.log(this.filter);
+
 
         window.addEventListener('click', () => {
             if (fired === false) {

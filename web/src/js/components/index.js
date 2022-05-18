@@ -10,10 +10,13 @@ export default class Index {
         this.filter = new Filter($('[data-filter-wrapper]'));
         this.yaMap = new YaMapAll(this.filter);
 
+
         //КЛИК ПО КНОПКЕ "ПОДОБРАТЬ"
         $('[data-filter-button]').on('click', function() {
             self.redirectToListing();
         });
+
+
 
         var topSlider = new Swiper('.swiper_top', {
 
@@ -54,7 +57,23 @@ export default class Index {
                 prevEl: '.swiper-button-prev',
             },
         });
+
+        const answersQuestionsSlider = new Swiper('.answers-questions-slider', {
+            loop: true,
+            navigation: {
+                nextEl: '.answers-swiper-button-next',
+                prevEl: '.answers-swiper-button-prev',
+            },
+            observer: true,
+            observeParents: true
+
+        });
+
     }
+
+
+
+
 
     redirectToListing() {
         this.filter.filterMainSubmit();
