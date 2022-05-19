@@ -1,6 +1,7 @@
 'use strict';
 import Filter from './filter';
 import YaMapAll from './map';
+import Swiper from 'swiper';
 
 export default class Listing {
     constructor($block) {
@@ -19,6 +20,17 @@ export default class Listing {
             self.reloadListing($(this).data('page-id'));
         });
         // console.log(this);
+
+        let swiper = new Swiper('.home-swiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
     }
 
     reloadListing(page = 1) {

@@ -1029,7 +1029,6 @@ section.header {
     line-height: 16px;
 }
 
-
 .middle-contacts-call {
     width: 30%;
     max-width: 170px;
@@ -1078,4 +1077,17 @@ section.header {
     font-size: 20px;
     line-height: 24px;
     color: $clrBlack;
+}
+
+.breadcrumbs {
+    margin-bottom: 49px;
+}
+
+.breadcrumbs a,
+.breadcrumbs span {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #686868;
 }

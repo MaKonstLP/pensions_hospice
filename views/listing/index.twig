@@ -1,6 +1,6 @@
 <div data-page-type="listing">
 
-	<div class="content_block" data-listing-title>
+	{# <div class="content_block" data-listing-title>
         {{ this.render('//components/generic/item_title.twig', {'seo':seo}) | raw }}
     </div>
 
@@ -53,5 +53,11 @@
 
     </div>
 
-	<div class="content_loading"></div>
+	<div class="content_loading"></div> #}
+
+	{{ this.render('//components/generic/home_listing.twig') | raw}}
+	
+    {{ this.render('//components/generic/home_map.twig') | raw}}
+
+	{{ this.render('//components/generic/home_bottom_banner.twig') | raw}}
 </div>

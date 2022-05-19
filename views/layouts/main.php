@@ -58,7 +58,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </nav>
                         </div>
                         <div class="header-middle-logo">
-                            <img src="./image/logo-blue.png" alt="logo">
+                            <img src="/image/logo-blue.png" alt="logo">
                         </div>
                         <div class="header-middle-contacts">
                             <div class="middle-contacts-phone">
@@ -73,12 +73,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div>
                                     <div class="socials-whatsapp">
                                         <a href="#">
-                                            <img src="./image/socials/wathsapp.png" alt="">
+                                            <img src="/image/socials/wathsapp.png" alt="">
                                         </a>
                                     </div>
                                     <div class="socials-telegramm">
                                         <a href="#">
-                                            <img src="./image/socials/telegramm.png" alt="">
+                                            <img src="/image/socials/telegramm.png" alt="">
                                         </a>
                                     </div>
                                 </div>
@@ -100,6 +100,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </section>
 
+        <?php 
+            if ((Yii::$app->controller->id !== 'site'))  { ?>
+                <div class="breadcrumbs">
+                    <a href="/">Главная</a>
+                    <span class="breadcrumbs-separator">|</span>
+                    <span>Хосписы</span>
+                </div>
+            <?php }
+
+        ?>
+
+        
         <!-- <header>
             <div class="header_wrap">
 
@@ -436,7 +448,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <footer>
                     <div class="footer-top">
                         <div class="footer-logo">
-                            <img src="./image/logo-blue.png" alt="logo">
+                            <img src="/image/logo-blue.png" alt="logo">
                         </div>
                         <div class="footer-menu-wrap">
                             <ul class="footer-menu">
