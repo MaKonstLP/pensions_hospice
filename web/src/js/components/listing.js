@@ -31,6 +31,13 @@ export default class Listing {
                 prevEl: '.swiper-button-prev',
             },
         });
+
+
+        $(document).click(function() {
+            console.log('ready');
+
+        })
+
     }
 
     reloadListing(page = 1) {

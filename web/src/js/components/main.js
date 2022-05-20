@@ -1,4 +1,5 @@
 'use strict';
+import Swiper from 'swiper';
 
 export default class Main {
     constructor() {
@@ -315,6 +316,29 @@ export default class Main {
             }
         }
         citySelectListBlockHeight();
+
+
+        var swiperSingleTop = new Swiper('.swiper-single-top', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        var swiperLocatedNearby = new Swiper('.swiper-located-nearby', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
     }
 
     init() {

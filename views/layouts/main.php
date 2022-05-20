@@ -98,7 +98,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </header>
             </div>
-        </section>
+    </section>
 
         <?php 
             if ((Yii::$app->controller->id !== 'site'))  { ?>

@@ -12,10 +12,14 @@ export default class Index {
 
 
         //КЛИК ПО КНОПКЕ "ПОДОБРАТЬ"
-        $('[data-filter-button]').on('click', function() {
-            self.redirectToListing();
-        });
+        // $('[data-filter-button]').on('click', function() {
+        //     self.redirectToListing();
+        // });
 
+        $(document).click(function() {
+            console.log('ready');
+
+        })
 
 
         var topSlider = new Swiper('.swiper_top', {

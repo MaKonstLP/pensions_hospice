@@ -90,6 +90,9 @@ export default class Item {
 
 
 
+
+
+
         // $('.object_gallery1').each((t,e) => {
 
         // 	let galleryRoomThumbs = new Swiper($(e).find('.gallery-thumbs'), {

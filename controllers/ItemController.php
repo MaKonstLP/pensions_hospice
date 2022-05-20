@@ -21,18 +21,18 @@ class ItemController extends Controller
 		$elastic_model = new ElasticItems;
 		$item = $elastic_model::get($id);
 
-		$seo = new Seo('item', 1, 0, $item, 'rest');
-		$seo = $seo->seo;
-        $this->setSeo($seo);
+		//$seo = new Seo('item', 1, 0, $item, 'rest');
+		//$seo = $seo->seo;
+        //$this->setSeo($seo);
 
 		//$item = ApiItem::getData($item->restaurants->gorko_id);
 
-		$seo['h1'] = $item->restaurant_name;
-		$seo['breadcrumbs'] = Breadcrumbs::get_breadcrumbs(3);
-		$seo['desc'] = $item->restaurant_name;
-		$seo['address'] = $item->restaurant_address;
+		//$seo['h1'] = $item->restaurant_name;
+		//$seo['breadcrumbs'] = Breadcrumbs::get_breadcrumbs(3);
+		//$seo['desc'] = $item->restaurant_name;
+		//$seo['address'] = $item->restaurant_address;
 
-		$other_rooms = $item->rooms;
+		//$other_rooms = $item->rooms;
 
 		//echo '<pre>';
 		//print_r($item);
@@ -41,8 +41,8 @@ class ItemController extends Controller
 		return $this->render('index.twig', array(
 			'item' => $item,
 			'queue_id' => $id,
-			'seo' => $seo,
-			'other_rooms' => $other_rooms
+			//'seo' => $seo,
+			//'other_rooms' => $other_rooms
 		));
 	}
 
