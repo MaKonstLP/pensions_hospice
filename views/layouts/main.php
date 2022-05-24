@@ -44,6 +44,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <span>Ваш город</span>
                             <a href="#">Москва</a>
                         </div>
+                        <div class="mobile-menu-btn-wrap">
+                            <div class="mobile-menu-btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="mobile-menu-wrap">
+                            <div class="mobile-menu-close">
+                                <img src="/image/icons/close.svg" alt="">
+                            </div>
+                            <div class="mobile-menu-top">
+                                <ul class="menu-top">
+                                    <li>
+                                        <a href="#">Паллиативные центры</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Хосписы</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Стационары</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Геронтологические центры</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Гериатрические центры</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mobile-menu-bottom">
+                                <ul class="menu-bottom">
+                                    <li><a href="#">Цены</a></li>
+                                    <li><a href="#">Лицензии</a></li>
+                                    <li><a href="#">О нас</a></li>
+                                    <li><a href="#">Контакты</a></li>
+                                    <li><a href="#">Информация</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="header-middle">
                         <div class="header-middle-nav">

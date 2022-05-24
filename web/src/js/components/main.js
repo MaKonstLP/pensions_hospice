@@ -315,7 +315,24 @@ export default class Main {
                 document.querySelector(".city_select_list").style.height = height + 'px';
             }
         }
-        citySelectListBlockHeight();
+        //citySelectListBlockHeight();
+
+        function mobileBtnMenuHandler() {
+            let mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            let mobileMenuClose = document.querySelector('.mobile-menu-close');
+            let mobileMenuWrap = document.querySelector('.mobile-menu-wrap');
+
+            mobileMenuBtn.addEventListener('click', function() {
+                this.classList.add('active');
+                mobileMenuWrap.classList.add('active');
+            });
+            mobileMenuClose.addEventListener('click', function() {
+                this.classList.remove('active');
+                mobileMenuWrap.classList.remove('active');
+            });
+        }
+
+        mobileBtnMenuHandler();
 
 
         var swiperSingleTop = new Swiper('.swiper-single-top', {

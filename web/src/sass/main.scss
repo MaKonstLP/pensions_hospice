@@ -193,106 +193,99 @@ section.home-banner {
     position: relative;
     margin-left: 51px;
     margin-right: 63px;
-}
-
-.free-consultation-center::after {
-    position: absolute;
-    content: '';
-    width: 1px;
-    background: rgba(255, 255, 255, 0.8);
-    height: 155px;
-    bottom: 0;
-}
-
-.free-consultation-center::before {
-    position: absolute;
-    content: '';
-    width: 1px;
-    background: rgba(255, 255, 255, 0.8);
-    height: 155px;
-    top: 0;
-}
-
-.free-consultation-center img {
-    position: absolute;
-    top: calc(50% - 15px);
-    width: auto;
-    transform: translateX(-14px);
-    max-width: fit-content;
+    &:after {
+        position: absolute;
+        content: '';
+        width: 1px;
+        background: rgba(255, 255, 255, 0.8);
+        height: 155px;
+        bottom: 0;
+    }
+    &:before {
+        position: absolute;
+        content: '';
+        width: 1px;
+        background: rgba(255, 255, 255, 0.8);
+        height: 155px;
+        top: 0;
+    }
+    img {
+        position: absolute;
+        top: calc(50% - 15px);
+        width: auto;
+        transform: translateX(-14px);
+        max-width: fit-content;
+    }
 }
 
 .free-consultation-right {
     width: 40%;
     max-width: 265px;
+    .form-title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        font-family: 'Inter-Bold';
+        color: $clrColorWhite;
+    }
+    .form-input {
+        margin: 15px 0 14px 0;
+    }
 }
 
-.free-consultation-right .form-title {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    text-align: center;
-    font-family: 'Inter-Bold';
-    color: $clrColorWhite;
-}
-
-.free-consultation-right .form-input {
-    margin: 15px 0 14px 0;
-}
-
-.free-consultation-right input[type='text'] {
-    width: 100%;
-    height: 40px;
-    background: $clrColorWhite;
-    border-radius: 5px;
-    border: none;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    color: #919191;
-    padding: 10px;
-}
-
-.free-consultation-right input[type='checkbox'] {
-    border: none;
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-}
-
-.free-consultation-right input[type='checkbox']+label {
-    display: inline-flex;
-    align-items: center;
-    user-select: none;
-    cursor: pointer;
-}
-
-.free-consultation-right input[type='checkbox']+label::before {
-    content: '';
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    flex-grow: 0;
-    border: 1px solid #adb5bd;
-    border-radius: 5px;
-    margin-right: 8px;
-    background: $clrColorWhite;
-    border: 1px solid #EBEBEB;
-    transition: 0.2s;
-}
-
-.free-consultation-right input[type='checkbox']:checked+label::before {
-    background: $clrColorWhite;
-    content: url(/image/icons/accept.svg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid $clrBlack;
-    transition: 0.2s;
-}
-
-.free-consultation-right input:focus {
-    outline: none;
+form {
+    input[type='text'],
+    input[type='e-mail'] {
+        width: 100%;
+        height: 40px;
+        background: $clrColorWhite;
+        border-radius: 5px;
+        border: none;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #919191;
+        padding: 10px;
+    }
+    input[type='checkbox'] {
+        border: none;
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    input[type='checkbox']+label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        cursor: pointer;
+    }
+    input[type='checkbox']+label::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid #adb5bd;
+        border-radius: 5px;
+        margin-right: 8px;
+        background: $clrColorWhite;
+        border: 1px solid #EBEBEB;
+        transition: 0.2s;
+    }
+    input[type='checkbox']:checked+label::before {
+        background: $clrColorWhite;
+        content: url(/image/icons/accept.svg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $clrBlack;
+        transition: 0.2s;
+    }
+    input:focus {
+        outline: none;
+    }
 }
 
 .form-accept-check {

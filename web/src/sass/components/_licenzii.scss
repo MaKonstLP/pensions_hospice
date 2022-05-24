@@ -1,0 +1,66 @@
+.licenzies {
+    padding: 30px 0 90px 0;
+}
+
+.licenzies-title {
+    font-family: 'Inter-Bold';
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 120%;
+}
+
+.licenzies-desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    margin: 36px 0 90px 0;
+}
+
+.licenzies-departments {
+    background: #F8F8F3;
+    padding: 55px 45px;
+    margin-bottom: 110px;
+}
+
+.departments-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.departments-list>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.department-img {
+    margin-right: 20px;
+}
+
+.department-desc {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 140%;
+    text-transform: uppercase;
+}
+
+.licenzies-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.licenzies-list-big {
+    width: 100%;
+    max-width: 542px;
+    margin-right: 20px;
+}
+
+.licenzies-list-small {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.licenzies-list-small .item {
+    margin-bottom: 24px;
+}

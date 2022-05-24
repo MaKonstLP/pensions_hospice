@@ -1,6 +1,6 @@
 <div data-page-type="contacts">
 
-  <div class="breadcrumbs">
+  {# <div class="breadcrumbs">
 
     <a class="breadcrumbs_item" href="/">
       Новый год {{year}}
@@ -150,5 +150,133 @@
 
       </div>
     </div>
-  </div>
+  </div> #}
+
+   <section class="contacts">
+            <div class="container">
+                <div class="contacts-title">
+                    Контакты
+                </div>
+                <div class="contacts-list">
+                    <div class="contacts-list-item contacts-adress">
+                        <div class="contacts-list-title">
+                            Адрес
+                        </div>
+                        <div class="contacts-list-text">
+                            Москва, Мясницкая улица, 13с24
+                        </div>
+                    </div>
+                    <div class="contacts-list-item contacts-phone">
+                        <div class="contacts-list-title">
+                            Телефон
+                        </div>
+                        <div class="contacts-list-text">
+                            +7 (800) 055-55-55
+                        </div>
+                    </div>
+                    <div class="contacts-list-item contacts-email">
+                        <div class="contacts-list-title">
+                            E-MAIL
+                        </div>
+                        <div class="contacts-list-text">
+                            info@hospisy@yandex.ru
+                        </div>
+                    </div>
+                    <div class="contacts-list-item contacts-working">
+                        <div class="contacts-list-title">
+                            Режим работы
+                        </div>
+                        <div class="contacts-list-text">
+                            Круглосуточно
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+  <section class="our-team">
+              <div class="container">
+                  <div class="our-team-title">
+                      Наша команда
+                  </div>
+                  <div class="our-team-list">
+                      <div class="our-team-list-item">
+                          <div class="item-img">
+                              <img src="/image/our-team/1920/team1.png" alt="">
+                          </div>
+                          <div class="item-name">Мировая Елизавета</div>
+                          <div class="item-position">Старший операттор Горячей линии</div>
+                      </div>
+                      <div class="our-team-list-item">
+                          <div class="item-img">
+                              <img src="/image/our-team/1920/team2.png" alt="">
+                          </div>
+                          <div class="item-name">Третьяков Николай</div>
+                          <div class="item-position">Техподдержка</div>
+                      </div>
+                      <div class="our-team-list-item">
+                          <div class="item-img">
+                              <img src="/image/our-team/1920/team3.png" alt="">
+                          </div>
+                          <div class="item-name">Воробьев Александр</div>
+                          <div class="item-position">Редактор</div>
+                      </div>
+                      <div class="our-team-list-item">
+                          <div class="item-img">
+                              <img src="/image/our-team/1920/team4.png" alt="">
+                          </div>
+                          <div class="item-name">Сонова Алия</div>
+                          <div class="item-position">Модератор</div>
+                      </div>
+                  </div>
+              </div>
+  </section>
+
+  <section class="home-map">
+      <div class="map-wrap" id="home-map">
+          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A57929345be5920911ec5a44271ba88fb6ed15a7897cd0aa54343c322d0cd42ef&amp;source=constructor" width="100%" height="653" frameborder="0"></iframe>
+      </div>
+  </section>
+
+  <section class="home-bottom-banner">
+              <div class="container">
+                  <div class="free-consultation">
+                      <div class="free-consultation-left">
+                          <div class="consultation-title">Поможем подобрать место, в котором пациенту будет комфортно</div>
+                          <div class="consultation-desc">
+                              <p>Оставьте важную информацию о состоянии больного и свои контакты</p>
+                              <p>Мы свяжемся в ближайшее время</p>
+                          </div>
+                      </div>
+                      <div class="free-consultation-center">
+                          <img src="/image/logo-white.png" alt="logo">
+                      </div>
+                      <div class="free-consultation-right">
+                          <form action="/" class="consultation-form">
+                              <div class="form-title">Подобрать место</div>
+                              <div class="form-input">
+                                  <input type="text" name="consultation-contact" placeholder="Email/телефон">
+                              </div>
+                              <div class="form-input">
+                                  <input type="text" name="consultation-name" placeholder="Ваше имя">
+                              </div>
+                              <div class="form-input">
+                                  <textarea type="text" name="consultation-info" placeholder="Дополнительная информация"></textarea>
+                              </div>
+                              <div class="form-accept">
+                                  <div class="form-accept-check-bottom">
+                                      <input type="checkbox" id="form-accept-check-bottom">
+                                      <label class="form-accept-desc" for="form-accept-check-bottom">
+                                          <span>Я согласен с условиями обработки <a href="#">персональных данных</a></span>
+                                      </label>
+                                  </div>
+                              </div>
+                              <div class="form-submit">
+                                  <button class="btn">Подобрать</button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+  </section>
 </div>
