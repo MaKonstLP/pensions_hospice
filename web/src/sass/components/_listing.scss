@@ -483,10 +483,19 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    @include for-extra-mobile {
+        flex-direction: column;
+    }
 }
 
 .home-listing-wrap {
     max-width: 1380px;
+    @include for-lowlap {
+        max-width: 930px;
+    }
+    @include for-laptop {
+        max-width: 670px;
+    }
 }
 
 .home-listing-title h1 {
@@ -494,6 +503,10 @@
     font-weight: 700;
     font-size: 36px;
     line-height: 120%;
+    text-align: center;
+    @include for-laptop {
+        font-size: 26px;
+    }
 }
 
 .home-listing-text {
@@ -522,6 +535,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include for-laptop {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-bottom: -15px;
+        margin-right: -15px;
+    }
+    li {
+        @include for-laptop {
+            margin-right: 10px;
+            margin-bottom: 15px;
+        }
+    }
 }
 
 .home-listing-sorting .sorting-menu li a {
@@ -536,6 +561,9 @@
     line-height: 120%;
     padding: 10px;
     transition: 0.2s;
+    @include for-extra-mobile {
+        font-size: 13px;
+    }
 }
 
 .home-listing-sorting .sorting-menu li a:hover {
@@ -549,6 +577,26 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @include for-extra-mobile {
+        justify-content: center;
+    }
+}
+
+.home-listing-wrap {
+    .listing-list-item {
+        @include for-lowlap {
+            max-width: 455px;
+            display: flex;
+            flex-direction: column;
+            max-height: fit-content;
+        }
+        @include for-laptop {
+            max-width: 325px;
+        }
+        @include for-extra-mobile {
+            max-width: 306px;
+        }
+    }
 }
 
 .listing-list-item {
@@ -592,6 +640,9 @@
     line-height: 120%;
     color: #00B2FF;
     text-decoration: underline;
+    @include for-laptop {
+        font-size: 16px;
+    }
 }
 
 .list-item-desc p {

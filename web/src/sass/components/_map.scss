@@ -238,4 +238,9 @@
 .map-wrap {
     max-width: 1661px;
     height: 653px;
+    @include for-extra-mobile {
+        max-width: 330px;
+        height: 330px;
+        margin: 0 auto;
+    }
 }

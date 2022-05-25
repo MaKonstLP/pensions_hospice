@@ -959,6 +959,11 @@ section.header {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    @include for-mobile {
+        padding: 0 15px;
+        height: 40px;
+    }
     a {
         font-weight: 400;
         font-size: 14px;
@@ -973,16 +978,44 @@ section.header {
     span {
         font-weight: 500;
         font-size: 14px;
+        @include for-mobile {
+            display: none;
+        }
+    }
+    a {
+        position: relative;
+        padding-left: 12px;
+        &:before {
+            position: absolute;
+            content: url(/image/icons/header-location.svg);
+            left: 0;
+            top: 2px;
+        }
+    }
+}
+
+.mobile-phone {
+    display: none;
+    @include for-mobile {
+        display: block;
     }
 }
 
 .mobile-menu-btn-wrap {
     display: none;
+    margin-right: 65px;
+    @include for-laptop {
+        display: block;
+    }
+    @include for-mobile {
+        margin: 0;
+    }
 }
 
-@media(max-width:690px) {
-    .mobile-menu-btn-wrap {
-        display: block;
+.mobile-btn-call {
+    a {
+        color: #ffffff;
+        padding: 5px 10px;
     }
 }
 
@@ -1056,11 +1089,17 @@ section.header {
     justify-content: space-between;
     align-items: center;
     padding: 40px 0;
+    @include for-extra-mobile {
+        justify-content: center;
+    }
 }
 
 .header-middle-nav {
     width: 40%;
     max-width: 626px;
+    @include for-laptop {
+        display: none;
+    }
 }
 
 .header-middle-menu {
@@ -1074,12 +1113,28 @@ section.header {
     }
 }
 
+.header-middle-logo {
+    @include for-lowlap {
+        max-width: 199px;
+    }
+}
+
 .header-middle-contacts {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 40%;
     max-width: 561px;
+    @include for-lowlap {
+        width: 100%;
+        max-width: 423px;
+    }
+    @include for-mobile {
+        max-width: 423px;
+    }
+    @include for-extra-mobile {
+        display: none;
+    }
 }
 
 .middle-contacts-phone {
@@ -1102,6 +1157,13 @@ section.header {
 .middle-contacts-call {
     width: 30%;
     max-width: 170px;
+    .btn {
+        @include for-lowlap {
+            font-size: 14px;
+            height: 35px;
+            max-width: 138px;
+        }
+    }
 }
 
 .middle-contacts-socials {
@@ -1135,6 +1197,19 @@ section.header {
     background: $clrBgWhite;
     border-radius: 5px;
     height: 70px;
+    @include for-lowlap {
+        padding: 15px 40px;
+        background: #fff;
+        border-radius: 5px;
+        height: 50px;
+    }
+    @include for-laptop {
+        padding: 8px 25px;
+        height: 40px;
+    }
+    @include for-mobile {
+        display: none;
+    }
 }
 
 .header-bottom-menu {
@@ -1145,6 +1220,14 @@ section.header {
         font-size: 20px;
         line-height: 24px;
         color: $clrBlack;
+        @include for-lowlap {
+            font-size: 16px;
+            line-height: 19px;
+        }
+        @include for-laptop {
+            font-size: 14px;
+            line-height: 17px;
+        }
     }
 }
 

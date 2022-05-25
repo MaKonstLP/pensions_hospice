@@ -4,6 +4,9 @@
     align-items: center;
     background: #fff;
     padding: 34px 50px 34px 30px;
+    @include for-laptop {
+        padding: 20px 17px;
+    }
 }
 
 .footer-logo {
@@ -13,11 +16,20 @@
 .footer-menu-wrap {
     width: 50%;
     max-width: 542px;
+    @include for-lowlap {
+        max-width: 512px;
+    }
+    @include for-laptop {
+        max-width: 410px;
+    }
 }
 
 .footer-menu {
     display: flex;
     justify-content: space-between;
+    @include for-laptop {
+        flex-wrap: wrap;
+    }
 }
 
 .footer-menu li {
@@ -46,11 +58,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include for-lowlap {
+        max-width: 375px;
+    }
+    @include for-laptop {
+        flex-direction: column;
+        max-width: 179px;
+    }
 }
 
 .footer-phone {
     max-width: 156px;
     line-height: 12px;
+    @include for-laptop {
+        margin-bottom: 10px;
+    }
 }
 
 .footer-phone span:first-child {
@@ -70,6 +92,9 @@
 .footer-call {
     width: 50%;
     max-width: 179px;
+    @include for-laptop {
+        width: 100%;
+    }
 }
 
 .footer-bottom p {
@@ -77,4 +102,7 @@
     font-size: 12px;
     line-height: 15px;
     padding: 20px 30px;
+    @include for-laptop {
+        padding-left: 0;
+    }
 }

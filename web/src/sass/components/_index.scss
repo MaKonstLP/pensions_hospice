@@ -56,6 +56,16 @@
 // }
 .best-hospises {
     padding-top: 90px;
+    .swiper {
+        @include for-lowlap {
+            max-width: 250px;
+            max-height: 250px;
+        }
+        @include for-laptop {
+            max-width: 435px;
+            max-height: 282px;
+        }
+    }
 }
 
 .best-hospises-title {
@@ -68,6 +78,9 @@
     font-weight: 700;
     font-size: 30px;
     line-height: 120%;
+    @include for-laptop {
+        font-size: 26px;
+    }
 }
 
 .best-hospises-list {
@@ -78,39 +91,83 @@
         max-width: 820px;
         max-height: 350px;
         margin-bottom: 90px;
+        @include for-lowlap {
+            max-width: 590px;
+            max-height: 250px;
+        }
+        @include for-laptop {
+            max-width: 435px;
+            display: flex;
+            flex-direction: column;
+            max-height: fit-content;
+        }
+    }
+    @include for-extra-mobile {
+        flex-direction: column;
     }
     .list-item-title a {
         font-size: 26px;
+        @include for-lowlap {
+            font-size: 18px;
+        }
     }
     .list-item-desc p {
         font-size: 16px;
+        @include for-lowlap {
+            font-size: 13px;
+        }
     }
     .list-item-price {
         font-size: 26px;
+        @include for-lowlap {
+            font-size: 16px;
+        }
     }
     .list-item-price-comment {
         font-size: 18px;
+        @include for-lowlap {
+            font-size: 14px;
+        }
     }
     .list-item-btns {
         max-width: 310px;
         height: 43px;
+        @include for-lowlap {
+            max-width: 245px;
+            height: 35px;
+        }
         button {
             height: 43px;
             font-size: 16px;
+            @include for-lowlap {
+                font-size: 14px;
+                height: 35px;
+            }
         }
         button:first-child {
             width: 50%;
             max-width: 170px;
+            @include for-lowlap {
+                max-width: 136px;
+            }
         }
         button:last-child {
             width: 50%;
             max-width: 126px;
+            @include for-lowlap {
+                max-width: 99px;
+            }
         }
     }
     .slide-recommended {
         font-size: 16px;
         max-width: 192px;
         padding: 15px;
+        @include for-lowlap {
+            font-size: 14px;
+            max-width: 155px;
+            padding: 9px;
+        }
     }
 }
 
@@ -155,6 +212,9 @@ section.answers-questions .container {
     font-size: 30px;
     line-height: 120%;
     text-align: center;
+    @include for-laptop {
+        font-size: 26px;
+    }
 }
 
 .answers-questions-slide>div {
@@ -208,24 +268,20 @@ section.answers-questions .container {
     color: #686868;
 }
 
-.answers-questions-swiper-navigation {
-    position: absolute;
+.answers-questions .swiper-button-prev {
     top: 54%;
-    left: 18%;
-    width: 100%;
-    max-width: 1064px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    left: 50px;
+    @include for-laptop {
+        left: 0;
+    }
 }
 
-.answers-questions-swiper-navigation .swiper-button-prev {
-    position: static;
-}
-
-.answers-questions-swiper-navigation .swiper-button-next {
-    position: static;
+.answers-questions .swiper-button-next {
+    top: 54%;
+    right: 50px;
+    @include for-laptop {
+        right: 0;
+    }
 }
 
 .good-to-know-title {
@@ -237,6 +293,9 @@ section.answers-questions .container {
     font-weight: 700;
     font-size: 30px;
     line-height: 120%;
+    @include for-laptop {
+        font-size: 26px;
+    }
 }
 
 .good-to-know-items {
@@ -249,6 +308,20 @@ section.answers-questions .container {
     position: relative;
     width: 40%;
     max-width: 540px;
+    @include for-lowlap {
+        max-width: 459px;
+    }
+    @include for-laptop {
+        height: 280px;
+        width: 40%;
+        max-width: 280px;
+    }
+}
+
+.good-to-know-items .item:nth-child(4) {
+    @include for-lowlap {
+        display: none;
+    }
 }
 
 .good-to-know-items .item {
@@ -261,6 +334,15 @@ section.answers-questions .container {
     background-position: center center;
     border-radius: 5px;
     overflow: hidden;
+    @include for-lowlap {
+        height: 358px;
+        background-size: cover;
+    }
+    @include for-laptop {
+        height: 280px;
+        width: 40%;
+        max-width: 280px;
+    }
 }
 
 .good-to-know-items .item-desc {
@@ -280,12 +362,23 @@ section.answers-questions .container {
     font-weight: 500;
     font-size: 22px;
     line-height: 140%;
+    @include for-laptop {
+        font-size: 16px;
+        line-height: 120%;
+    }
 }
 
 section.home-bottom-banner {
-    background: url(/image/banner-footer.png) no-repeat center;
+    background-image: url(/image/banner-footer.png);
+    background-repeat: no-repeat;
+    background-position: center;
     height: 543px;
     margin: 50px 0;
+    @include for-extra-mobile {
+        height: 537px;
+        padding: 0;
+        background-size: cover;
+    }
 }
 
 section.home-bottom-banner .container {
@@ -294,6 +387,14 @@ section.home-bottom-banner .container {
 
 section.home-bottom-banner .free-consultation {
     max-width: 980px;
+    @include for-laptop {
+        max-width: 805px;
+        padding: 0;
+    }
+    @include for-extra-mobile {
+        max-width: 100%;
+        padding: 20px 0;
+    }
 }
 
 section.home-bottom-banner .consultation-title {
@@ -301,20 +402,38 @@ section.home-bottom-banner .consultation-title {
     font-size: 30px;
     line-height: 36px;
     text-align: right;
+    @include for-laptop {
+        font-size: 24px;
+    }
+    @include for-extra-mobile {
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        margin-bottom: 5px;
+    }
 }
 
 section.home-bottom-banner .free-consultation-left {
     max-width: 428px;
+    @include for-laptop {
+        max-width: 333px;
+    }
 }
 
 section.home-bottom-banner .consultation-desc {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    @include for-extra-mobile {
+        align-items: center;
+    }
 }
 
 section.home-bottom-banner .consultation-desc p:first-child {
     margin-bottom: 20px;
+    @include for-extra-mobile {
+        margin-bottom: 5px;
+    }
 }
 
 section.home-bottom-banner .consultation-desc p {
@@ -324,6 +443,12 @@ section.home-bottom-banner .consultation-desc p {
     text-align: right;
     text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
     max-width: 390px;
+    @include for-laptop {
+        font-size: 16px;
+    }
+    @include for-extra-mobile {
+        text-align: center;
+    }
 }
 
 section.home-bottom-banner .free-consultation-center::before {

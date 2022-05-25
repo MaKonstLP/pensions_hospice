@@ -44,6 +44,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <span>Ваш город</span>
                             <a href="#">Москва</a>
                         </div>
+                        <div class="mobile-phone">
+                            <img src="/image/icons/header-phone.svg" alt="">
+                        </div>
+                        <div class="mobile-btn-call">
+                            <a class="btn" href="#">Заказать звонок</a>
+                        </div>
                         <div class="mobile-menu-btn-wrap">
                             <div class="mobile-menu-btn">
                                 <span></span>

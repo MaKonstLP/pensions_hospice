@@ -599,6 +599,26 @@
 // }
 .sidebar {
     max-width: 217px;
+    @include for-laptop {
+        max-width: 211px;
+    }
+    @include for-extra-mobile {
+        max-width: 330px;
+    }
+}
+
+.filter-desctop {
+    display: block;
+    @include for-extra-mobile {
+        display: none;
+    }
+}
+
+.filter-mobile {
+    display: none;
+    @include for-extra-mobile {
+        display: block;
+    }
 }
 
 .filter-item {
@@ -650,6 +670,9 @@
     background: #F2F1E6;
     transition: 0.2s;
     border: 1px solid transparent;
+    @include for-laptop {
+        width: 100px;
+    }
 }
 
 .filter-price label:not(:last-child) {
