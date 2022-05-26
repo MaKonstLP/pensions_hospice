@@ -17,6 +17,12 @@
     line-height: 120%;
     max-width: 814px;
     text-align: center;
+    @include for-laptop {
+        font-size: 26px;
+    }
+    @include for-extra-mobile {
+        font-size: 24px;
+    }
 }
 
 .single-post-content p {
@@ -27,6 +33,9 @@
 
 .single-post-content img:first-of-type {
     margin: 90px 0;
+    @include for-extra-mobile {
+        margin: 50px 0;
+    }
 }
 
 .single-post-content img:nth-of-type(2) {
@@ -39,6 +48,9 @@
     font-size: 30px;
     line-height: 120%;
     margin-bottom: 20px;
+    @include for-extra-mobile {
+        font-size: 24px;
+    }
 }
 
 .single-post ol {
@@ -71,12 +83,18 @@ ol li:before {
     background: #F8F8F3;
     padding: 21px 50px;
     margin: 90px 0;
+    @include for-extra-mobile {
+        padding: 20px;
+    }
 }
 
 .sibgle-post-quote p {
     font-weight: 600;
     font-size: 18px;
     line-height: 140%;
+    @include for-extra-mobile {
+        font-size: 16px;
+    }
 }
 
 .single-post ul {
@@ -109,6 +127,9 @@ ol li:before {
     margin: 90px 0;
     height: 543px;
     background-image: url(/image/posts/post3.png);
+    @include for-extra-mobile {
+        background-position: right;
+    }
 }
 
 .post-form-bg {
@@ -119,11 +140,20 @@ ol li:before {
     display: flex;
     align-items: center;
     justify-content: center;
+    @include for-extra-mobile {
+        width: 100%;
+    }
 }
 
 .post-form-wrap {
     width: 100%;
     max-width: 455px;
+    @include for-laptop {
+        max-width: 375px;
+    }
+    @include for-extra-mobile {
+        max-width: 291px;
+    }
 }
 
 .post-form-title {
@@ -134,6 +164,9 @@ ol li:before {
     text-align: center;
     color: #FFFFFF;
     text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    @include for-laptop {
+        font-size: 26px;
+    }
     @include for-mobile {
         font-size: 20px;
     }
@@ -166,15 +199,32 @@ ol li:before {
 
 .post-form-btn button {
     max-width: 265px;
+    @include for-extra-mobile {
+        max-width: 100%;
+    }
 }
 
 .post-form-form .form-row {
     display: flex;
     justify-content: space-between;
+    &:first-child {
+        @include for-extra-mobile {
+            flex-direction: column;
+        }
+    }
 }
 
 .post-form-form .form-row input {
     max-width: 220px;
+    @include for-laptop {
+        max-width: 180px;
+    }
+    @include for-extra-mobile {
+        max-width: 100%;
+    }
+    &:first-child {
+        margin-bottom: 15px;
+    }
 }
 
 .post-form-form .form-row textarea {

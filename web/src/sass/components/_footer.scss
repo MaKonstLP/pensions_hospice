@@ -7,6 +7,10 @@
     @include for-laptop {
         padding: 20px 17px;
     }
+    @include for-extra-mobile {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 .footer-logo {
@@ -21,6 +25,10 @@
     }
     @include for-laptop {
         max-width: 410px;
+    }
+    @include for-extra-mobile {
+        width: 70%;
+        margin: 20px 0;
     }
 }
 
@@ -64,6 +72,10 @@
     @include for-laptop {
         flex-direction: column;
         max-width: 179px;
+    }
+    @include for-extra-mobile {
+        width: 100%;
+        max-width: 100%;
     }
 }
 

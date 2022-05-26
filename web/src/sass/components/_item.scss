@@ -2102,15 +2102,26 @@ section.single-content {
     margin-right: 0;
     overflow: hidden;
     border-radius: 5px;
+    @include for-extra-mobile {
+        height: 183px;
+    }
+    img {
+        @include for-extra-mobile {
+            width: 100%;
+        }
+    }
 }
 
 .single-top-wrap {
     display: flex;
     justify-content: space-between;
+    @include for-extra-mobile {
+        flex-direction: column;
+    }
 }
 
 .single-top-desc-padding {
-    padding: 40px 30px 0 30px;
+    padding: 30px 10px 0 10px;
 }
 
 .single-top-desc {
@@ -2121,6 +2132,9 @@ section.single-content {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    @include for-extra-mobile {
+        height: 420px;
+    }
 }
 
 .single-top-desc-title {
@@ -2130,10 +2144,17 @@ section.single-content {
     line-height: 120%;
     max-width: 480px;
     text-align: center;
+    @include for-extra-mobile {
+        font-size: 22px;
+        line-height: 110%;
+    }
 }
 
 .single-top-desc-title span {
     display: block;
+    @include for-extra-mobile {
+        display: inline;
+    }
 }
 
 .single-top-desc-adress {
@@ -2143,6 +2164,11 @@ section.single-content {
     text-align: center;
     color: #686868;
     margin: 10px 0 70px 10px;
+    @include for-extra-mobile {
+        font-size: 16px;
+        line-height: 110%;
+        margin: 5px 0 25px 0;
+    }
 }
 
 .single-top-desc-price {
@@ -2151,6 +2177,10 @@ section.single-content {
     font-size: 26px;
     line-height: 100%;
     text-align: center;
+    @include for-extra-mobile {
+        font-size: 22px;
+        line-height: 100%;
+    }
 }
 
 .single-top-desc-price-comment {
@@ -2173,6 +2203,11 @@ section.single-content {
     font-weight: 700;
     font-size: 30px;
     line-height: 120%;
+    @include for-extra-mobile {
+        font-size: 24px;
+        line-height: 120%;
+        height: 60px;
+    }
 }
 
 .single-top-desc-phone-wrap {
@@ -2181,6 +2216,9 @@ section.single-content {
     display: flex;
     justify-content: center;
     padding: 20px 0;
+    @include for-extra-mobile {
+        padding: 14px 0;
+    }
 }
 
 .single-top-desc-phone {
@@ -2189,11 +2227,17 @@ section.single-content {
     align-items: center;
     width: 100%;
     max-width: 325px;
+    @include for-extra-mobile {
+        max-width: 265px;
+    }
 }
 
 .desc-phone-number {
     display: flex;
     flex-direction: column;
+    @include for-extra-mobile {
+        max-width: 200px;
+    }
 }
 
 .desc-phone-number span:first-child {
@@ -2201,6 +2245,10 @@ section.single-content {
     font-weight: 700;
     font-size: 24px;
     line-height: 130%;
+    @include for-extra-mobile {
+        font-size: 20px;
+        line-height: 130%;
+    }
 }
 
 .desc-phone-number span:last-child {
@@ -2215,6 +2263,15 @@ section.single-content {
     justify-content: space-between;
     max-width: 1050px;
     margin-top: 20px;
+    @include for-extra-mobile {
+        overflow: scroll;
+    }
+}
+
+.links-item {
+    @include for-extra-mobile {
+        margin-right: 10px;
+    }
 }
 
 .single-top-links a {
@@ -2226,6 +2283,10 @@ section.single-content {
     font-size: 16px;
     line-height: 19px;
     padding: 0 20px;
+    @include for-extra-mobile {
+        white-space: nowrap;
+        padding: 0 12px;
+    }
 }
 
 .single-wrap {
@@ -2264,6 +2325,10 @@ section.single-content {
     margin-bottom: 30px;
     width: 50%;
     max-width: 50%;
+    @include for-extra-mobile {
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
 .comforts-list-item .item-text {
@@ -2296,6 +2361,9 @@ section.single-content {
     width: 100%;
     max-width: 953px;
     padding: 90px 0 0 0;
+    @include for-extra-mobile {
+        padding: 50px 0 0 0;
+    }
 }
 
 .single-diseases-list {
@@ -2314,6 +2382,11 @@ section.single-content {
     padding: 10px;
     margin-right: 20px;
     margin-bottom: 15px;
+    @include for-extra-mobile {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
 }
 
 .single-documents {
@@ -2325,6 +2398,10 @@ section.single-content {
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    flex-wrap: wrap;
+    @include for-extra-mobile {
+        flex-wrap: wrap;
+    }
 }
 
 .single-documents-list div {
@@ -2338,10 +2415,29 @@ section.single-content {
     height: 210px;
     background-repeat: no-repeat;
     background-position: center;
+    &:nth-child(3) {
+        @include for-extra-mobile {
+            margin-bottom: 0;
+        }
+    }
+    &:nth-child(4) {
+        @include for-extra-mobile {
+            margin-bottom: 0;
+        }
+    }
+    @include for-extra-mobile {
+        height: 145px;
+        width: 50%;
+        max-width: 157px;
+        margin-bottom: 15px;
+    }
 }
 
 .single-prices {
     padding: 90px 0 0 0;
+    @include for-extra-mobile {
+        padding: 50px 0 0 0;
+    }
 }
 
 .single-prices-list {
@@ -2349,6 +2445,9 @@ section.single-content {
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    @include for-extra-mobile {
+        flex-direction: column;
+    }
 }
 
 .single-prices-list-item {
@@ -2363,6 +2462,9 @@ section.single-content {
     border-radius: 5px;
     text-align: center;
     padding: 40px 0 0 0;
+    @include for-extra-mobile {
+        width: 100%;
+    }
 }
 
 .single-prices-list .item-title {
@@ -2409,6 +2511,9 @@ section.single-content {
     border: 1px solid #E5E5E5;
     border-radius: 5px;
     padding: 25px 40px 25px 20px;
+    @include for-extra-mobile {
+        padding: 25px 20px;
+    }
 }
 
 .testimonial-item .item-avatar {
@@ -2420,6 +2525,9 @@ section.single-content {
     width: 60px;
     height: 60px;
     position: relative;
+    @include for-extra-mobile {
+        position: absolute;
+    }
 }
 
 .testimonial-item .item-avatar::after {
@@ -2443,6 +2551,10 @@ section.single-content {
     justify-content: space-between;
     width: 100%;
     max-width: 120px;
+    @include for-extra-mobile {
+        max-width: max-content;
+        padding-left: 100px;
+    }
 }
 
 .testimonial-item .item-desc-rating div {
@@ -2464,6 +2576,9 @@ section.single-content {
     font-size: 16px;
     line-height: 140%;
     margin: 15px 0;
+    @include for-extra-mobile {
+        margin: 50px 0 15px 0;
+    }
 }
 
 .testimonial-item .item-desc-info {
@@ -2481,6 +2596,9 @@ section.single-content {
     font-size: 14px;
     line-height: 140%;
     margin-right: 5px;
+    @include for-extra-mobile {
+        margin: 0;
+    }
 }
 
 .testimonial-item .item-desc-info .info-text {
