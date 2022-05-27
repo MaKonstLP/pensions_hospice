@@ -16,9 +16,9 @@ export default class Index {
         //     self.redirectToListing();
         // });
 
-        $(document).click(function() {
-            console.log('ready');
-
+        $('.home-listing-text .more-text').click(function() {
+            $(this).closest('.home-listing-text').find('p').addClass('active');
+            $(this).remove();
         })
 
 
@@ -72,7 +72,25 @@ export default class Index {
             observeParents: true
 
         });
+        const answersQuestionsSliderMobile = new Swiper('.answers-questions-slider-mobile', {
+            loop: true,
+            observer: true,
+            observeParents: true
 
+        });
+
+        if ($(window).width() <= 400) {
+
+            const swiperGoodToKnow = new Swiper('.swiper-good-to-know', {
+                loop: true,
+                observer: true,
+                observeParents: true,
+                watchSlidesProgress: true,
+                slidesPerView: 1,
+                spaceBetween: 20,
+
+            });
+        }
     }
 
 

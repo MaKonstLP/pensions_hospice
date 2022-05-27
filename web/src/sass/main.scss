@@ -109,7 +109,7 @@ body {
 }
 
 .wrap {
-    max-width: 1661px;
+    max-width: 1680px;
     margin: 0 auto;
     padding: 0 10px;
     @include for-lowlap {
@@ -122,7 +122,7 @@ body {
         max-width: 670px;
     }
     @include for-extra-mobile {
-        max-width: 360px;
+        max-width: 380px;
     }
 }
 

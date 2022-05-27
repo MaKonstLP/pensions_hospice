@@ -56,8 +56,13 @@ export default class Filter {
             });
         });
 
-        $('.filter-city-select').on('click', function(e) {
-            self.showCitySelect();
+        $('.filter-select').on('click', function(e) {
+            let filterPopup = $(this).closest('.filter-item').find('.filter-popup');
+            self.showCitySelect(filterPopup);
+        });
+        $('.filter-more-paramters span').on('click', function(e) {
+            self.showAllSelect();
+            $(this).remove();
         });
     }
 
@@ -205,11 +210,11 @@ export default class Filter {
         return href;
     }
 
-    showCitySelect() {
-
-        let filterCityPopup = $('.filter-city-popup');
-
-        filterCityPopup.toggleClass('active');
-
+    showCitySelect(elem) {
+        elem.toggleClass('active');
+    }
+    showAllSelect() {
+        let filterMobile = $('.filter-mobile');
+        $(filterMobile).addClass('active-all');
     }
 }

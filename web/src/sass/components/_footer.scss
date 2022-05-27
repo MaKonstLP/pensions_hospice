@@ -26,6 +26,9 @@
     @include for-laptop {
         max-width: 410px;
     }
+    @include for-mobile {
+        max-width: 200px;
+    }
     @include for-extra-mobile {
         width: 70%;
         margin: 20px 0;

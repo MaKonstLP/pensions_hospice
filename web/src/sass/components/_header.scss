@@ -139,6 +139,7 @@ section.header {
     padding: 40px 0;
     @include for-extra-mobile {
         justify-content: center;
+        padding: 15px 0;
     }
 }
 

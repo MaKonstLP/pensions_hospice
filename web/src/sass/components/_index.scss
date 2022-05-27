@@ -120,10 +120,16 @@
             padding: 9px;
         }
     }
+    @include for-extra-mobile {
+        overflow: scroll;
+    }
 }
 
 section.answers-questions {
     padding-bottom: 100px;
+    @include for-extra-mobile {
+        padding-bottom: 50px;
+    }
 }
 
 section.answers-questions .container {
@@ -134,6 +140,31 @@ section.answers-questions .container {
     max-width: 820px;
     height: auto;
     margin: 0 auto;
+    display: block;
+    @include for-extra-mobile {
+        display: none;
+    }
+}
+
+.swiper.answers-questions-slider-mobile {
+    @include for-extra-mobile {
+        height: auto;
+    }
+}
+
+.swiper.answers-questions-slider-mobile {
+    .swiper-wrapper {
+        @include for-extra-mobile {
+            height: auto;
+        }
+    }
+}
+
+.swiper.answers-questions-slider-mobile {
+    display: none;
+    @include for-extra-mobile {
+        display: block;
+    }
 }
 
 .answers-questions-slider .swiper-wrapper {
@@ -175,6 +206,12 @@ section.answers-questions .container {
     margin-bottom: 30px;
 }
 
+.answers-questions-slider-mobile .answers-questions-slide>div {
+    @include for-extra-mobile {
+        padding: 20px 20px 25px 20px;
+    }
+}
+
 .answers-questions-slide>div:last-child {
     margin-bottom: 0;
 }
@@ -189,6 +226,9 @@ section.answers-questions .container {
     padding-left: 40px;
     display: flex;
     align-items: center;
+    @include for-extra-mobile {
+        font-size: 16px;
+    }
 }
 
 .answers-questions-slide .slide-title::before {
@@ -217,6 +257,9 @@ section.answers-questions .container {
     font-size: 14px;
     line-height: 170%;
     color: #686868;
+    @include for-extra-mobile {
+        line-height: 130%;
+    }
 }
 
 .answers-questions .swiper-button-prev {
@@ -225,6 +268,9 @@ section.answers-questions .container {
     @include for-laptop {
         left: 0;
     }
+    @include for-extra-mobile {
+        display: none;
+    }
 }
 
 .answers-questions .swiper-button-next {
@@ -232,6 +278,9 @@ section.answers-questions .container {
     right: 50px;
     @include for-laptop {
         right: 0;
+    }
+    @include for-extra-mobile {
+        display: none;
     }
 }
 
@@ -249,10 +298,19 @@ section.answers-questions .container {
     }
 }
 
-.good-to-know-items {
+.good-to-know-items .swiper-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @include for-extra-mobile {
+        flex-wrap: nowrap;
+        height: auto;
+    }
+}
+
+.swiper.good-to-know-items {
+    max-width: 100%;
+    height: fit-content;
 }
 
 .good-to-know-items .item:first-child {
@@ -267,11 +325,17 @@ section.answers-questions .container {
         width: 40%;
         max-width: 280px;
     }
+    @include for-extra-mobile {
+        max-width: 100%;
+    }
 }
 
 .good-to-know-items .item:nth-child(4) {
     @include for-lowlap {
         display: none;
+    }
+    @include for-extra-mobile {
+        display: block;
     }
 }
 
@@ -293,6 +357,9 @@ section.answers-questions .container {
         height: 280px;
         width: 40%;
         max-width: 280px;
+    }
+    @include for-extra-mobile {
+        max-width: 100%;
     }
 }
 
