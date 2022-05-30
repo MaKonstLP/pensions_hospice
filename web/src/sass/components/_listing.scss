@@ -2,17 +2,18 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    @include for-extra-mobile {
+    @include for-laptop {
         flex-direction: column;
+        align-items: center;
     }
 }
 
 .home-listing-wrap {
     max-width: 1380px;
-    @include for-lowlap {
+    @include for-lowdesc {
         max-width: 930px;
     }
-    @include for-laptop {
+    @include for-lowlap {
         max-width: 670px;
     }
 }
@@ -23,7 +24,7 @@
     font-size: 36px;
     line-height: 120%;
     text-align: center;
-    @include for-laptop {
+    @include for-lowlap {
         font-size: 26px;
     }
 }
@@ -38,19 +39,19 @@
         display: none;
     }
     p {
-        @include for-extra-mobile {
+        @include for-laptop {
             max-height: 134px;
             overflow: hidden;
         }
     }
     p.active {
-        @include for-extra-mobile {
+        @include for-mobile {
             max-height: fit-content;
             overflow: visible;
         }
     }
     .more-text {
-        @include for-extra-mobile {
+        @include for-laptop {
             display: inline;
             font-weight: 500;
             font-size: 16px;
@@ -79,14 +80,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include for-laptop {
+    @include for-lowlap {
         flex-wrap: wrap;
         justify-content: flex-start;
         margin-bottom: -15px;
         margin-right: -15px;
     }
     li {
-        @include for-laptop {
+        @include for-lowlap {
             margin-right: 10px;
             margin-bottom: 15px;
         }
@@ -105,7 +106,7 @@
     line-height: 120%;
     padding: 10px;
     transition: 0.2s;
-    @include for-extra-mobile {
+    @include for-laptop {
         font-size: 13px;
         padding: 8px 5px;
     }
@@ -129,16 +130,16 @@
 
 .home-listing-wrap {
     .listing-list-item {
-        @include for-lowlap {
+        @include for-lowdesc {
             max-width: 455px;
             display: flex;
             flex-direction: column;
             max-height: fit-content;
         }
-        @include for-laptop {
+        @include for-lowlap {
             max-width: 325px;
         }
-        @include for-extra-mobile {
+        @include for-mobile {
             max-width: 306px;
         }
     }

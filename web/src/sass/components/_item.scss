@@ -9,14 +9,14 @@ section.single-content {
     margin-right: 0;
     overflow: hidden;
     border-radius: 5px;
-    @include for-laptop {
+    @include for-lowlap {
         height: 500px;
     }
-    @include for-extra-mobile {
+    @include for-laptop {
         height: 183px;
     }
     img {
-        @include for-extra-mobile {
+        @include for-mobile {
             width: 100%;
         }
     }
@@ -25,10 +25,10 @@ section.single-content {
 .single-top-wrap {
     display: flex;
     justify-content: space-between;
-    @include for-laptop {
+    @include for-lowlap {
         flex-direction: column;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         flex-direction: column;
     }
     .single-top-img {
@@ -40,7 +40,7 @@ section.single-content {
 
 .single-top-desc-padding {
     padding: 30px 10px 0 10px;
-    @include for-laptop {
+    @include for-lowlap {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -56,11 +56,11 @@ section.single-content {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    @include for-laptop {
+    @include for-lowlap {
         max-width: 100%;
         height: 400px;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         height: 420px;
     }
 }
@@ -72,12 +72,12 @@ section.single-content {
     line-height: 120%;
     max-width: 480px;
     text-align: center;
-    @include for-laptop {
+    @include for-lowlap {
         font-size: 24px;
         line-height: 110%;
         max-width: 510px;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         font-size: 22px;
         line-height: 110%;
     }
@@ -85,10 +85,10 @@ section.single-content {
 
 .single-top-desc-title span {
     display: block;
-    @include for-laptop {
+    @include for-lowlap {
         display: inline;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         display: inline;
     }
 }
@@ -100,13 +100,13 @@ section.single-content {
     text-align: center;
     color: #686868;
     margin: 10px 0 70px 10px;
-    @include for-laptop {
+    @include for-lowlap {
         font-size: 16px;
         line-height: 110%;
         max-width: 510px;
         margin: 10px 0 30px 10px;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         font-size: 16px;
         line-height: 110%;
         margin: 5px 0 25px 0;
@@ -119,11 +119,11 @@ section.single-content {
     font-size: 26px;
     line-height: 100%;
     text-align: center;
-    @include for-laptop {
+    @include for-lowlap {
         font-size: 24px;
         line-height: 100%;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         font-size: 22px;
         line-height: 100%;
     }
@@ -136,14 +136,14 @@ section.single-content {
     text-align: center;
     color: #686868;
     margin: 7px 0 30px 0;
-    @include for-laptop {
+    @include for-lowlap {
         margin: 7px 0 15px 0;
     }
 }
 
 .single-top-desc-btn {
     text-align: center;
-    @include for-laptop {
+    @include for-lowlap {
         width: 100%;
     }
 }
@@ -155,12 +155,12 @@ section.single-content {
     font-weight: 700;
     font-size: 30px;
     line-height: 120%;
-    @include for-laptop {
+    @include for-lowlap {
         max-width: 280px;
         height: 60px;
         font-size: 24px;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         font-size: 24px;
         line-height: 120%;
         height: 60px;
@@ -173,7 +173,7 @@ section.single-content {
     display: flex;
     justify-content: center;
     padding: 20px 0;
-    @include for-extra-mobile {
+    @include for-mobile {
         padding: 14px 0;
     }
 }
@@ -184,7 +184,7 @@ section.single-content {
     align-items: center;
     width: 100%;
     max-width: 325px;
-    @include for-extra-mobile {
+    @include for-mobile {
         max-width: 265px;
     }
 }
@@ -192,7 +192,7 @@ section.single-content {
 .desc-phone-number {
     display: flex;
     flex-direction: column;
-    @include for-extra-mobile {
+    @include for-mobile {
         max-width: 200px;
     }
 }
@@ -202,10 +202,10 @@ section.single-content {
     font-weight: 700;
     font-size: 24px;
     line-height: 130%;
-    @include for-laptop {
+    @include for-lowlap {
         font-size: 20px;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         font-size: 20px;
         line-height: 130%;
     }
@@ -223,13 +223,13 @@ section.single-content {
     justify-content: space-between;
     max-width: 1050px;
     margin-top: 20px;
-    @include for-extra-mobile {
+    @include for-mobile {
         overflow: scroll;
     }
 }
 
 .links-item {
-    @include for-extra-mobile {
+    @include for-mobile {
         margin-right: 10px;
     }
 }
@@ -243,11 +243,11 @@ section.single-content {
     font-size: 16px;
     line-height: 19px;
     padding: 0 20px;
-    @include for-laptop {
+    @include for-lowlap {
         padding: 0 10px;
         white-space: nowrap;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         white-space: nowrap;
         padding: 0 12px;
     }
@@ -259,7 +259,7 @@ section.single-content {
 
 .single-condition {
     padding: 90px 0 0 0;
-    @include for-laptop {
+    @include for-lowlap {
         padding: 50px 0 0 0;
     }
 }
@@ -292,7 +292,7 @@ section.single-content {
     margin-bottom: 30px;
     width: 50%;
     max-width: 50%;
-    @include for-extra-mobile {
+    @include for-mobile {
         width: 100%;
         max-width: 100%;
     }
@@ -328,7 +328,7 @@ section.single-content {
     width: 100%;
     max-width: 953px;
     padding: 90px 0 0 0;
-    @include for-extra-mobile {
+    @include for-mobile {
         padding: 50px 0 0 0;
     }
 }
@@ -349,7 +349,7 @@ section.single-content {
     padding: 10px;
     margin-right: 20px;
     margin-bottom: 15px;
-    @include for-extra-mobile {
+    @include for-mobile {
         margin-right: 10px;
         margin-bottom: 10px;
         font-size: 14px;
@@ -358,7 +358,7 @@ section.single-content {
 
 .single-documents {
     padding: 90px 0 0 0;
-    @include for-laptop {
+    @include for-lowlap {
         padding: 70px 0 0 0;
     }
 }
@@ -369,10 +369,10 @@ section.single-content {
     align-items: center;
     margin-top: 20px;
     flex-wrap: wrap;
-    @include for-laptop {
+    @include for-lowlap {
         max-width: 780px;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         flex-wrap: wrap;
     }
 }
@@ -389,20 +389,20 @@ section.single-content {
     background-repeat: no-repeat;
     background-position: center;
     &:nth-child(3) {
-        @include for-extra-mobile {
+        @include for-mobile {
             margin-bottom: 0;
         }
     }
     &:nth-child(4) {
-        @include for-extra-mobile {
+        @include for-mobile {
             margin-bottom: 0;
         }
     }
-    @include for-laptop {
+    @include for-lowlap {
         max-width: 182px;
         height: 176px;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         height: 145px;
         width: 50%;
         max-width: 157px;
@@ -412,10 +412,10 @@ section.single-content {
 
 .single-prices {
     padding: 90px 0 0 0;
-    @include for-laptop {
+    @include for-lowlap {
         padding: 70px 0 0 0;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         padding: 50px 0 0 0;
     }
 }
@@ -425,7 +425,7 @@ section.single-content {
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-    @include for-extra-mobile {
+    @include for-mobile {
         flex-direction: column;
     }
 }
@@ -443,15 +443,15 @@ section.single-content {
     text-align: center;
     padding: 40px 0 0 0;
     &:not(:last-child) {
-        @include for-extra-mobile {
+        @include for-mobile {
             margin-bottom: 15px;
         }
     }
-    @include for-laptop {
+    @include for-lowlap {
         width: 40%;
         max-width: 287px;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         width: 100%;
         max-width: 100%;
     }
@@ -485,10 +485,10 @@ section.single-content {
 
 .single-testimonial {
     padding: 90px 0;
-    @include for-laptop {
+    @include for-lowlap {
         padding: 70px 0 0 0;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         padding: 50px 0;
     }
 }
@@ -507,7 +507,7 @@ section.single-content {
     border: 1px solid #E5E5E5;
     border-radius: 5px;
     padding: 25px 40px 25px 20px;
-    @include for-extra-mobile {
+    @include for-mobile {
         padding: 25px 20px;
     }
 }
@@ -521,7 +521,7 @@ section.single-content {
     width: 60px;
     height: 60px;
     position: relative;
-    @include for-extra-mobile {
+    @include for-mobile {
         position: absolute;
     }
 }
@@ -547,7 +547,7 @@ section.single-content {
     justify-content: space-between;
     width: 100%;
     max-width: 120px;
-    @include for-extra-mobile {
+    @include for-mobile {
         max-width: max-content;
         padding-left: 100px;
     }
@@ -565,7 +565,7 @@ section.single-content {
     justify-content: center;
     width: 100%;
     max-width: 948px;
-    @include for-laptop {
+    @include for-lowlap {
         max-width: 730px;
     }
 }
@@ -575,7 +575,7 @@ section.single-content {
     font-size: 16px;
     line-height: 140%;
     margin: 15px 0;
-    @include for-extra-mobile {
+    @include for-mobile {
         margin: 50px 0 15px 0;
     }
 }
@@ -595,7 +595,7 @@ section.single-content {
     font-size: 14px;
     line-height: 140%;
     margin-right: 5px;
-    @include for-extra-mobile {
+    @include for-mobile {
         margin: 0;
     }
 }

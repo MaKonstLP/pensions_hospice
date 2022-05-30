@@ -34,7 +34,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     
 
-    <div class="wrap">
+    <div class="wrap" data-page-type="index">
         
     <section class="header">
             <div class="container">
@@ -148,11 +148,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <?php 
             if ((Yii::$app->controller->id !== 'site'))  { ?>
+            <section class="breadcrumbs-section">
                 <div class="breadcrumbs">
                     <a href="/">Главная</a>
                     <span class="breadcrumbs-separator">|</span>
                     <span>Хосписы</span>
                 </div>
+            </section>
             <?php }
 
         ?>
@@ -485,9 +487,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </header>  -->
 
-        <div class="content_wrap">
-            <?= $content ?>
-        </div>
+        
+        <?= $content ?>
+        
 
         <section class="footer">
             <div class="container">

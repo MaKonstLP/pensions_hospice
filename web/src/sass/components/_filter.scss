@@ -1,9 +1,17 @@
+div[data-page-type="listing"] {
+    padding-top: 40px;
+}
+
 .sidebar {
     max-width: 217px;
-    @include for-laptop {
+    @include for-lowlap {
         max-width: 211px;
     }
-    @include for-extra-mobile {
+    @include for-laptop {
+        max-width: 500px;
+        margin-bottom: 50px;
+    }
+    @include for-mobile {
         max-width: 330px;
         margin-bottom: 50px;
     }
@@ -11,15 +19,29 @@
 
 .filter-desctop {
     display: block;
-    @include for-extra-mobile {
+    @include for-laptop {
         display: none;
     }
 }
 
 .filter-mobile {
     display: none;
-    @include for-extra-mobile {
+    @include for-laptop {
         display: block;
+    }
+    form {
+        @include for-laptop {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .filter-item {
+            @include for-laptop {
+                margin-bottom: 25px;
+                width: 50%;
+                max-width: 240px;
+            }
+        }
     }
 }
 
@@ -35,13 +57,16 @@
 
 .filter-item:last-child {
     margin-bottom: 0;
+    @include for-laptop {
+        margin: 0 auto;
+    }
 }
 
 .filter-price .filter-items {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    @include for-extra-mobile {
+    @include for-mobile {
         justify-content: flex-start;
     }
 }
@@ -82,7 +107,7 @@
 
 .filter-price label:not(:last-child) {
     margin-bottom: 10px;
-    @include for-extra-mobile {
+    @include for-mobile {
         margin-right: 10px;
     }
 }
@@ -95,26 +120,45 @@
     transition: 0.2s;
 }
 
-.filter-pacient-type,
-.filter-hospis-type,
-.filter-region {
-    @include for-extra-mobile {
-        visibility: hidden;
-        height: 0;
-        opacity: 0;
-        margin: 0;
+.filter-mobile {
+    form {
+        .filter-pacient-type,
+        .filter-hospis-type,
+        .filter-region {
+            @include for-laptop {
+                visibility: hidden;
+                height: 0;
+                opacity: 0;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.filter-mobile {
+    form {
+        .filter-pacient-type {
+            @include for-laptop {
+                visibility: visible;
+                height: fit-content;
+                opacity: 1;
+                margin-bottom: 25px;
+            }
+        }
     }
 }
 
 .active-all {
-    .filter-pacient-type,
-    .filter-hospis-type,
-    .filter-region {
-        @include for-extra-mobile {
-            visibility: visible;
-            height: fit-content;
-            opacity: 1;
-            margin-bottom: 25px;
+    form {
+        .filter-pacient-type,
+        .filter-hospis-type,
+        .filter-region {
+            @include for-laptop {
+                visibility: visible;
+                height: fit-content;
+                opacity: 1;
+                margin-bottom: 25px;
+            }
         }
     }
 }
@@ -365,7 +409,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include for-extra-mobile {
+    @include for-laptop {
         flex-direction: column;
     }
 }
@@ -373,7 +417,7 @@
 .filter-search {
     width: 50%;
     max-width: 112px;
-    @include for-extra-mobile {
+    @include for-laptop {
         width: 100%;
         max-width: 100%;
     }
@@ -382,22 +426,22 @@
 .filter-btns {
     .filter-more-paramters span,
     .filter-reset a {
-        @include for-extra-mobile {
+        color: #00B2FF;
+        border-bottom: 1px dashed;
+        @include for-laptop {
             font-weight: 500;
             font-size: 13px;
             line-height: 16px;
-            color: #00B2FF;
-            border-bottom: 1px dashed;
         }
     }
     .filter-more-paramters span {
-        @include for-extra-mobile {
+        @include for-laptop {
             margin-bottom: 15px;
             display: block;
         }
     }
     .filter-reset a {
-        @include for-extra-mobile {
+        @include for-laptop {
             margin-top: 10px;
             display: block;
         }

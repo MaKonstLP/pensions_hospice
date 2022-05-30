@@ -75,11 +75,15 @@ export default class Index {
         const answersQuestionsSliderMobile = new Swiper('.answers-questions-slider-mobile', {
             loop: true,
             observer: true,
-            observeParents: true
+            observeParents: true,
+            navigation: {
+                nextEl: '.answers-swiper-button-next',
+                prevEl: '.answers-swiper-button-prev',
+            },
 
         });
 
-        if ($(window).width() <= 400) {
+        if ($(window).width() <= 690) {
 
             const swiperGoodToKnow = new Swiper('.swiper-good-to-know', {
                 loop: true,
@@ -88,6 +92,7 @@ export default class Index {
                 watchSlidesProgress: true,
                 slidesPerView: 1,
                 spaceBetween: 20,
+
 
             });
         }

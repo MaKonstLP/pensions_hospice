@@ -7,7 +7,7 @@
     @include for-laptop {
         padding: 20px 17px;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -20,16 +20,16 @@
 .footer-menu-wrap {
     width: 50%;
     max-width: 542px;
-    @include for-lowlap {
+    @include for-lowdesc {
         max-width: 512px;
     }
-    @include for-laptop {
+    @include for-lowlap {
         max-width: 410px;
     }
-    @include for-mobile {
+    @include for-laptop {
         max-width: 200px;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         width: 70%;
         margin: 20px 0;
     }
@@ -38,7 +38,7 @@
 .footer-menu {
     display: flex;
     justify-content: space-between;
-    @include for-laptop {
+    @include for-lowlap {
         flex-wrap: wrap;
     }
 }
@@ -69,14 +69,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include for-lowlap {
+    @include for-lowdesc {
         max-width: 375px;
     }
-    @include for-laptop {
+    @include for-lowlap {
         flex-direction: column;
         max-width: 179px;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         width: 100%;
         max-width: 100%;
     }
@@ -85,7 +85,7 @@
 .footer-phone {
     max-width: 156px;
     line-height: 12px;
-    @include for-laptop {
+    @include for-lowlap {
         margin-bottom: 10px;
     }
 }
@@ -107,7 +107,7 @@
 .footer-call {
     width: 50%;
     max-width: 179px;
-    @include for-laptop {
+    @include for-lowlap {
         width: 100%;
     }
 }
@@ -117,7 +117,7 @@
     font-size: 12px;
     line-height: 15px;
     padding: 20px 30px;
-    @include for-laptop {
+    @include for-lowlap {
         padding-left: 0;
     }
 }
