@@ -83,7 +83,7 @@ export default class Index {
 
         });
 
-        if ($(window).width() <= 690) {
+        if ($(window).width() < 690) {
 
             const swiperGoodToKnow = new Swiper('.swiper-good-to-know', {
                 loop: true,

@@ -1,5 +1,8 @@
 section.header {
     margin-bottom: 20px;
+    @include for-laptop {
+        margin-bottom: 0;
+    }
 }
 
 .header-top {
@@ -217,7 +220,7 @@ section.header {
     width: 30%;
     max-width: 170px;
     .btn {
-        @include for-lowlap {
+        @include for-lowdesc {
             font-size: 14px;
             height: 35px;
             max-width: 138px;

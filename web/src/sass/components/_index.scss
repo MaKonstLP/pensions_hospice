@@ -27,29 +27,19 @@
     }
 }
 
-.located-nearby .container {
-    @include for-extra-mobile {
-        overflow: scroll;
-    }
-}
-
 .best-hospises-list {
     display: flex;
     justify-content: space-between;
     max-width: 1660px;
     @include for-laptop {
-        overflow-y: scroll;
+        overflow-x: scroll;
     }
     .listing-list-item {
         max-width: 820px;
         max-height: 350px;
         margin-bottom: 90px;
         @include for-lowdesc {
-            max-width: 590px;
-            max-height: 250px;
-        }
-        @include for-laptop {
-            margin-right: 30px;
+            max-width: 575px;
         }
         @include for-lowlap {
             max-width: 435px;
@@ -57,46 +47,49 @@
             flex-direction: column;
             max-height: fit-content;
         }
+        @include for-laptop {
+            margin-right: 30px;
+        }
         @include for-mobile {
             max-width: 306px;
-            margin-right: 10px;
+            margin-right: 20px;
         }
     }
     .list-item-title a {
         font-size: 26px;
-        @include for-lowlap {
+        @include for-lowdesc {
             font-size: 18px;
         }
     }
     .list-item-desc p {
         font-size: 16px;
-        @include for-lowlap {
+        @include for-lowdesc {
             font-size: 13px;
         }
     }
     .list-item-price {
         font-size: 26px;
-        @include for-lowlap {
+        @include for-lowdesc {
             font-size: 16px;
         }
     }
     .list-item-price-comment {
         font-size: 18px;
-        @include for-lowlap {
+        @include for-lowdesc {
             font-size: 14px;
         }
     }
     .list-item-btns {
         max-width: 310px;
         height: 43px;
-        @include for-lowlap {
+        @include for-lowdesc {
             max-width: 245px;
             height: 35px;
         }
         button {
             height: 43px;
             font-size: 16px;
-            @include for-lowlap {
+            @include for-lowdesc {
                 font-size: 14px;
                 height: 35px;
             }
@@ -104,14 +97,14 @@
         button:first-child {
             width: 50%;
             max-width: 170px;
-            @include for-lowlap {
+            @include for-lowdesc {
                 max-width: 136px;
             }
         }
         button:last-child {
             width: 50%;
             max-width: 126px;
-            @include for-lowlap {
+            @include for-lowdesc {
                 max-width: 99px;
             }
         }
@@ -120,14 +113,15 @@
         font-size: 16px;
         max-width: 192px;
         padding: 15px;
-        @include for-lowlap {
+        @include for-lowdesc {
             font-size: 14px;
             max-width: 155px;
             padding: 9px;
         }
     }
-    @include for-mobile {
-        overflow: scroll;
+    @include for-laptop {
+        overflow-x: scroll;
+        width: 105%;
     }
 }
 
@@ -289,6 +283,13 @@ section.answers-questions .container {
     }
 }
 
+.good-to-know .container {
+    @include for-mobile {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+}
+
 .good-to-know-title {
     text-align: center;
     margin-bottom: 20px;
@@ -316,6 +317,7 @@ section.answers-questions .container {
 .swiper.good-to-know-items {
     max-width: 100%;
     height: fit-content;
+    overflow: visible;
 }
 
 .good-to-know-items .item:first-child {

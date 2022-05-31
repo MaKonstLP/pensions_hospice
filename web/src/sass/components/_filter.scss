@@ -41,6 +41,11 @@ div[data-page-type="listing"] {
                 width: 50%;
                 max-width: 240px;
             }
+            @include for-mobile {
+                margin-bottom: 25px;
+                width: 100%;
+                max-width: 330px;
+            }
         }
     }
 }

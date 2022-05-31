@@ -17,7 +17,7 @@
 }
 
 @mixin for-mobile {
-    @media(max-width: 690px) {
+    @media(max-width: 689px) {
         @content;
     }
 }
@@ -29,7 +29,7 @@
 }
 
 @mixin for-lowlap {
-    @media (max-width: 1200px) {
+    @media (max-width: 1199px) {
         @content;
     }
 }

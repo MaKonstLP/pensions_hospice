@@ -1,6 +1,6 @@
 .contacts {
     padding: 30px 0 100px 0;
-    @include for-extra-mobile {
+    @include for-lowlap {
         padding: 30px 0 50px 0;
     }
 }
@@ -10,7 +10,7 @@
     font-weight: 700;
     font-size: 36px;
     line-height: 120%;
-    @include for-extra-mobile {
+    @include for-mobile {
         font-size: 26px;
     }
 }
@@ -19,7 +19,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 26px;
-    @include for-laptop {
+    @include for-lowlap {
         flex-wrap: wrap;
     }
 }
@@ -30,15 +30,19 @@
     padding: 17px 20px;
     width: 30%;
     max-width: 400px;
-    @include for-lowlap {
+    @include for-lowdesc {
         margin-right: 10px;
+        width: 30%;
+        max-width: 280px;
+        padding: 17px 18px;
     }
-    @include for-laptop {
-        width: 50%;
+    @include for-lowlap {
+        width: 100%;
         max-width: 440px;
         margin: 0 0 20px 0;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
+        padding: 17px 7px 17px 20px;
         width: 100%;
         max-width: 330px;
     }
@@ -57,7 +61,7 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 120%;
-    @include for-lowlap {
+    @include for-lowdesc {
         font-size: 18px;
     }
 }
@@ -86,7 +90,7 @@
 .our-team-list {
     display: flex;
     justify-content: space-between;
-    @include for-laptop {
+    @include for-lowlap {
         flex-wrap: wrap;
     }
 }
@@ -107,32 +111,35 @@
         line-height: 120%;
         margin: 15px 0 5px 0;
     }
+    @include for-lowdesc {
+        max-width: 280px;
+    }
     @include for-lowlap {
-        max-width: 285px;
+        max-width: 440px;
     }
     @include for-laptop {
-        max-width: 440px;
+        max-width: 320px;
     }
 }
 
 .our-team-list-item {
     &:nth-child(1) {
-        @include for-laptop {
+        @include for-lowlap {
             margin-bottom: 40px;
         }
-        @include for-extra-mobile {
+        @include for-mobile {
             margin-bottom: 20px;
         }
     }
     &:nth-child(2) {
-        @include for-laptop {
+        @include for-lowlap {
             margin-bottom: 40px;
         }
-        @include for-extra-mobile {
+        @include for-mobile {
             margin-bottom: 20px;
         }
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         margin-bottom: 20px;
     }
 }
