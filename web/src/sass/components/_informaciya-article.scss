@@ -1,13 +1,29 @@
 .single-post {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 30px 0 50px 0;
+    
+    margin: 0 -15px;
+    padding: 30px 0 40px 0;
+    @include for-lowdesc {
+        padding: 30px 0 20px 0;
+    }
+    @include for-lowlap {
+        padding: 30px 0 64px 0;
+    }
+    @include for-mobile {
+        padding: 30px 0 30px 0;
+    }
+    .container{
+        max-width: 1100px;
+        margin: 0 auto;
+    }
 }
 
 .single-post-title-wrap {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+    @include for-laptop {
+        margin-bottom: 20px;
+    }
 }
 
 .single-post-title h1 {
@@ -17,10 +33,10 @@
     line-height: 120%;
     max-width: 814px;
     text-align: center;
-    @include for-laptop {
+    @include for-lowlap {
         font-size: 26px;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         font-size: 24px;
     }
 }
@@ -29,11 +45,20 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
+    @include for-mobile {
+        font-size: 14px;
+    }
 }
 
 .single-post-content img:first-of-type {
     margin: 90px 0;
-    @include for-extra-mobile {
+    @include for-lowdesc {
+        margin: 70px 0;
+    }
+    @include for-lowlap {
+        margin: 50px 0;
+    }
+    @include for-mobile {
         margin: 50px 0;
     }
 }
@@ -83,7 +108,13 @@ ol li:before {
     background: #F8F8F3;
     padding: 21px 50px;
     margin: 90px 0;
-    @include for-extra-mobile {
+    @include for-lowdesc {
+        margin: 70px 0;
+    }
+    @include for-lowlap {
+        margin: 50px 0;
+    }
+    @include for-mobile {
         padding: 20px;
     }
 }
@@ -127,7 +158,13 @@ ol li:before {
     margin: 90px 0;
     height: 543px;
     background-image: url(/image/posts/post3.png);
-    @include for-extra-mobile {
+    @include for-lowdesc {
+        margin: 70px 0;
+    }
+    @include for-lowlap {
+        margin: 50px 0;
+    }
+    @include for-mobile {
         background-position: right;
     }
 }
@@ -140,7 +177,7 @@ ol li:before {
     display: flex;
     align-items: center;
     justify-content: center;
-    @include for-extra-mobile {
+    @include for-laptop {
         width: 100%;
     }
 }
@@ -148,10 +185,10 @@ ol li:before {
 .post-form-wrap {
     width: 100%;
     max-width: 455px;
-    @include for-laptop {
+    @include for-lowlap {
         max-width: 375px;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         max-width: 291px;
     }
 }
@@ -164,8 +201,11 @@ ol li:before {
     text-align: center;
     color: #FFFFFF;
     text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
-    @include for-laptop {
+    @include for-lowdesc {
         font-size: 26px;
+    }
+    @include for-lowlap {
+        font-size: 24px;
     }
     @include for-mobile {
         font-size: 20px;
@@ -186,6 +226,9 @@ ol li:before {
 .post-form-accept {
     display: flex;
     justify-content: center;
+    @include for-mobile {
+        justify-content: flex-start;
+    }
 }
 
 .post-form-accept a {
@@ -199,7 +242,7 @@ ol li:before {
 
 .post-form-btn button {
     max-width: 265px;
-    @include for-extra-mobile {
+    @include for-mobile {
         max-width: 100%;
     }
 }
@@ -208,7 +251,7 @@ ol li:before {
     display: flex;
     justify-content: space-between;
     &:first-child {
-        @include for-extra-mobile {
+        @include for-mobile {
             flex-direction: column;
         }
     }
@@ -216,14 +259,12 @@ ol li:before {
 
 .post-form-form .form-row input {
     max-width: 220px;
-    @include for-laptop {
+    margin-bottom: 15px;
+    @include for-lowlap {
         max-width: 180px;
     }
-    @include for-extra-mobile {
+    @include for-mobile {
         max-width: 100%;
-    }
-    &:first-child {
-        margin-bottom: 15px;
     }
 }
 
@@ -232,7 +273,7 @@ ol li:before {
     width: 100%;
     border-radius: 5px;
     border: none;
-    margin: 15px 0;
+    margin: 0 0 15px 0;
     padding: 10px;
     font-weight: 500;
     font-size: 14px;

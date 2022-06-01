@@ -248,17 +248,14 @@ div[data-page-type="listing"] {
     margin-top: 2px;
     display: flex;
     flex-wrap: wrap;
-    opacity: 0;
-    height: 0;
-    padding: 0;
-    visibility: hidden;
+    position: absolute;
+    top:-10000px;
 }
 
 .filter-popup.active {
     padding: 16px 10px 13px 10px;
     opacity: 1;
-    height: fit-content;
-    visibility: visible;
+    position: static;
 }
 
 .filter-city-popup label {

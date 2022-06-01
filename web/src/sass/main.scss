@@ -303,6 +303,7 @@ section.home-banner {
     }
     @include for-mobile {
         width: 100%;
+        max-width: 265px;
     }
 }
 

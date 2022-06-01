@@ -56,9 +56,11 @@ export default class Filter {
             });
         });
 
-        $('.filter-select').on('click', function(e) {
-            let filterPopup = $(this).closest('.filter-item').find('.filter-popup');
-            self.showCitySelect(filterPopup);
+        $('.sidebar').unbind("click").on('click', function(e) {
+            let filterPopup = $(e.target).closest('.filter-item').find('.filter-popup');
+            if($(e.target).hasClass('filter-select')){
+                filterPopup.toggleClass('active');
+            }
         });
         $('.filter-more-paramters span').on('click', function(e) {
             self.showAllSelect();
@@ -210,9 +212,7 @@ export default class Filter {
         return href;
     }
 
-    showCitySelect(elem) {
-        elem.toggleClass('active');
-    }
+   
     showAllSelect() {
         let filterMobile = $('.filter-mobile');
         $(filterMobile).addClass('active-all');

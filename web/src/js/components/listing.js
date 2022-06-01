@@ -32,12 +32,6 @@ export default class Listing {
             },
         });
 
-
-        $(document).click(function() {
-            console.log('ready');
-
-        })
-
     }
 
     reloadListing(page = 1) {
