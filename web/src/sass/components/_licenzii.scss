@@ -103,6 +103,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    width: 100px;
+    height: 100px;
     @include for-lowlap {
         width: 100px;
         height: 100px;
@@ -151,9 +153,11 @@
 .licenzies-list-big {
     width: 100%;
     max-width: 542px;
+    max-height: 764px;
     margin-right: 20px;
     @include for-lowlap {
         max-width: 440px;
+        max-height: 622px;
     }
     @include for-laptop {
         display: none;
@@ -222,6 +226,7 @@
 
 .licenzies-list-small .item {
     margin-bottom: 24px;
+    max-width: 261px;
     @include for-lowlap {
         max-width: 212px;
     }

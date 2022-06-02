@@ -1,8 +1,8 @@
 "use strict";
 
 export default class YaMapSingleObject{
-	constructor(){
-		let self = this;
+  constructor(){
+    let self = this;
     var fired = false;
 
     window.addEventListener('click', () => {
@@ -39,7 +39,7 @@ export default class YaMapSingleObject{
       }, 100);
       
     }
-	}
+  }
 
   script(url) {
     if (Array.isArray(url)) {
@@ -70,11 +70,11 @@ export default class YaMapSingleObject{
     });
   }
 
-	init() {
+  init() {
     this.script('//api-maps.yandex.ru/2.1/?lang=ru_RU').then(() => {
         const ymaps = global.ymaps;
-    		ymaps.ready(function(){
-    			let map = document.querySelector(".map");
+        ymaps.ready(function(){
+          let map = document.querySelector(".map");
           let myMap = new ymaps.Map(map, {center: [55.76, 37.64], zoom: 15, controls: []},
                       {suppressMapOpenBlock: true});
 
@@ -107,82 +107,33 @@ export default class YaMapSingleObject{
           let objectCoordinates = [$("#map").attr("data-mapDotX"), $("#map").attr("data-mapDotY")];
           let myBalloonHeader = $("#map").attr("data-name");
           let myBalloonBody = $("#map").attr("data-address");
-          let myBalloonCapacity = $("#map").attr("data-capacity");
-          let myBalloonImage = $("#map").attr("data-image");
-          let myBalloonLowestPrice = $("#map").attr("data-lowest-price");
+          let iconLayout = ymaps.templateLayoutFactory.createClass(
+            '<div class="map-icon">$[properties.iconContent]</div>');
+
           let myBalloonLayout = ymaps.templateLayoutFactory.createClass(
-    				`<div class="balloon_layout _single_object">
-    					<div class="arrow"></div>
-              <div class="close">
-                <div></div>
-                <div></div>
-              </div>
+            `<div class="balloon_layout _single_object" style="background:#fff">
+              <div class="arrow"></div>
               <div class="balloon_inner">
                 <div class="balloon_inner_header">
-                  <div class="balloon_inner_header_img">
-                  <img src={{properties.balloonContentImage}}>
-                  </div>
+                  {{properties.balloonContentHeader}}
                 </div>
                 <div class="balloon_inner_body">
-                  <!-- {{properties.balloonContentBody}} --!>
-                  <a href="#" class="balloon_inner_body_name">{{properties.balloonContentHeader}}</a>
-                  <a href="#" class="balloon_inner_body_address">{{properties.balloonContentBody}}</a>
-                  <p class="balloon_inner_body_options">{{properties.balloonContentCapacity}} человек | от {{properties.balloonContentLowestPrice}} Р/чел.</p>
+                  {{properties.balloonContentBody}}
                 </div>
-    					</div>
-    				</div>`, {
-              build: function() {
-                this.constructor.superclass.build.call(this);
-    
-                this._$element = $('.balloon_layout', this.getParentElement());
-    
-                this._$element.find('.close')
-                              .on('click', $.proxy(this.onCloseClick, this));
-    
-              },
-    
-              clear: function () {
-                this._$element.find('.close')
-                    .off('click');
-    
-                this.constructor.superclass.clear.call(this);
-              },
-    
-              onCloseClick: function (e) {
-                e.preventDefault();
-    
-                this.events.fire('userclose');
-              },
-    
-              getShape: function () {
-                if(!this._isElement(this._$element)) {
-                    return myBalloonLayout.superclass.getShape.call(this);
-                }
-    
-                var position = this._$element.position();
-    
-                return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
-                    [position.left, position.top], [
-                        position.left + this._$element[0].offsetWidth,
-                        position.top + this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight
-                    ]
-                ]));
-              },
-    
-              _isElement: function (element) {
-                return element && element[0] && element.find('.arrow')[0];
-              }
-              }
+              </div>
+            </div>`
           );
 
           let object = new ymaps.Placemark(objectCoordinates, {
             balloonContentHeader: myBalloonHeader,
             balloonContentBody: myBalloonBody,
-            balloonContentCapacity: myBalloonCapacity,
-            balloonContentImage: myBalloonImage,
-            balloonContentLowestPrice: myBalloonLowestPrice
+            iconContent: 'от 1100 руб.',
           }, {
-            iconColor: "green",
+            iconLayout: 'default#imageWithContent',
+            iconContentLayout: iconLayout,
+            iconImageSize: [48, 48],
+            iconImageOffset: [0, 0],
+            iconContentOffset: [0, 0],
             balloonLayout: myBalloonLayout,
             hideIconOnBalloonOpen: false,
             balloonOffset: [-150, 17],
@@ -190,9 +141,9 @@ export default class YaMapSingleObject{
 
           myMap.geoObjects.add(object);
           myMap.setCenter(objectCoordinates);
-          object.balloon.open( "", "", {closeButton: false});
+          object.balloon.open( "", "", {closeButton: true});
 
-    		});
+        });
       });
-	}
+  }
 }

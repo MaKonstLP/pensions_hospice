@@ -16,11 +16,15 @@ export default class Index {
         //     self.redirectToListing();
         // });
 
-        $('.home-listing-text .more-text').click(function() {
-            $(this).closest('.home-listing-text').find('p').addClass('active');
+        $('.more-text-link').click(function() {
+            $(this).closest('.more-text').find('p').addClass('active');
             $(this).remove();
         })
 
+        $('.map-item-close').on('click', function(){
+            let mapItem = $(this).closest('.map-item');
+            $(mapItem).addClass('hide');
+        });
 
         var topSlider = new Swiper('.swiper_top', {
 
@@ -76,9 +80,20 @@ export default class Index {
             loop: true,
             observer: true,
             observeParents: true,
+            spaceBetween: 10,
             navigation: {
                 nextEl: '.answers-swiper-button-next',
                 prevEl: '.answers-swiper-button-prev',
+            },
+
+        });
+        const mapSlider = new Swiper('.map-swiper', {
+            loop: true,
+            observer: true,
+            observeParents: true,
+            navigation: {
+                nextEl: '.map-swiper-button-next',
+                prevEl: '.map-swiper-button-prev',
             },
 
         });

@@ -1,6 +1,6 @@
 'use strict';
 import Filter from './filter';
-import YaMapAll from './map';
+//import YaMapAll from './map';
 import Swiper from 'swiper';
 
 export default class Listing {
@@ -8,7 +8,8 @@ export default class Listing {
         self = this;
         this.block = $block;
         this.filter = new Filter($('[data-filter-wrapper]'));
-        this.yaMap = new YaMapAll(this.filter);
+        //this.yaMap = new YaMapAll(this.filter);
+        console.log(2);
 
         //КЛИК ПО КНОПКЕ "ПОДОБРАТЬ"
         $('[data-filter-button]').on('click', function() {

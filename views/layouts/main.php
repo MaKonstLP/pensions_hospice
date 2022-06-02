@@ -32,9 +32,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <?php $this->beginBody() ?>
 
-    
 
-    <div class="wrap" data-page-type="index">
+    <div class="wrap">
         
     <section class="header">
             <div class="container">
@@ -83,10 +82,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="mobile-menu-bottom">
                                 <ul class="menu-bottom">
                                     <li><a href="#">Цены</a></li>
-                                    <li><a href="#">Лицензии</a></li>
+                                    <li><a href="/licenzii/">Лицензии</a></li>
                                     <li><a href="#">О нас</a></li>
-                                    <li><a href="#">Контакты</a></li>
-                                    <li><a href="#">Информация</a></li>
+                                    <li><a href="/kontakty/">Контакты</a></li>
+                                    <li><a href="/informaciya/">Информация</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -96,10 +95,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <nav>
                                 <ul class="header-middle-menu">
                                     <li><a href="#">Цены</a></li>
-                                    <li><a href="#">Лицензии</a></li>
+                                    <li><a href="/licenzii/">Лицензии</a></li>
                                     <li><a href="#">О нас</a></li>
-                                    <li><a href="#">Контакты</a></li>
-                                    <li><a href="#">Информация</a></li>
+                                    <li><a href="/kontakty/">Контакты</a></li>
+                                    <li><a href="/informaciya/">Информация</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -134,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="header-bottom">
                         <nav>
                             <ul class="header-bottom-menu">
-                                <li><a href="#">Паллиативные центры</a></li>
+                                <li class="active"><a href="#">Паллиативные центры</a></li>
                                 <li><a href="#">Хосписы</a></li>
                                 <li><a href="#">Стационары</a></li>
                                 <li><a href="#">Геронтологические центры</a></li>
@@ -499,19 +498,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <img src="/image/logo-blue.png" alt="logo">
                         </div>
                         <div class="footer-menu-wrap">
-                            <ul class="footer-menu">
-                                <div class="footer-menu-col-1">
+                            <div class="footer-menu">
+                                <ul class="footer-menu-col-1">
                                     <li><a href="#">Паллиативные центры</a></li>
                                     <li><a href="#">Хосписы</a></li>
-                                </div>
-                                <div class="footer-menu-col-2">
+                                </ul>
+                                <ul class="footer-menu-col-2">
                                     <li><a href="#">Геронтологические центры</a></li>
                                     <li><a href="#">Гериатрические центры</a></li>
-                                </div>
-                                <div class="footer-menu-col-3">
+                                </ul>
+                                <ul class="footer-menu-col-3">
                                     <li><a href="#">Стационары</a></li>
-                                </div>
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
                         <div class="footer-contacts">
                             <div class="footer-phone">

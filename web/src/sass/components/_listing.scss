@@ -29,15 +29,13 @@
     }
 }
 
-.home-listing-text {
+.more-text {
     font-family: 'Inter-Regular';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 140%;
-    .more-text {
-        display: none;
-    }
+   
     p {
         @include for-mobile {
             max-height: 134px;
@@ -50,20 +48,25 @@
             overflow: visible;
         }
     }
-    .more-text {
-        @include for-mobile {
-            display: inline;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 140%;
-            color: #00B2FF;
-            border-bottom: 1px dashed;
-        }
+}
+
+.more-text-link {
+    display: none;
+    @include for-mobile {
+        display: inline;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        color: #00B2FF;
+        border-bottom: 1px dashed;
     }
 }
 
 .home-listing-text.top {
-    margin: 10px 0 30px 0;
+    margin: 20px 0 30px 0;
+    @include for-mobile {
+        margin: 10px 0 30px 0;
+    }
 }
 
 .home-listing-text.bottom {
@@ -82,46 +85,46 @@
     max-width: 977px;
 }
 
-.home-listing-sorting .sorting-menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    @include for-lowlap {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        margin-bottom: -15px;
-        margin-right: -15px;
-    }
-    li {
+.home-listing-sorting{
+    .sorting-menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         @include for-lowlap {
-            margin-right: 10px;
-            margin-bottom: 15px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-bottom: -15px;
+            margin-right: -15px;
+        }
+        li {
+            @include for-lowlap {
+                margin-right: 10px;
+                margin-bottom: 15px;
+            }
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #00B2FF;
+                color: #00B2FF;
+                border-radius: 5px;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 120%;
+                padding: 10px;
+                transition: 0.2s;
+                @include for-laptop {
+                    font-size: 13px;
+                    padding: 8px 5px;
+                }
+                &:hover {
+                    color: #ffffff;
+                    background: #00B2FF;
+                    transition: 0.2s;
+                }
+            }
         }
     }
-}
-
-.home-listing-sorting .sorting-menu li a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #00B2FF;
-    color: #00B2FF;
-    border-radius: 5px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 120%;
-    padding: 10px;
-    transition: 0.2s;
-    @include for-laptop {
-        font-size: 13px;
-        padding: 8px 5px;
-    }
-}
-
-.home-listing-sorting .sorting-menu li a:hover {
-    color: #ffffff;
-    background: #00B2FF;
-    transition: 0.2s;
 }
 
 .home-listing-list {
@@ -197,12 +200,15 @@
     }
 }
 
-.list-item-desc p {
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 110%;
-    color: #686868;
+.list-item-desc{
     margin: 11px 0 25px 0;
+    p {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 110%;
+        color: #686868;
+        
+    }
 }
 
 .list-item-price {
@@ -233,21 +239,18 @@
     align-items: center;
     height: 35px;
     max-width: 245px;
-}
-
-.list-item-btns button {
-    height: 35px;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 120%;
-}
-
-.list-item-btns button:first-child {
-    max-width: 136px;
-}
-
-.list-item-btns button:last-child {
-    max-width: 99px;
+    button {
+        height: 35px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 120%;
+        &:first-child {
+            max-width: 136px;
+        }
+        &:last-child {
+            max-width: 99px;
+        }
+    }
 }
 
 .home-listing-more-btn {
@@ -258,8 +261,7 @@
     font-size: 16px;
     line-height: 120%;
     margin: 0 auto;
-}
-
-.home-listing-more-btn button {
-    height: 45px;
+    button {
+        height: 45px;
+    }
 }

@@ -80,7 +80,7 @@ export default class YaMapAll {
 
             ymaps.ready(function() {
                 let map = document.querySelector(".map");
-                let myMap = new ymaps.Map(map, { center: [55.76, 37.64], zoom: 15 });
+                let myMap = new ymaps.Map(map, { center: [55.763118, 37.633787], zoom: 15 });
                 myMap.behaviors.disable('scrollZoom');
 
                 let myBalloonLayout = ymaps.templateLayoutFactory.createClass(
@@ -226,7 +226,7 @@ export default class YaMapAll {
 
                     }
                 });
-                /*let serverResponse = fetch("/api/map_all/", {
+                let serverResponse = fetch("/api/map_all/", {
                 	    method: 'post',
                 	    mode:    'cors',
                 	    headers: {
@@ -251,8 +251,9 @@ export default class YaMapAll {
                 		myMap.geoObjects.add(objectManager);
                 		//console.log(`objectManager: ${objectManager.getBounds()}`);
                 		myMap.setBounds(objectManager.getBounds());
-                	});*/
+                	});
             });
         });
     }
 }
+

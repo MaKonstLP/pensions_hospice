@@ -9,7 +9,7 @@ div[data-page-type="listing"] {
     }
     @include for-laptop {
         max-width: 500px;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
     @include for-mobile {
         max-width: 330px;
