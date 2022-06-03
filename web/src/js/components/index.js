@@ -87,16 +87,16 @@ export default class Index {
             },
 
         });
-        const mapSlider = new Swiper('.map-swiper', {
-            loop: true,
-            observer: true,
-            observeParents: true,
-            navigation: {
-                nextEl: '.map-swiper-button-next',
-                prevEl: '.map-swiper-button-prev',
-            },
+        // const mapSlider = new Swiper('.map-swiper', {
+        //     loop: true,
+        //     observer: true,
+        //     observeParents: true,
+        //     navigation: {
+        //         nextEl: '.map-swiper-button-next',
+        //         prevEl: '.map-swiper-button-prev',
+        //     },
 
-        });
+        // });
 
         if ($(window).width() < 690) {
 

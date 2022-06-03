@@ -8,6 +8,7 @@ import Index from './components/index';
 import Widget from './components/widget';
 import Form from './components/form';
 import YaMapSingleObject from './components/mapSingleObject';
+import YaMapContacts from './components/mapContactsPage';
 import CalendarCustom from './components/calendarCustom';
 import WidgetMain from './components/widgetMain';
 import Breadcrumbs from './components/breadcrumbs';
@@ -41,6 +42,11 @@ window.$ = $;
 	    if ($('.map').length > 0) {
 			if($('[data-page-type="item"]').length > 0) {
 				var yaMap = new YaMapSingleObject();
+			}
+		}
+	    if ($('#map-contacts').length > 0) {
+			if($('[data-page-type="contacts"]').length > 0) {
+				var yaMapContacts = new YaMapContacts();
 			}
 		}
 
