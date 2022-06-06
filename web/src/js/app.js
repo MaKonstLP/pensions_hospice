@@ -44,6 +44,16 @@ window.$ = $;
 				var yaMap = new YaMapSingleObject();
 			}
 		}
+	    if ($('.map').length > 0) {
+			if($('[data-page-type="listing"]').length > 0) {
+				var yaMapListing = new YaMapSingleObject();
+			}
+		}
+	    if ($('.map').length > 0) {
+			if($('[data-page-type="index"]').length > 0) {
+				var yaMapIndex = new YaMapSingleObject();
+			}
+		}
 	    if ($('#map-contacts').length > 0) {
 			if($('[data-page-type="contacts"]').length > 0) {
 				var yaMapContacts = new YaMapContacts();

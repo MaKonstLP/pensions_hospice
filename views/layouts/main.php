@@ -6,6 +6,9 @@
 use yii\helpers\Html;
 use frontend\modules\hospice\assets\AppAsset;
 use common\models\Subdomen;
+use frontend\modules\hospice\widgets\FirstMenu;
+use frontend\modules\hospice\widgets\SecondMenu;
+use frontend\modules\hospice\widgets\FooterMenu;
 
 AppAsset::register($this);
 ?>
@@ -62,30 +65,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="mobile-menu-top">
                                 <ul class="menu-top">
-                                    <li>
-                                        <a href="#">Паллиативные центры</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Хосписы</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Стационары</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Геронтологические центры</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Гериатрические центры</a>
-                                    </li>
+                                    <?php echo SecondMenu::widget(); ?>
                                 </ul>
                             </div>
                             <div class="mobile-menu-bottom">
                                 <ul class="menu-bottom">
-                                    <li><a href="#">Цены</a></li>
-                                    <li><a href="/licenzii/">Лицензии</a></li>
-                                    <li><a href="#">О нас</a></li>
-                                    <li><a href="/kontakty/">Контакты</a></li>
-                                    <li><a href="/informaciya/">Информация</a></li>
+                                    <?php echo FirstMenu::widget(); ?>
                                 </ul>
                             </div>
                         </div>
@@ -94,11 +79,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="header-middle-nav">
                             <nav>
                                 <ul class="header-middle-menu">
-                                    <li><a href="#">Цены</a></li>
-                                    <li><a href="/licenzii/">Лицензии</a></li>
-                                    <li><a href="#">О нас</a></li>
-                                    <li><a href="/kontakty/">Контакты</a></li>
-                                    <li><a href="/informaciya/">Информация</a></li>
+                                    <?php echo FirstMenu::widget(); ?>
                                 </ul>
                             </nav>
                         </div>
@@ -133,11 +114,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="header-bottom">
                         <nav>
                             <ul class="header-bottom-menu">
-                                <li class="active"><a href="#">Паллиативные центры</a></li>
-                                <li><a href="#">Хосписы</a></li>
-                                <li><a href="#">Стационары</a></li>
-                                <li><a href="#">Геронтологические центры</a></li>
-                                <li><a href="#">Гериатрические центры</a></li>
+                                <?php echo SecondMenu::widget(); ?>
                             </ul>
                         </nav>
                     </div>
@@ -499,17 +476,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                         <div class="footer-menu-wrap">
                             <div class="footer-menu">
-                                <ul class="footer-menu-col-1">
-                                    <li><a href="#">Паллиативные центры</a></li>
-                                    <li><a href="#">Хосписы</a></li>
-                                </ul>
-                                <ul class="footer-menu-col-2">
-                                    <li><a href="#">Геронтологические центры</a></li>
-                                    <li><a href="#">Гериатрические центры</a></li>
-                                </ul>
-                                <ul class="footer-menu-col-3">
-                                    <li><a href="#">Стационары</a></li>
-                                </ul>
+                                <?php echo FooterMenu::widget(); ?>
                             </div>
                         </div>
                         <div class="footer-contacts">

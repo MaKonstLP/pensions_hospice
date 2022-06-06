@@ -12,6 +12,7 @@ use frontend\modules\hospice\components\Breadcrumbs;
 use common\models\elastic\ItemsWidgetElastic;
 use frontend\modules\hospice\models\ElasticItems;
 use common\models\Seo;
+use common\models\elastic\ItemsFilterElastic;
 
 class ItemController extends Controller
 {
@@ -20,6 +21,8 @@ class ItemController extends Controller
 	{
 		$elastic_model = new ElasticItems;
 		$item = $elastic_model::get($id);
+
+		$items = new ItemsFilterElastic([], 6, 1, false, 'restaurants', $elastic_model);
 
 		//$seo = new Seo('item', 1, 0, $item, 'rest');
 		//$seo = $seo->seo;
@@ -39,6 +42,7 @@ class ItemController extends Controller
 		//exit;
 
 		return $this->render('index.twig', array(
+			'items' => $items->items,
 			'item' => $item,
 			'queue_id' => $id,
 			//'seo' => $seo,

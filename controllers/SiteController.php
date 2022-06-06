@@ -13,6 +13,7 @@ use common\models\elastic\ItemsFilterElastic;
 use frontend\modules\hospice\models\ElasticItems;
 use common\models\Seo;
 use common\models\PansionMain;
+use frontend\modules\hospice\models\TopBannerForm;
 
 class SiteController extends Controller
 {
@@ -37,10 +38,14 @@ class SiteController extends Controller
         ]);
 
         $elastic_model = new ElasticItems;
-        $items = new ItemsFilterElastic([], 10, 1, false, 'restaurants', $elastic_model);
+        $items = new ItemsFilterElastic([], 6, 1, false, 'restaurants', $elastic_model);
+
+        $top_banner_form_model = new TopBannerForm;
 
 
         return $this->render('index.twig', [
+            'top_banner_form_model' => $top_banner_form_model,
+            'items' => $items->items,
             'filter' => $filter,
             'count' => $items->total,
             // 'mainWidget' => $mainWidget,
@@ -64,12 +69,12 @@ class SiteController extends Controller
             $subdomen_alias = '';
         }
         echo 'User-agent: *
-Disallow: /*rest_type=
-Disallow: /*chelovek=
-Disallow: /*price=
-Disallow: /*firework=
-Disallow: /*svoy-alko=
-Sitemap: https://'.$subdomen_alias.'korporativ-ng.ru/sitemap/';
+            Disallow: /*rest_type=
+            Disallow: /*chelovek=
+            Disallow: /*price=
+            Disallow: /*firework=
+            Disallow: /*svoy-alko=
+            Sitemap: https://'.$subdomen_alias.'korporativ-ng.ru/sitemap/';
         exit;
     }
 
@@ -84,4 +89,5 @@ Sitemap: https://'.$subdomen_alias.'korporativ-ng.ru/sitemap/';
         $this->view->params['desc'] = $seo['description'];
         $this->view->params['kw'] = $seo['keywords'];
     }
+
 }

@@ -644,54 +644,7 @@
                 </div>
                 <div class="best-hospises-list">
 
-                    <div class="listing-list-item">
-                        <div class="slide-recommended">
-                            <img src="/image/icons/star-recomended.svg" alt="">
-                            <span>Рекомендуем</span>
-                        </div>
-                        <div class="list-item-slider">
-                            <div class="swiper swiper-located-nearby">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img src="/image/houses-listing/house2.png" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="/image/houses-listing/house2.png" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="/image/houses-listing/house2.png" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="swiper-pagination"></div>
-
-                                <div class="swiper-button-prev"></div>
-                                <div class="swiper-button-next"></div>
-
-                            </div>
-                        </div>
-                        <div class="list-item-content">
-                            <div class="list-item-title">
-                                <a href="#">Пансионат для престарелых «Нескучный сад»</a>
-                            </div>
-                            <div class="list-item-desc">
-                                <p>
-                                    Московская обл., Мытищинский район, деревня Ховрино, ул. Бородинская
-                                </p>
-                            </div>
-                            <div class="list-item-price">
-                                <span>3000</span> рублей/сутки
-                            </div>
-                            <div class="list-item-price-comment">
-                                <span>Цена за месяц: от 45000 рублей</span>
-                            </div>
-
-                            <div class="list-item-btns">
-                                <button class="btn">Забронировать</button>
-                                <button class="btn-white">О хосписе</button>
-                            </div>
-                        </div>
-                    </div>
+                    {% for item in items|slice(0,2) %}
 
                     <div class="listing-list-item">
                         <div class="slide-recommended">
@@ -721,15 +674,13 @@
                         </div>
                         <div class="list-item-content">
                             <div class="list-item-title">
-                                <a href="#">Пансионат для престарелых «Нескучный сад»</a>
+                                <a href="{{item.pansion_url}}">{{item.pansion_name}}</a>
                             </div>
                             <div class="list-item-desc">
-                                <p>
-                                    Московская обл., Мытищинский район, деревня Ховрино, ул. Бородинская
-                                </p>
+                                <p>{{item.pansion_address}}</p>
                             </div>
                             <div class="list-item-price">
-                                <span>3000</span> рублей/сутки
+                                <span>{{item.pansion_price}}</span> рублей/сутки
                             </div>
                             <div class="list-item-price-comment">
                                 <span>Цена за месяц: от 45000 рублей</span>
@@ -741,6 +692,8 @@
                             </div>
                         </div>
                     </div>
+
+                    {% endfor %}
 
                 </div>
             </div>

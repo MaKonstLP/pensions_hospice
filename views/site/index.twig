@@ -1,12 +1,14 @@
 
 
+<div data-page-type="index">
+
         {{ this.render('//components/generic/home_banner.twig') | raw}}
 
-        {{ this.render('//components/generic/home_listing.twig') | raw}}
+        {{ this.render('//components/generic/home_listing.twig', {'items':items}) | raw}}
 	
         {{ this.render('//components/generic/home_map.twig') | raw}}
 
-        {{ this.render('//components/generic/best_hospises.twig') | raw}}
+        {{ this.render('//components/generic/best_hospises.twig', {'items':items}) | raw}}
 
         {{ this.render('//components/generic/answers_questions.twig') | raw}}
 
@@ -14,7 +16,9 @@
 
         {{ this.render('//components/generic/home_bottom_banner.twig') | raw}}
 
-    
+</div>
+
+{{ dump(top_banner_form_model) }}
     {# <div class="top_slider_wrapper">
 
         <div class="top_slider">
