@@ -331,6 +331,12 @@ section.home-banner {
     @include for-mobile {
         width: 100%;
     }
+    .form-submit{
+        margin-top: 24px;
+        @include for-mobile {
+            margin-top: 15px;
+        }
+    }
 }
 
 form {
@@ -346,9 +352,9 @@ form {
         line-height: 17px;
         color: #919191;
         padding: 10px;
+        border: 1px solid transparent;
     }
     input[type='checkbox'] {
-        border: none;
         position: absolute;
         z-index: -1;
         opacity: 0;
@@ -366,11 +372,10 @@ form {
         height: 20px;
         flex-shrink: 0;
         flex-grow: 0;
-        border: 1px solid #adb5bd;
         border-radius: 5px;
         margin-right: 8px;
         background: $clrColorWhite;
-        border: 1px solid #EBEBEB;
+        border: 1px solid #e5e5e5;
         transition: 0.2s;
     }
     input[type='checkbox']:checked+label::before {
@@ -385,10 +390,19 @@ form {
     input:focus {
         outline: none;
     }
-}
-
-.form-accept-check {
-    display: flex;
+    .help-block{
+        color: #FF7E7E;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 120%;
+        position: absolute;
+    }
+    .has-error input[type='checkbox']+label::before{
+        border: 1px solid #FF7E7E;
+    }
+    .has-error input:not([type='checkbox']){
+        border: 1px solid #FF7E7E;
+    }
 }
 
 .form-accept-desc {
@@ -398,12 +412,10 @@ form {
     line-height: 12px;
     color: $clrColorWhite;
     max-width: 238px;
-    margin-bottom: 24px;
-    @include for-mobile {
-        margin-bottom: 15px;
-    }
 }
-
+.form-accept-check{
+    line-height: 12px;
+}
 .swiper {
     max-width: 360px;
     height: 291px;

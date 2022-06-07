@@ -13,7 +13,7 @@ use common\models\elastic\ItemsFilterElastic;
 use frontend\modules\hospice\models\ElasticItems;
 use common\models\Seo;
 use common\models\PansionMain;
-use frontend\modules\hospice\models\TopBannerForm;
+use frontend\modules\hospice\widgets\TopBannerFormWidget;
 
 class SiteController extends Controller
 {
@@ -40,11 +40,11 @@ class SiteController extends Controller
         $elastic_model = new ElasticItems;
         $items = new ItemsFilterElastic([], 6, 1, false, 'restaurants', $elastic_model);
 
-        $top_banner_form_model = new TopBannerForm;
-
+        
+        $top_banner_form = TopBannerFormWidget::widget();
 
         return $this->render('index.twig', [
-            'top_banner_form_model' => $top_banner_form_model,
+            'top_banner_form' => $top_banner_form,
             'items' => $items->items,
             'filter' => $filter,
             'count' => $items->total,

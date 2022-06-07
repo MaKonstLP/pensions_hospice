@@ -12,8 +12,10 @@
                         <img src="./image/logo-white.png" alt="logo">
                     </div>
                     <div class="free-consultation-right">
-                        <form action="/" class="consultation-form">
-                            <div class="form-title">Есть вопросы?</div>
+                        <div class="form-title">Есть вопросы?</div>
+                        {{ top_banner_form | raw }}
+                        {# <form action="/" class="consultation-form">
+                            
                             <div class="form-input">
                                 <input type="text" name="consultation" id="consultation-form" placeholder="Email/телефон">
                             </div>
@@ -26,7 +28,7 @@
                             <div class="form-submit">
                                 <button class="btn">Отправить</button>
                             </div>
-                        </form>
+                        </form> #}
                     </div>
                 </div>
             </div>

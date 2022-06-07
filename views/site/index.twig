@@ -2,7 +2,8 @@
 
 <div data-page-type="index">
 
-        {{ this.render('//components/generic/home_banner.twig') | raw}}
+		
+        {{ this.render('//components/generic/home_banner.twig', { 'top_banner_form':top_banner_form }) | raw}}
 
         {{ this.render('//components/generic/home_listing.twig', {'items':items}) | raw}}
 	
@@ -18,7 +19,7 @@
 
 </div>
 
-{{ dump(top_banner_form_model) }}
+
     {# <div class="top_slider_wrapper">
 
         <div class="top_slider">
