@@ -20,6 +20,12 @@
         height: 330px!important;
     }
 }
+*[class*="balloon"]{
+    @include for-mobile {
+        background: transparent!important;
+    }
+    
+}
 .map-item{
     width: 660px;
     position: absolute;
@@ -28,14 +34,26 @@
         .swiper-slide{
             background: #fff;
         }
+        @include for-laptop {
+            max-height: 200px;
+        }
+        @include for-mobile {
+            max-height: 140px;
+        }
     }
     .listing-list-item{
         margin: 0;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         .list-item-btns{
             margin-top: 24%;
+            @include for-laptop {
+                margin-top: 15px;
+            }
+            @include for-mobile {
+                margin-top: 8px;
+            }
         }
-        @include for-mobile {
+        @include for-laptop {
             flex-direction: column;
         }
     }
@@ -43,6 +61,66 @@
         position: relative;
         background: #FFFFFF;
         padding: 20px 20px;
+        @include for-laptop {
+            max-height: 227px;
+            padding: 15px 25px;
+        }
+        @include for-mobile {
+            max-height: 167px;
+            padding: 10px 15px 15px 15px;
+        }
+    }
+    .list-item-desc{
+        @include for-laptop {
+            margin: 7px 0 15px 0;
+        }
+        @include for-mobile {
+            margin: 5px 0 8px 0;
+        }
+    }
+    .list-item-price-comment{
+        @include for-laptop {
+            margin: 5px 0 0 0;
+        }
+        @include for-mobile {
+            font-size: 12px;
+            margin: 6px 0 0 8px;
+        }
+        div:first-child{
+            display: block;
+            @include for-mobile {
+                display: none;
+            }
+        }
+        div:last-child{
+            display: none;
+            @include for-mobile {
+                display: block;
+            }
+        }
+    }
+    .list-item-price{
+        div:first-child{
+            display: block;
+            @include for-mobile {
+                display: none;
+            }
+        }
+        div:last-child{
+            display: none;
+            @include for-mobile {
+                display: block;
+            }
+        }
+        @include for-mobile {
+            font-size: 16px;
+        }
+    }
+    .list-item-price-block{
+        @include for-mobile {
+            display: flex;
+            align-items: center;
+        }
     }
     .map-item-close{
         position:absolute;
@@ -54,16 +132,29 @@
         right: 10px;
         top: 8px;
         cursor: pointer;
+        z-index: 10;
+        
     }
-  
+    .map-item-close.map-close-mobile{
+        @include for-laptop {
+            display: block;
+        }
+    }
+    .map-item-close.map-close-desc{
+        @include for-laptop {
+            display: none;
+        }
+    }
     @include for-laptop {
-        left: 0!important;
-        top: 0!important;
+        max-width: 300px;
+        // top: -354px!important;
+        height: 427px;
     }
     @include for-mobile {
-        max-width: 330px;
-        left: 0!important;
-        top: 0!important;
+        max-width: 300px;
+        height: 307px;
+        left: 14px!important;
+        top: 35px!important;
     }
   
 }

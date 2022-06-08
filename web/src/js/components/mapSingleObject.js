@@ -127,9 +127,11 @@ export default class YaMapSingleObject{
 
           let myBalloonLayout = ymaps.templateLayoutFactory.createClass(
             `<div class="map-item">
+            <div class="map-item-close map-close-mobile"></div>
                 <div class="listing-list-item">
                     <div class="list-item-slider">
                         <div class="swiper map-swiper">
+                            
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <img src="/image/houses-listing/house2.png" alt="">
@@ -150,7 +152,7 @@ export default class YaMapSingleObject{
                         </div>
                     </div>
                     <div class="list-item-content">
-                        <div class="map-item-close">
+                        <div class="map-item-close map-close-desc">
                         </div>
                         <div class="list-item-title">
                             <a href="#">Пансионат для престарелых «Нескучный сад»</a>
@@ -160,11 +162,24 @@ export default class YaMapSingleObject{
                                 Московская обл., Мытищинский район, деревня Ховрино, ул. Бородинская
                             </p>
                         </div>
-                        <div class="list-item-price">
-                            <span>3000</span> рублей/сутки
-                        </div>
-                        <div class="list-item-price-comment">
-                            <span>Цена за месяц: от 45000 рублей</span>
+                        <div class="list-item-price-block">
+                          <div class="list-item-price">
+                              <div>
+                                <span>3000</span> рублей/сутки
+                              </div>
+                              <div>
+                                <span>3000</span> руб./сутки
+                              </div>
+                          </div>
+
+                          <div class="list-item-price-comment">
+                              <div>
+                                <span>Цена за месяц: от 45000 рублей</span>
+                              </div>
+                              <div>
+                                <span>от 45000 руб./мес.</span>
+                              </div>
+                          </div>
                         </div>
                         <div class="list-item-btns">
                             <button class="btn">Забронировать</button>
@@ -217,6 +232,7 @@ export default class YaMapSingleObject{
               this.events.fire('shapechange');
             },
             applyElementOffset: function () {
+
               this._$element.css({
                   left: -(this._$element[0].offsetWidth / 2),
                   top: -(this._$element[0].offsetHeight)
@@ -265,7 +281,7 @@ export default class YaMapSingleObject{
 
           myMap.geoObjects.add(object);
           myMap.setCenter(objectCoordinates);
-          object.balloon.open( "", "", {closeButton: false});
+          // object.balloon.open( "", "", {closeButton: false});
 
         });
       });

@@ -21,8 +21,10 @@ class TopBannerFormWidget extends Widget{
         $top_banner_form_model = new TopBannerForm;
 
         if($top_banner_form_model->load(Yii::$app->request->post())){
-            var_dump(Yii::$app->request->post());
+         
         }
+
+                 
 
         $form = ActiveForm::begin([
             'options' => ['id' => 'consultation-form']
