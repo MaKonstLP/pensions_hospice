@@ -7,6 +7,7 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\helpers\Html;
 use frontend\modules\hospice\models\ElasticItems;
+use frontend\modules\hospice\models\TopBannerForm;
 
 class FormController extends Controller
 {
@@ -14,6 +15,34 @@ class FormController extends Controller
     //{
     //    return Yii::getAlias('@app/modules/svadbanaprirode/views/site');
     //}
+    
+
+    public function actionSendform(){
+        $top_banner_form_model = new TopBannerForm();
+
+        // if(Yii::$app->request->isAjax){
+        //     var_dump($top_banner_form_model->validate());
+        //     // echo 'hello';
+        //     return 'Запрос принят!';
+        // }
+        if($top_banner_form_model->load(Yii::$app->request->post())){
+            if($top_banner_form_model->validate()){
+                echo 'hello';
+                $this->refresh();
+            }
+        }
+        echo 'hello';
+
+        // if($top_banner_form_model->load(Yii::$app->request->post())){
+        //     Yii::$app->session->setFlash('success', 'Данные приняты');
+        //     return $this->refresh();
+        // }else{
+        //     Yii::$app->session->setFlash('error', 'Ошибка');
+        // }
+    }    
+
+
+
 
     public function beforeAction($action) {
         $this->enableCsrfValidation = false;

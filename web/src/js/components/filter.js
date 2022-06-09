@@ -56,12 +56,15 @@ export default class Filter {
             });
         });
 
+        //ОТкрытие скрытие попапа фильтра
         $('.sidebar').unbind("click").on('click', function(e) {
             let filterPopup = $(e.target).closest('.filter-item').find('.filter-popup');
             if($(e.target).hasClass('filter-select')){
                 filterPopup.toggleClass('active');
             }
         });
+        
+        //Больше параметров фильтра в моб. версии
         $('.filter-more-paramters span').on('click', function(e) {
             self.showAllSelect();
             $(this).remove();

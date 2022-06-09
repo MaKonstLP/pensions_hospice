@@ -361,18 +361,13 @@ section.answers-questions .container {
 }
 
 .good-to-know-items .item {
-    position: relative;
     height: 353px;
     width: 30%;
     max-width: 353px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
     border-radius: 5px;
     overflow: hidden;
     @include for-lowdesc {
         height: 358px;
-        background-size: cover;
     }
     @include for-lowlap {
         height: 280px;
@@ -390,13 +385,12 @@ section.answers-questions .container {
 }
 
 .good-to-know-items a {
-    position:absolute;
-    top:0px;
-    left:0px;
     width:100%;
     height:100%;
-    display:inline;
-    z-index: 100;
+    display:block;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .good-to-know-items .item-desc {
     position: absolute;

@@ -16,11 +16,13 @@ export default class Index {
         //     self.redirectToListing();
         // });
 
+        //Развернуть текст
         $('.more-text-link').click(function() {
             $(this).closest('.more-text').find('p').addClass('active');
             $(this).remove();
         })
 
+        //Закрыть объект на карте
         $('.map-item-close').on('click', function(){
             let mapItem = $(this).closest('.map-item');
             $(mapItem).addClass('hide');
@@ -87,35 +89,76 @@ export default class Index {
             },
 
         });
-        // const mapSlider = new Swiper('.map-swiper', {
-        //     loop: true,
-        //     observer: true,
-        //     observeParents: true,
-        //     navigation: {
-        //         nextEl: '.map-swiper-button-next',
-        //         prevEl: '.map-swiper-button-prev',
-        //     },
 
+        var swiperGoodToKnow = undefined;
+        function initSwiper() {
+            var screenWidth = $(window).width();
+            if(screenWidth < 690 && swiperGoodToKnow == undefined) {            
+                swiperGoodToKnow = new Swiper('.swiper-good-to-know', {            
+                    loop: true,
+                    observer: true,
+                    observeParents: true,
+                    watchSlidesProgress: true,
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                });
+            } else if (screenWidth > 690 && swiperGoodToKnow != undefined) {
+                swiperGoodToKnow.destroy();
+                swiperGoodToKnow = undefined;
+                jQuery('.swiper-good-to-know .swiper-wrapper').removeAttr('style');
+                // jQuery('.swiper-good-to-know .swiper-slide').removeAttr('style');            
+            }        
+        }
+
+        initSwiper();
+
+        $(window).on('resize', function(){
+            initSwiper();       
+        });
+            
+        // window.addEventListener('resize', function(){
+        //     if ($(window).width() < 690) {
+        //         self.swiperGoodToKnowInit();
+        //     }
         // });
 
-        if ($(window).width() < 690) {
-
-            const swiperGoodToKnow = new Swiper('.swiper-good-to-know', {
-                loop: true,
-                observer: true,
-                observeParents: true,
-                watchSlidesProgress: true,
-                slidesPerView: 1,
-                spaceBetween: 20,
+        // if (document.readyState == "complete") {
+        //     if ($(window).width() < 690) {
+        //         self.swiperGoodToKnowInit();
+        //     }
+        // }
 
 
-            });
-        }
+
+        $('body').on('beforeSubmit', '#consultation-form', function(e){
+            
+            
+            var data = $(this).serialize();
+             $.ajax({
+                 url: 'form/sendform',
+                 type: 'POST',
+                 data: data,
+                 success: function(res){
+                     console.log(res);
+                 },
+                 error: function(){
+                     alert('Error!');
+                 }
+             });
+             return false;
+         });
+      
     }
-
-
-
-
+    // swiperGoodToKnowInit(){
+    //     let swiperGoodToKnow = new Swiper('.swiper-good-to-know', {
+    //         loop: true,
+    //         observer: true,
+    //         observeParents: true,
+    //         watchSlidesProgress: true,
+    //         slidesPerView: 1,
+    //         spaceBetween: 20,
+    //     });
+    // }
 
     redirectToListing() {
         this.filter.filterMainSubmit();

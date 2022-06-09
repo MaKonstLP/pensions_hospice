@@ -53,6 +53,7 @@ class SiteController extends Controller
             'subid' => isset(Yii::$app->params['subdomen_id']) ? Yii::$app->params['subdomen_id'] : false
         ]);
     }
+    
 
     public function actionError()
     {

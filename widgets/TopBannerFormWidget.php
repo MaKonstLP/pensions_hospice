@@ -20,14 +20,19 @@ class TopBannerFormWidget extends Widget{
     public function run(){
         $top_banner_form_model = new TopBannerForm;
 
-        if($top_banner_form_model->load(Yii::$app->request->post())){
-         
+        
+        if(Yii::$app->session->hasFlash('success')){
+            Yii::$app->session->getFlash('success');
         }
-
+        if(Yii::$app->session->hasFlash('error')){
+            Yii::$app->session->getFlash('error');
+        }
                  
 
         $form = ActiveForm::begin([
-            'options' => ['id' => 'consultation-form']
+            'action' => ['form/sendform'],
+            'enableAjaxValidation' => true,
+            'options' => ['id' => 'consultation-form', 'method' => 'post']
         ]);
         echo $form->field($top_banner_form_model, 'user_phone', [
             'inputOptions' => ['placeholder'=> 'Email/телефон'],

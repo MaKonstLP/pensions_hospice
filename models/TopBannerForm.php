@@ -19,4 +19,6 @@ class TopBannerForm extends Model{
             ['accept', 'required', 'requiredValue' => 1, 'message' => 'Необходимо принять условия']
         ];
     }
+
+    
 }

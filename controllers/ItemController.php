@@ -17,10 +17,10 @@ use common\models\elastic\ItemsFilterElastic;
 class ItemController extends Controller
 {
 
-	public function actionIndex($id)
+	public function actionIndex($url)
 	{
 		$elastic_model = new ElasticItems;
-		$item = $elastic_model::get($id);
+		$item = $elastic_model::get($url);
 
 		$items = new ItemsFilterElastic([], 6, 1, false, 'restaurants', $elastic_model);
 
@@ -44,7 +44,7 @@ class ItemController extends Controller
 		return $this->render('index.twig', array(
 			'items' => $items->items,
 			'item' => $item,
-			'queue_id' => $id,
+			// 'queue_id' => $id,
 			//'seo' => $seo,
 			//'other_rooms' => $other_rooms
 		));
