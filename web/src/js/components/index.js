@@ -106,7 +106,7 @@ export default class Index {
                 swiperGoodToKnow.destroy();
                 swiperGoodToKnow = undefined;
                 jQuery('.swiper-good-to-know .swiper-wrapper').removeAttr('style');
-                // jQuery('.swiper-good-to-know .swiper-slide').removeAttr('style');            
+                jQuery('.swiper-good-to-know .swiper-slide').removeAttr('style');            
             }        
         }
 
@@ -115,50 +115,8 @@ export default class Index {
         $(window).on('resize', function(){
             initSwiper();       
         });
-            
-        // window.addEventListener('resize', function(){
-        //     if ($(window).width() < 690) {
-        //         self.swiperGoodToKnowInit();
-        //     }
-        // });
 
-        // if (document.readyState == "complete") {
-        //     if ($(window).width() < 690) {
-        //         self.swiperGoodToKnowInit();
-        //     }
-        // }
-
-
-
-        $('body').on('beforeSubmit', '#consultation-form', function(e){
-            
-            
-            var data = $(this).serialize();
-             $.ajax({
-                 url: 'form/sendform',
-                 type: 'POST',
-                 data: data,
-                 success: function(res){
-                     console.log(res);
-                 },
-                 error: function(){
-                     alert('Error!');
-                 }
-             });
-             return false;
-         });
-      
     }
-    // swiperGoodToKnowInit(){
-    //     let swiperGoodToKnow = new Swiper('.swiper-good-to-know', {
-    //         loop: true,
-    //         observer: true,
-    //         observeParents: true,
-    //         watchSlidesProgress: true,
-    //         slidesPerView: 1,
-    //         spaceBetween: 20,
-    //     });
-    // }
 
     redirectToListing() {
         this.filter.filterMainSubmit();

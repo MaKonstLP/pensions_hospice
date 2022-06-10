@@ -366,6 +366,7 @@ section.answers-questions .container {
     max-width: 353px;
     border-radius: 5px;
     overflow: hidden;
+    position: relative;
     @include for-lowdesc {
         height: 358px;
     }
@@ -391,6 +392,7 @@ section.answers-questions .container {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    color: #fff;
 }
 .good-to-know-items .item-desc {
     position: absolute;

@@ -18,20 +18,10 @@ class TopBannerFormWidget extends Widget{
     
 
     public function run(){
-        $top_banner_form_model = new TopBannerForm;
-
-        
-        if(Yii::$app->session->hasFlash('success')){
-            Yii::$app->session->getFlash('success');
-        }
-        if(Yii::$app->session->hasFlash('error')){
-            Yii::$app->session->getFlash('error');
-        }
+        $top_banner_form_model = new TopBannerForm();
                  
 
         $form = ActiveForm::begin([
-            'action' => ['form/sendform'],
-            'enableAjaxValidation' => true,
             'options' => ['id' => 'consultation-form', 'method' => 'post']
         ]);
         echo $form->field($top_banner_form_model, 'user_phone', [

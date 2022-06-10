@@ -119,6 +119,7 @@
     height: 400px;
     width: 50%;
     max-width: 400px;
+    position: relative;
     @include for-lowdesc {
         max-width: 285px;
         max-height: 287px;
@@ -138,6 +139,9 @@
         @include for-lowdesc {
             font-size: 18px;
         }
+    }
+    a{
+        color: #fff;
     }
 }
 
