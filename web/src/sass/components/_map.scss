@@ -183,7 +183,7 @@
         border-right: 10px solid transparent;
         border-bottom: 10px solid transparent;
         bottom: -20px;
-        right: 40px;
+        right: calc(50% - 10px);
     }
 }
 

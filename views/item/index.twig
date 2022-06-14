@@ -202,7 +202,6 @@
     </div>
 
 </div> #}
-{{dump(item)}}
         <section class="single-content" data-page-type="item">
             <div class="container">
                 <div class="single-top">
@@ -232,13 +231,13 @@
 
                             <div class="single-top-desc-padding">
                                 <div class="single-top-desc-title">
-                                    Пансионат для престарелых <span>«Одинцово»</span> Забота о близких
+                                    {{item.pansion_name}}
                                 </div>
                                 <div class="single-top-desc-adress">
-                                    Московская обл., Мытищинский район, деревня Ховрино, ул. Бородинская
+                                    {{item.pansion_address}}
                                 </div>
                                 <div class="single-top-desc-price">
-                                    <span>3000</span> рублей/сутки
+                                    <span>{{item.pansion_price}}</span> рублей/сутки
                                 </div>
                                 <div class="single-top-desc-price-comment">
                                     Цена за месяц: от 45000 рублей
@@ -285,11 +284,6 @@
                         <div class="links-item">
                             <a href="#" class="btn-white">Как добраться</a>
                         </div>
-                    </div>
-                </div>
-
-                <div class="map map-wrap">
-                    <div id="map" data-mapDotX="52.283" data-mapDotY="104.322" data-name="test" data-address="test" data-image="test" data-capacity="test" data-lowest-price="test" data-balloon="" data-hint="">
                     </div>
                 </div>
 

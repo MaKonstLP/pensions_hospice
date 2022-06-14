@@ -16,6 +16,17 @@ class FormController extends Controller
     //    return Yii::getAlias('@app/modules/svadbanaprirode/views/site');
     //}
     
+public function actionTest(){
+    $model = new TopBannerForm();
+    if(\Yii::$app->request->isAjax){
+        
+        $name = $_POST['TopBannerForm']['user_phone'] ?? '';
+        return 'Спасибо, '.$name.', ваше сообщение принято.';
+    } else {
+        return $this->render('form_ajax');
+    }
+}
+    
 
     public function beforeAction($action) {
         $this->enableCsrfValidation = false;

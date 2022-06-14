@@ -1,0 +1,44 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+        "type": "Feature",
+         "id": 0, 
+         "geometry": {
+            "type": "Point", 
+            "coordinates": [55.831903, 37.411961]
+        }, 
+        "properties": {
+            "hintContent": "",
+            "price": "от 1200 p.",
+            "name": "Пансионат для престарелых «Нескучный сад»",
+            "address":"Московская обл., Мытищинский район, деревня Ховрино, ул. Бородинская"
+        }
+             
+        },
+        {"type": "Feature", 
+            "id": 1, 
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [55.763338, 37.565466]}, 
+                "properties": {
+                    "hintContent": "",
+                    "price": "от 1700 p.",
+                    "name": "Пансионат ветеранов труда №17",
+                    "address":"Москва, ул. Островитянова дом 16, корп.5"
+                }
+                },
+        {"type": "Feature", 
+            "id": 2, 
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [55.793559, 37.435983]}, 
+                "properties": {
+                    "hintContent": "",
+                    "price": "от 1500 p.",
+                    "name": "Пансионат ветеранов труда №29",
+                    "address":"Москва, улица 16-я Парковая, дом 16"
+                }
+                }
+    ]
+}

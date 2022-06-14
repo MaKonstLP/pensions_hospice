@@ -39,7 +39,6 @@ class SiteController extends Controller
 
         $elastic_model = new ElasticItems;
         $items = new ItemsFilterElastic([], 6, 1, false, 'restaurants', $elastic_model);
-
         
         $top_banner_form = TopBannerFormWidget::widget();
 

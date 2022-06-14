@@ -1,5 +1,6 @@
 "use strict";
 import Swiper from 'swiper';
+const data = require('./data-cityes.json');
 
 export default class YaMapSingleObject{
   constructor(){
@@ -76,7 +77,7 @@ export default class YaMapSingleObject{
         const ymaps = global.ymaps;
         ymaps.ready(function(){
           let map = document.querySelector(".map");
-          let myMap = new ymaps.Map(map, {center: [55.76, 37.64], zoom: 15, controls: []},
+          let myMap = new ymaps.Map(map, {center: [55.763118, 37.633787], zoom: 12, controls: []},
                       {suppressMapOpenBlock: true});
 
           myMap.behaviors.disable('scrollZoom');
@@ -109,7 +110,7 @@ export default class YaMapSingleObject{
           let myBalloonHeader = $("#map").attr("data-name");
           let myBalloonBody = $("#map").attr("data-address");
           let iconTemplate = ymaps.templateLayoutFactory.createClass(
-            '<div class="map-icon">$[properties.iconContent]</div>');
+            '<div class="map-icon">$[properties.price]</div>');
 
           let myBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
             `<div class="balloon_layout _single_object" style="background:#fff">
@@ -155,20 +156,20 @@ export default class YaMapSingleObject{
                         <div class="map-item-close map-close-desc">
                         </div>
                         <div class="list-item-title">
-                            <a href="#">Пансионат для престарелых «Нескучный сад»</a>
+                            <a href="#">$[properties.name]</a>
                         </div>
                         <div class="list-item-desc">
                             <p>
-                                Московская обл., Мытищинский район, деревня Ховрино, ул. Бородинская
+                            $[properties.address]
                             </p>
                         </div>
                         <div class="list-item-price-block">
                           <div class="list-item-price">
                               <div>
-                                <span>3000</span> рублей/сутки
+                                <span>$[properties.price]</span> рублей/сутки
                               </div>
                               <div>
-                                <span>3000</span> руб./сутки
+                                <span>$[properties.price]</span> руб./сутки
                               </div>
                           </div>
 
@@ -262,26 +263,58 @@ export default class YaMapSingleObject{
             }
           );
 
-          let object = window.object = new ymaps.Placemark(objectCoordinates, {
-            balloonContentHeader: myBalloonHeader,
-            balloonContentBody: myBalloonBody,
-            iconContent: 'от 1100 руб.',
-          }, {
-            iconLayout: iconTemplate,
-            iconShape: {
-              type: 'Rectangle',
-              coordinates: [
-                  [0, 0], [100, 40]
-              ]
-          },
-            balloonLayout: myBalloonLayout,
-            balloonContentLayout: myBalloonLayout,
-            hideIconOnBalloonOpen: false,
-          });
+          // let object = window.object = new ymaps.Placemark(objectCoordinates, {
+          //   balloonContentHeader: myBalloonHeader,
+          //   balloonContentBody: myBalloonBody,
+          //   iconContent: 'от 1100 руб.',
+          // }, {
+          //   iconLayout: iconTemplate,
+          //   iconShape: {
+          //     type: 'Rectangle',
+          //     coordinates: [
+          //         [0, 0], [100, 40]
+          //     ]
+          // },
+          //   balloonLayout: myBalloonLayout,
+          //   balloonContentLayout: myBalloonLayout,
+          //   hideIconOnBalloonOpen: false,
+          // });
 
-          myMap.geoObjects.add(object);
+          // myMap.geoObjects.add(object);
           myMap.setCenter(objectCoordinates);
           // object.balloon.open( "", "", {closeButton: false});
+          // let dataPrice = data.features['properties'];   
+
+        let objectManager = new ymaps.ObjectManager({
+            gridSize: 32,
+            geoObjectBalloonLayout: myBalloonLayout,
+            geoObjectBalloonContentLayout: myBalloonLayout,
+            geoObjectHideIconOnBalloonOpen: false,
+            geoObjectBalloonOffset: [-360, 17],
+            clusterize: false,
+            clusterDisableClickZoom: false,
+            clusterBalloonItemContentLayout: myBalloonLayout,
+        });
+        let iconShape = {
+                  type: "Rectangle",
+                  "coordinates": [
+                      [0, 0], [100, 40]
+                  ]
+              };
+             
+
+        objectManager.objects.options.set('iconLayout', iconTemplate);
+        objectManager.objects.options.set('iconShape', iconShape);
+        myMap.geoObjects.add(objectManager);
+
+        objectManager.add(data);
+        // $.ajax({
+        //     url: "data-cityes.json"
+        // }).done(function(data) {
+        //     objectManager.add(data);
+        // });
+
+
 
         });
       });

@@ -18,23 +18,6 @@ class TopBannerFormWidget extends Widget{
     
 
     public function run(){
-        $top_banner_form_model = new TopBannerForm();
-                 
-
-        $form = ActiveForm::begin([
-            'options' => ['id' => 'consultation-form', 'method' => 'post']
-        ]);
-        echo $form->field($top_banner_form_model, 'user_phone', [
-            'inputOptions' => ['placeholder'=> 'Email/телефон'],
-            'template' => '<div class="form-input">{label}{input}{error}</div>'
-        ]);
-        echo $form->field($top_banner_form_model, 'accept', [
-            'template' => '<div class="form-accept-check">{input}{label}{error}</div>'
-        ])->checkbox([], false)->label('Я согласен с условиями обработки персональных данных', ['class'=>'form-accept-desc']);
-
-        echo Html::beginTag('div', ['class' => 'form-submit']);
-        echo Html::submitButton('Отправить', ['class' => 'btn']);
-        echo Html::endTag('div');
-        ActiveForm::end();
+        return $this->render('top_banner_form');
     }
 }

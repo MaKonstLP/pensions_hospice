@@ -20,7 +20,12 @@ class ItemController extends Controller
 	public function actionIndex($url)
 	{
 		$elastic_model = new ElasticItems;
-		$item = $elastic_model::get($url);
+		// $item = $elastic_model::get($url);
+
+		$item = $elastic_model::find()
+		->query(['bool' => ['must' => ['match'=>['pansion_url' => $url]]]])
+		->limit(1)
+		->search();
 
 		$items = new ItemsFilterElastic([], 6, 1, false, 'restaurants', $elastic_model);
 
@@ -43,7 +48,7 @@ class ItemController extends Controller
 
 		return $this->render('index.twig', array(
 			'items' => $items->items,
-			'item' => $item,
+			'item' => $item['hits']['hits'][0],
 			// 'queue_id' => $id,
 			//'seo' => $seo,
 			//'other_rooms' => $other_rooms

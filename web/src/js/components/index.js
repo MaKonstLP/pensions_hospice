@@ -115,6 +115,7 @@ export default class Index {
         $(window).on('resize', function(){
             initSwiper();       
         });
+        
 
     }
 
