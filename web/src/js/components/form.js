@@ -34,12 +34,14 @@ export default class Form {
 			$(el).on('blur', (e) => {
 				this.checkField($(e.currentTarget));
 				this.checkValid();
+				
 			});
 
 			$(el).on('change', (e) => {
+				
 			  // console.log('input change');
 			  this.checkValid();
-			  // this.checkField($(e.currentTarget));
+			  this.checkField($(e.currentTarget));
 			  // this.checkValid();
 			});
 		});
@@ -55,22 +57,22 @@ export default class Form {
 
 		this.$policy.on('click',(e) => {
 			var $el = $(e.currentTarget);
-
-			if ($el.prop('checked'))
-			$el.removeClass('_invalid');
-				else
-			$el.addClass('_invalid');
-
-			this.checkValid();
+			
+			if ($el.prop('checked')){
+				$el.removeClass('_invalid');
+				$($el).closest('.form-accept').removeClass('has-error');
+			}else{
+				$el.addClass('_invalid');
+				$($el).closest('.form-accept').addClass('has-error');
+				this.checkValid();
+			}
 		});
 
 		$('[data-action="form_checkbox"]').on('click',(e) => {
 			let $el = $(e.currentTarget);
 			let $input = $el.siblings('input');
-			console.log(1);
-
+			
 			if(!$(e.target).hasClass('_link')){
-				console.log(2);
 				$el.toggleClass("_active");
 				$input.prop("checked", !$input.prop("checked"));
 				e.stopImmediatePropagation();
@@ -122,18 +124,25 @@ export default class Form {
 					var custom_error = 'Неверный формат телефона';
 				}
 
-		    if (name === 'email' && !(pattern_email.test($field.val()))) {
+				if (name === 'email' && !(pattern_email.test($field.val()))) {
 					valid = false;
 					var custom_error = 'Неверный формат электронной почты';
 				}
 
-		    if (name === 'policy' && $field.prop('checked'))
-		      valid = true;
+				if (name === 'policy' && !$field.prop('checked')){
+					valid = false;
+				}else{
+					valid = true;
+				}
+		      
+
 			}
+
 			if (valid) {
+				
 				$field.removeClass('_invalid');
 
-        if ($field.parent().find('.form_input_error').length > 0)
+        	if ($field.parent().find('.form_input_error').length > 0)
 					$field.parent().find('.form_input_error').html('');
 
 			} else {
@@ -205,12 +214,11 @@ export default class Form {
 		    break;
 		}
 		this.$submitButton.removeClass('button__pending');
-		console.log($("input[name='name']"));
 		this.reset();
 		this.$formWrap.find('[data-success] [data-success-name]').text(data.name);
 		this.$formWrap.find('[data-success] [data-success-phone]').text(data.phone);
 		// console.log($("input[name='name']"));
-		console.dir($(".header_form_popup_message").text());
+		// console.dir($(".header_form_popup_message").text());
 		// this.$formWrap.hasClass('header_form_popup_message').text('блаблабла');
 		// console.log(popupMessage);
 		// console.log(name);
@@ -240,7 +248,7 @@ export default class Form {
 	    formData.append('url', formUrl);
 
 	    for (var pair of formData.entries()) {
-		    console.log(pair[0]+ ', ' + pair[1]);
+		    //console.log(pair[0]+ ', ' + pair[1]);
 		}
 
 	    fetch(this.to,{

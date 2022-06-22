@@ -86,7 +86,7 @@
             max-width: 245px;
             height: 35px;
         }
-        button {
+        button, a {
             height: 43px;
             font-size: 16px;
             @include for-lowdesc {
@@ -101,7 +101,7 @@
                 max-width: 136px;
             }
         }
-        button:last-child {
+        a.btn-white {
             width: 50%;
             max-width: 126px;
             @include for-lowdesc {

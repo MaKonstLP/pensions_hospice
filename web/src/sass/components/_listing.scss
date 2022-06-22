@@ -239,7 +239,10 @@
     align-items: center;
     height: 35px;
     max-width: 245px;
-    button {
+    button, a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 35px;
         font-weight: 700;
         font-size: 14px;

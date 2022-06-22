@@ -603,29 +603,31 @@
                         <img src="/image/logo-white.png" alt="logo">
                     </div>
                     <div class="free-consultation-right">
-                        <form action="/" class="consultation-form">
-                            <div class="form-title">Подобрать место</div>
-                            <div class="form-input">
-                                <input type="text" name="consultation-contact" placeholder="Email/телефон">
-                            </div>
-                            <div class="form-input">
-                                <input type="text" name="consultation-name" placeholder="Ваше имя">
-                            </div>
-                            <div class="form-input">
-                                <textarea type="text" name="consultation-info" placeholder="Дополнительная информация"></textarea>
-                            </div>
-                            <div class="form-accept">
-                                <div class="form-accept-check-bottom">
-                                    <input type="checkbox" id="form-accept-check-bottom">
-                                    <label class="form-accept-desc" for="form-accept-check-bottom">
-                                        <span>Я согласен с условиями обработки <a href="#">персональных данных</a></span>
-                                    </label>
+                        <div class="form_wrapper">
+                            <form action="/ajax/form/" class="consultation-form" data-type="item">
+                                <div class="form-title">Подобрать место</div>
+                                <div class="form-input">
+                                    <input type="text" name="consultation-contact" placeholder="Email/телефон" data-required>
                                 </div>
-                            </div>
-                            <div class="form-submit">
-                                <button class="btn">Подобрать</button>
-                            </div>
-                        </form>
+                                <div class="form-input">
+                                    <input type="text" name="consultation-name" placeholder="Ваше имя" data-required>
+                                </div>
+                                <div class="form-input">
+                                    <textarea type="text" name="consultation-info" placeholder="Дополнительная информация"></textarea>
+                                </div>
+                                <div class="form-accept">
+                                    <div class="form-accept-check-bottom _active" data-action="form_checkbox" data-form-privacy>
+                                        <input type="checkbox" name="policy" id="form-accept-check-bottom" data-required>
+                                        <label class="form-accept-desc _link" for="form-accept-check-bottom">
+                                            <span>Я согласен с условиями обработки <a href="#">персональных данных</a></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-submit">
+                                    <button class="btn" type="submit">Подобрать</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -682,7 +684,7 @@
 
                             <div class="list-item-btns">
                                 <button class="btn">Забронировать</button>
-                                <button class="btn-white">О хосписе</button>
+                                 <a class="btn-white" href="{{item.pansion_url}}">О хосписе</a>
                             </div>
                         </div>
                     </div>

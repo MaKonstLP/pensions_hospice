@@ -13,22 +13,24 @@
                     </div>
                     <div class="free-consultation-right">
                         <div class="form-title">Есть вопросы?</div>
-                        {{ top_banner_form | raw }}
-                        {# <form action="/" class="consultation-form">
-                            
-                            <div class="form-input">
-                                <input type="text" name="consultation" id="consultation-form" placeholder="Email/телефон">
-                            </div>
-                            <div class="form-accept">
-                                <div class="form-accept-check">
-                                    <input type="checkbox" id="form-accept-check">
-                                    <label class="form-accept-desc" for="form-accept-check">Я согласен с условиями обработки персональных данных</label>
+                        {# {{ top_banner_form | raw }} #}
+                        <div class="form_wrapper">
+                            <form action="/ajax/form/" class="consultation-form" data-type="main">
+                                
+                                <div class="form-input">
+                                    <input type="text" name="consultation-contact" id="consultation-form" placeholder="Email/телефон" data-required>
                                 </div>
-                            </div>
-                            <div class="form-submit">
-                                <button class="btn">Отправить</button>
-                            </div>
-                        </form> #}
+                                <div class="form-accept">
+                                    <div class="form-accept-check _active" data-action="form_checkbox" data-form-privacy>
+                                        <input type="checkbox" name="policy" id="form-accept-check" data-required>
+                                        <label class="form-accept-desc _link" for="form-accept-check">Я согласен с условиями обработки персональных данных</label>
+                                    </div>
+                                </div>
+                                <div class="form-submit">
+                                    <button class="btn" type="submit">Отправить</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
