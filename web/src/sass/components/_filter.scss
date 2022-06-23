@@ -239,6 +239,10 @@ div[data-page-type="listing"] {
     position: absolute;
     content: url(/image/icons/arrow-down.svg);
     right: 10px;
+    transition: 0.3s;
+}
+.filter-select.active::before {
+    transform: rotate(180deg);
 }
 
 .filter-popup {

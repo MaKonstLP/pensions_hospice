@@ -9,7 +9,7 @@ export default class Filter {
         this.state = {};
 
         this.init(this.$filter);
-
+        console.log(this.$filter);
         //КЛИК ПО БЛОКУ С СЕЛЕКТОМ
         this.$filter.find('[data-filter-select-current]').on('click', function() {
             let $parent = $(this).closest('[data-filter-select-block]');
@@ -23,8 +23,8 @@ export default class Filter {
         });
 
         //КЛИК ПО ЧЕКБОКСУ
-        this.$filter.find('[data-filter-checkbox-item]').on('click', function() {
-            $('.filter_checkbox').find('[data-filter-checkbox-item]').not(this).removeClass('_checked'); // Снимаем чекбокс со всех остальных чекбоксов, кроме выбранного
+        this.$filter.find('[data-filter-checkbox-item]').on('click', function(e) {
+            $(e.target).closest('.filter_checkbox').find('[data-filter-checkbox-item]').not(this).removeClass('_checked').prop('checked', false); // Снимаем чекбокс со всех остальных чекбоксов, кроме выбранного
             $(this).toggleClass('_checked');
             self.checkboxStateRefresh($(this));
         });
@@ -59,13 +59,17 @@ export default class Filter {
         //ОТкрытие скрытие попапа фильтра
         $('.sidebar').unbind("click").on('click', function(e) {
             let filterPopup = $(e.target).closest('.filter-item').find('.filter-popup');
+            let filterField = $(e.target).closest('.filter-item').find('.filter-city-select');
             if($(e.target).hasClass('filter-select')){
                 filterPopup.toggleClass('active');
+            }
+            if(filterField){
+                filterField.toggleClass('active');
             }
         });
         
         //Больше параметров фильтра в моб. версии
-        $('.filter-more-paramters span').on('click', function(e) {
+        $('.filter-more-parameters span').on('click', function(e) {
             self.showAllSelect();
             $(this).remove();
         });
@@ -186,9 +190,10 @@ export default class Filter {
     }
 
     checkboxStateRefresh($item) {
+        
         let blockType = $item.closest('[data-type]').data('type');
         if ($item.hasClass('_checked')) {
-            this.state[blockType] = $item.find('[data-value]').data('value');
+            this.state[blockType] = $item.data('value');
         } else {
             delete this.state[blockType];
         }

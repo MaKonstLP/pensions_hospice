@@ -11,10 +11,10 @@ export default class Index {
         this.yaMap = new YaMapAll(this.filter);
 
 
-        //КЛИК ПО КНОПКЕ "ПОДОБРАТЬ"
-        // $('[data-filter-button]').on('click', function() {
-        //     self.redirectToListing();
-        // });
+        //КЛИК ПО КНОПКЕ "НАЙТИ"
+        $('[data-filter-button]').on('click', function() {
+            self.redirectToListing();
+        });
 
         //Развернуть текст
         $('.more-text-link').click(function() {
@@ -123,9 +123,9 @@ export default class Index {
         this.filter.filterMainSubmit();
         this.filter.promise.then(
             response => {
-                ym(66603799, 'reachGoal', 'filter');
-                dataLayer.push({ 'event': 'event-to-ga', 'eventCategory': 'Search', 'eventAction': 'Filter' });
-                window.location.href = response;
+               // ym(66603799, 'reachGoal', 'filter');
+                //dataLayer.push({ 'event': 'event-to-ga', 'eventCategory': 'Search', 'eventAction': 'Filter' });
+                //window.location.href = response;
             }
         );
     }

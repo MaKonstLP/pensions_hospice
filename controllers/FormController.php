@@ -16,16 +16,16 @@ class FormController extends Controller
     //    return Yii::getAlias('@app/modules/svadbanaprirode/views/site');
     //}
     
-public function actionTest(){
-    $model = new TopBannerForm();
-    if(\Yii::$app->request->isAjax){
+// public function actionTest(){
+//     $model = new TopBannerForm();
+//     if(\Yii::$app->request->isAjax){
         
-        $name = $_POST['TopBannerForm']['user_phone'] ?? '';
-        return 'Спасибо, '.$name.', ваше сообщение принято.';
-    } else {
-        return $this->render('form_ajax');
-    }
-}
+//         $name = $_POST['TopBannerForm']['user_phone'] ?? '';
+//         return 'Спасибо, '.$name.', ваше сообщение принято.';
+//     } else {
+//         return $this->render('form_ajax');
+//     }
+// }
     
 
     public function beforeAction($action) {
@@ -35,7 +35,7 @@ public function actionTest(){
 
     public function actionSend()
     {
-        return 1;
+        //return 1;
 		if($_POST['type'] == 'main'){
             if(isset($_POST['name']) && isset($_POST['phone']) && isset($_POST['date'])  && isset($_POST['guests_number'])){
     		    $messageApi = $this->sendApi($_POST['name'], $_POST['phone'], $_POST['date'], $_POST['guests_number']);
@@ -56,11 +56,11 @@ public function actionTest(){
 		}
 
 		//return $messageApi;
-        //$to   = ['martynov@liderpoiska.ru'];
-        $to   = ['martynov@liderpoiska.ru', 'callme@korporativ-ng.ru', 'sites@plusmedia.ru'];
+        $to   = ['vanish7@mail.ru'];
+        //$to   = ['martynov@liderpoiska.ru', 'callme@korporativ-ng.ru', 'sites@plusmedia.ru'];
 
         if($_POST['type'] == 'main' or $_POST['type'] == 'header'){
-            $subj = "Заявка на выбор зала.";
+            $subj = "Бесплатная консультация";
         }
         else{
             $subj = "Заявка на бронирование зала.";
@@ -69,6 +69,9 @@ public function actionTest(){
         $msg  = "";
 
         $post_string_array = [
+            'consultation-contact'  => 'Email/телефон',
+            'consultation-name'  => 'Имя',
+            'consultation-info'  => 'Дополнительная информация',
             'name'  => 'Имя',
             'phone' => 'Телефон',
             'question' => 'Вопрос',
@@ -105,18 +108,18 @@ public function actionTest(){
 
         $message = $this->sendMail($to,$subj,$msg);
         $to = ['536@plusmedia.ru'];
-        $message2 = $this->sendMail($to,$subj,$msg);
+        //$message2 = $this->sendMail($to,$subj,$msg);
         if ($message) {
             $responseMsg = empty($responseMsg) ? 'Успешно отправлено!' : $responseMsg;
             $resp = [
                 'error' => 0,
                 'msg' => $responseMsg,
                 'name' => isset($_POST['name']) ? $_POST['name'] : '',
-                'phone' => $_POST['phone'],
+                'phone' => $_POST['phone'] ?? '',
                 //'api' => $messageApi
             ];              
         } else {
-            $resp = ['error'=>1, 'msg'=>'Ошибка'];//.serialize($_POST)
+            $resp = ['error'=>1, 'msg'=>'Ошибка отправки'];//.serialize($_POST)
         }       
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         return $resp;
@@ -155,7 +158,7 @@ public function actionTest(){
 
     public function sendMail($to,$subj,$msg) {
         $message = Yii::$app->mailer->compose()
-            ->setFrom(['send@korporativ-ng.ru' => 'Новогодний корпоратив.'])
+            ->setFrom(['send@korporativ-ng.ru' => 'Сообщение с сайта'])
             ->setTo($to)
             ->setSubject($subj)
             ->setCharset('utf-8')

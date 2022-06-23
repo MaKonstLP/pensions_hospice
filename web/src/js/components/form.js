@@ -187,6 +187,8 @@ export default class Form {
 	}
 
 	success(data, formType) {
+		this.$form.append('<p class="form-respone">' + data.msg + '</p>');
+		
 		// let name = this.$formWrap.hasClass('header_form_popup_message').text();
 		// var popupMessage = this.attr('name');
 
