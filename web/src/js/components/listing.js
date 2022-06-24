@@ -42,7 +42,7 @@ export default class Listing {
         self.filter.filterListingSubmit(page);
         self.filter.promise.then(
             response => {
-                //console.log(response);
+                console.log(response.listing);
                 //ym(66603799,'reachGoal','filter');
                 //dataLayer.push({'event': 'event-to-ga', 'eventCategory' : 'Search', 'eventAction' : 'Filter'});
                 $('[data-listing-list]').html(response.listing);
@@ -51,9 +51,10 @@ export default class Listing {
                 $('[data-listing-text-bottom]').html(response.text_bottom);
                 $('[data-pagination-wrapper]').html(response.pagination);
                 self.block.removeClass('_loading');
-                $('html,body').animate({ scrollTop: $('.items_list').offset().top - 160 }, 400);
-                history.pushState({}, '', '/ploshhadki/' + response.url);
+                //$('html,body').animate({ scrollTop: $('.items_list').offset().top - 160 }, 400);
+                //history.pushState({}, '', '/ploshhadki/' + response.url);
             }
         );
     }
 }
+

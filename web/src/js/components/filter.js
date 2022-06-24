@@ -9,24 +9,29 @@ export default class Filter {
         this.state = {};
 
         this.init(this.$filter);
-        console.log(this.$filter);
+
+        self.getFilterAvalable();
+
         //КЛИК ПО БЛОКУ С СЕЛЕКТОМ
         this.$filter.find('[data-filter-select-current]').on('click', function() {
             let $parent = $(this).closest('[data-filter-select-block]');
             self.selectBlockClick($parent);
         });
 
-        //КЛИК ПО СТРОКЕ В СЕЛЕКТЕ
+        //КЛИК ПО чекбоксу
         this.$filter.find('[data-filter-select-item]').on('click', function() {
             $(this).toggleClass('_active');
             self.selectStateRefresh($(this).closest('[data-filter-select-block]'));
+            self.reloadTotalCount();
+            self.getFilterAvalable();
         });
 
-        //КЛИК ПО ЧЕКБОКСУ
+        //КЛИК ПО радиобаттону
         this.$filter.find('[data-filter-checkbox-item]').on('click', function(e) {
-            $(e.target).closest('.filter_checkbox').find('[data-filter-checkbox-item]').not(this).removeClass('_checked').prop('checked', false); // Снимаем чекбокс со всех остальных чекбоксов, кроме выбранного
+            $(e.target).closest('.filter_checkbox').find('[data-filter-checkbox-item]').not(this).removeClass('_checked').prop('checked', false); // Снимаем чекбокс со всех остальных радиобаттонов, кроме выбранного
             $(this).toggleClass('_checked');
             self.checkboxStateRefresh($(this));
+            self.reloadTotalCount();
         });
 
         //КЛИК ВНЕ БЛОКА С СЕЛЕКТОМ
@@ -167,7 +172,7 @@ export default class Filter {
 
     selectStateRefresh($block) {
         let self = this;
-        let blockType = $block.data('type');
+        let blockType = $block.closest('[data-type]').data('type');
         let $items = $block.find('[data-filter-select-item]._active');
         let selectText = '-';
 
@@ -206,6 +211,112 @@ export default class Filter {
             delete this.state[type];
         }
     }
+
+    //ОБНОВЛЕНИЕ КОЛИЧЕСТВА ПЛОЩАДОК В КНОПКЕ "ПОКАЗАТЬ __"
+	reloadTotalCount(page = 1) {
+		this.filterCountItemsRefresh(page);
+
+		this.promise.then(
+			response => {
+				if (response.total == 0) {
+					$('[data-filter-button]').html('Показать (0)');
+					$('[data-filter-button]').addClass('_disabled');
+				} else {
+					$('[data-filter-button]').html('Показать (' + response.total + ')');
+					$('[data-filter-button]').removeClass('_disabled');
+				}
+			}
+		);
+	}
+
+
+    filterCountItemsRefresh(page = 1) {
+		let self = this;
+		self.state.page = page;
+
+		let data = {
+			'filter': JSON.stringify(self.state)
+		}
+
+		this.promise = new Promise(function (resolve, reject) {
+			self.reject = reject;
+			self.resolve = resolve;
+		});
+
+		$.ajax({
+			type: 'get',
+			url: '/ajax/get-total/',
+			data: data,
+			success: function (response) {
+				response = $.parseJSON(response);
+				self.resolve(response);
+			},
+			error: function (response) {
+			}
+		});
+	}
+
+    
+	refreshFilterItems(disabledItemsList) {
+		var self = this;
+
+		// $('[data-filter-wrapper] [data-filter-select-item]._disabled').removeClass('_disabled');
+
+		for (var filter in disabledItemsList) {
+			$(`[data-filter-select-block][data-type='${filter}'] [data-filter-select-item]`).addClass('_disabled');
+			$(`[data-filter-select-block][data-type='${filter}'] [data-filter-select-item] span`).html('');
+			var currentArray = disabledItemsList[filter];
+
+			var size = Object.keys(currentArray).length;
+
+			if (typeof currentArray === 'string') {
+				currentArray = currentArray.split(',');
+				for (var item in currentArray) {
+					// $(`[data-value='${currentArray[item]}']`).removeClass('_disabled');
+				}
+			} else if (typeof currentArray === 'object') {
+				let keys = Object.keys(currentArray)
+
+				for (var i = 0, l = keys.length; i < l; i++) {
+					// console.log(keys[i] + ' is ' + currentArray[keys[i]]);
+					// keys[i] - ключ
+					// currentArray[keys[i]] - а это свойство, доступное по этому ключу
+
+					if (filter == 'district') {
+						console.log(11123344);
+						console.log('data-id');
+						console.log(keys[i]);
+						console.log(currentArray[keys[i]]);
+					}
+
+					$(`[data-id='${keys[i]}']`).removeClass('_disabled');
+					$(`[data-id='${keys[i]}'] span`).html(currentArray[keys[i]]);
+
+				}
+			}
+		}
+	}
+
+	getFilterAvalable() {
+		var self = this;
+
+		var data = {
+			'filter': JSON.stringify(self.state),
+		}
+
+		$.ajax({
+			type: 'get',
+			url: '/ajax/ajax-update-filter/',
+			data: data,
+			success: function (response) {
+				self.refreshFilterItems(JSON.parse(response));
+				console.log(JSON.parse(response));
+			},
+			error: function (response) {
+				console.log('error');
+			}
+		});
+	}
 
     filterListingHref() {
         if (Object.keys(this.state).length > 0) {

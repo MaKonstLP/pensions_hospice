@@ -2,6 +2,7 @@
             <div class="container">
 
                 <div class="sidebar">
+                  {{filter | raw}}
                   {{ this.render('//components/filter/filter_desctop.twig') | raw}}
                   {{ this.render('//components/filter/filter_mobile.twig') | raw}}
                 </div>
@@ -31,7 +32,7 @@
                         </ul>
                     </div>
 
-                    <div class="home-listing-list">
+                    <div class="home-listing-list" data-listing-list>
                             
                         {% for item in items %}
 

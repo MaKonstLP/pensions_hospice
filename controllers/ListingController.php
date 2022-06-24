@@ -140,6 +140,15 @@ class ListingController extends Controller
 		));	
 	}
 
+	public function actionAjaxGetTotal(){
+		$params = $this->parseGetQuery(json_decode($_GET['filter'], true), $this->filter_model, $this->slices_model);
+		$elastic_model = new ElasticItems;
+		$items = new ItemsFilterElastic($params['params_filter'], 1, $params['page'], false, 'restaurants', $elastic_model);
+		return json_encode([
+			'total' => $items->total,
+		]);
+	}
+
 	public function actionAjaxFilter(){
 		$params = $this->parseGetQuery(json_decode($_GET['filter'], true), $this->filter_model, $this->slices_model);
 
