@@ -1,33 +1,7 @@
-<div class="filter-wrap filter-desctop filter" data-filter-wrapper>
+{{ this.render('//components/filter/filter_desctop.twig', {'filters':filters}) | raw}}
+{{ this.render('//components/filter/filter_mobile.twig', {'filters':filters}) | raw}}
 
-	<div class="filter_select-checkbox-wrapper">
-
-		<div class="filter-item filter-price filter_checkbox">
-			<div class="filter-title">Цена (за сутки)</div>
-			<div class="filter-items" data-type="price">
-				<label>
-					<input type="radio" name="filter-price" data-value="500" data-filter-checkbox-item>
-					<span>до 500 руб.</span>
-				</label>
-				<label>
-					<input type="radio" name="filter-price" data-value="1000" data-filter-checkbox-item>
-					<span>до 1000 руб.</span>
-				</label>
-				<label>
-					<input type="radio" name="filter-price"data-value="1100" data-filter-checkbox-item>
-					<span>до 1100 руб.</span>
-				</label>
-				<label>
-					<input type="radio" name="filter-price" data-value="1200" data-filter-checkbox-item>
-					<span>до 1200 руб.</span>
-				</label>
-				<label>
-					<input type="radio" name="filter-price" data-value="1300" data-filter-checkbox-item>
-					<span>до 1300 руб.</span>
-				</label>
-			</div>
-		</div>
-
+{# 
 
 		{% for label,filter_item in filters %}
 			{% if filter_item.type == 'select' %}
@@ -49,12 +23,12 @@
 					'filter_active': filter_active
 				}) | raw }}
 			{% endif %}
-		{% endfor %}
+		{% endfor %} #}
 
-		<div class="filter_select middle_chek">
+		{# <div class="filter_select middle_chek">
 			<p class="filter_label">{{filter_item.name}}Чек на человека</p>
 			<div class="filter_select_block" data-type="{{label}}" data-filter-select-block>
-				<div class="filter_select_current" data-filter-select-current>
+				<div class="filter_select_current" data-filter-select-current> #}
 					{# {% if filter_item.active is not null %}
 						{% if filter_item.active|length > 1 %}
 							<p>Выбрано ({{filter_item.active|length}})</p>
@@ -62,21 +36,21 @@
 							<p>{{filter_item.items[filter_item.active|keys|first]}}</p>
 						{% endif %}
 					{% else %} #}
-						<p>-</p>
+						{# <p>-</p> #}
 					{# {% endif %} #}
-				</div>
-				<div class="filter_select_list">
+				{# </div>
+				<div class="filter_select_list"> #}
 					{# {% for key,value in filter_item.items %} #}
-						<div class="filter_select_item {{filter_item.active[key] is defined ? '_active':''}}" data-value="{{key}}" data-filter-select-item><p>{{value}}</p></div>
+						{# <div class="filter_select_item {{filter_item.active[key] is defined ? '_active':''}}" data-value="{{key}}" data-filter-select-item><p>{{value}}</p></div> #}
 					{# {% endfor %} #}
-				</div>
+				{# </div>
 			</div>
-		</div>
+		</div> #}
 
-		<div class="filter_select">
+		{# <div class="filter_select">
 			<p class="filter_label">{{filter_item.name}}Район *city*</p>
 			<div class="filter_select_block" data-type="{{label}}" data-filter-select-block>
-				<div class="filter_select_current" data-filter-select-current>
+				<div class="filter_select_current" data-filter-select-current> #}
 					{# {% if filter_item.active is not null %}
 						{% if filter_item.active|length > 1 %}
 							<p>Выбрано ({{filter_item.active|length}})</p>
@@ -84,21 +58,21 @@
 							<p>{{filter_item.items[filter_item.active|keys|first]}}</p>
 						{% endif %}
 					{% else %} #}
-						<p>-</p>
+						{# <p>-</p> #}
 					{# {% endif %} #}
-				</div>
-				<div class="filter_select_list">
+				{# </div>
+				<div class="filter_select_list"> #}
 					{# {% for key,value in filter_item.items %} #}
-						<div class="filter_select_item {{filter_item.active[key] is defined ? '_active':''}}" data-value="{{key}}" data-filter-select-item><p>{{value}}</p></div>
+						{# <div class="filter_select_item {{filter_item.active[key] is defined ? '_active':''}}" data-value="{{key}}" data-filter-select-item><p>{{value}}</p></div> #}
 					{# {% endfor %} #}
-				</div>
+				{# </div>
 			</div>
-		</div>
+		</div> #}
 
-		<div class="filter_select">
+		{# <div class="filter_select">
 			<p class="filter_label">{{filter_item.name}}Фишки</p>
 			<div class="filter_select_block" data-type="{{label}}" data-filter-select-block>
-				<div class="filter_select_current" data-filter-select-current>
+				<div class="filter_select_current" data-filter-select-current> #}
 					{# {% if filter_item.active is not null %}
 						{% if filter_item.active|length > 1 %}
 							<p>Выбрано ({{filter_item.active|length}})</p>
@@ -106,24 +80,23 @@
 							<p>{{filter_item.items[filter_item.active|keys|first]}}</p>
 						{% endif %}
 					{% else %} #}
-						<p>-</p>
+						{# <p>-</p> #}
 					{# {% endif %} #}
-				</div>
-				<div class="filter_select_list">
+				{# </div>
+				<div class="filter_select_list"> #}
 					{# {% for key,value in filter_item.items %} #}
-						<div class="filter_select_item {{filter_item.active[key] is defined ? '_active':''}}" data-value="{{key}}" data-filter-select-item><p>{{value}}</p></div>
+						{# <div class="filter_select_item {{filter_item.active[key] is defined ? '_active':''}}" data-value="{{key}}" data-filter-select-item><p>{{value}}</p></div> #}
 					{# {% endfor %} #}
-				</div>
+				{# </div>
 			</div>
-		</div>
+		</div> #}
 
-	</div>
+	
 
-	<div class="filter_submit">
+	{# <div class="filter_submit">
 		<div class="filter_submit_button _button" data-filter-button>Посмотреть ___ площадок</div>
 	</div>
 	<div class="filter_cancel">
 		<div class="filter_cancel_button _link_blue" data-filter-button>Сбросить фильтр</div>
-	</div>
+	</div> #}
 
-</div>

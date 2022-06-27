@@ -3,8 +3,8 @@
 
                 <div class="sidebar">
                   {{filter | raw}}
-                  {{ this.render('//components/filter/filter_desctop.twig') | raw}}
-                  {{ this.render('//components/filter/filter_mobile.twig') | raw}}
+                  {# {{ this.render('//components/filter/filter_desctop.twig') | raw}} #}
+                  {# {{ this.render('//components/filter/filter_mobile.twig') | raw}} #}
                 </div>
 
                 <div class="home-listing-wrap">
@@ -98,7 +98,10 @@
                     </div>
 
                     <div class="home-listing-more-btn">
-                        <button class="btn-white">Показать еще</button>
+                        <div data-pagination-wrapper>
+                            {# {{pagination | raw }} #}
+                            <button class="btn-white" data-page-id="2" data-listing-pagitem>Показать еще</button>
+                        </div>
                     </div>
 
             

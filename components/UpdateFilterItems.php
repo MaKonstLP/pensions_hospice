@@ -77,13 +77,13 @@ class UpdateFilterItems
 		}
 
 		$aggregation_nested_arr = [
-			'web' => 'network',
+			//'web' => 'network',
 			'city' => 'city',
-			'district' => 'district',
-			'metro' => 'metro',
-			'type' => 'type',
-			'specials' => 'specials',
-			'disease' => 'conditions'
+			//'district' => 'district',
+			//'metro' => 'metro',
+			//'type' => 'type',
+			//'specials' => 'specials',
+			//'disease' => 'conditions'
 		];
 
 		foreach ($aggregation_nested_arr as $agg_key => $agg_val) {

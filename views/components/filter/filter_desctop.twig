@@ -1,199 +1,159 @@
-<div class="filter-wrap filter-desctop" data-filter-wrapper>
-    <div class="filter-item filter-price filter_checkbox">
-        <div class="filter-title">Цена (за сутки)</div>
-        <div class="filter-items" data-type="price">
-            <label>
-                <input type="radio" name="filter-price" data-value="500" data-filter-checkbox-item>
-                <span>до 500 руб.</span>
-            </label>
-            <label>
-                <input type="radio" name="filter-price" data-value="1000" data-filter-checkbox-item>
-                <span>до 1000 руб.</span>
-            </label>
-            <label>
-                <input type="radio" name="filter-price"data-value="1100" data-filter-checkbox-item>
-                <span>до 1100 руб.</span>
-            </label>
-            <label>
-                <input type="radio" name="filter-price" data-value="1200" data-filter-checkbox-item>
-                <span>до 1200 руб.</span>
-            </label>
-            <label>
-                <input type="radio" name="filter-price" data-value="1300" data-filter-checkbox-item>
-                <span>до 1300 руб.</span>
-            </label>
-        </div>
-    </div>
-    <div class="filter-item filter-zabolevanie filter_select">
-        <div class="filter-title">Заболевание/осложнение</div>
-        <div class="filter-items" data-type="zabolevanie" data-filter-select-block>
-            <label>
-                <input type="checkbox" name="filter-zabolevanie" data-value="insult" data-filter-select-item>
-                <span>Инсульт</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-zabolevanie" data-value="infarkt" data-filter-select-item>
-                <span>Инфаркт</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-zabolevanie" data-value="onkologiya" data-filter-select-item>
-                <span>Онкология</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-zabolevanie" data-value="parkinson" data-filter-select-item>
-                <span>Паркинсон</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-zabolevanie" data-value="alcgeimer" data-filter-select-item>
-                <span>Альцгеймер</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-zabolevanie" data-value="demenciya" data-filter-select-item>
-                <span>Деменция</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-zabolevanie" data-value="psiho-zabolevaniya" data-filter-select-item>
-                <span>Психические заболевания</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-zabolevanie" data-value="sahar-diabet" data-filter-select-item>
-                <span>Сахарный диабет</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-zabolevanie" data-value="perelom-bedra" data-filter-select-item>
-                <span>Перелом шейки бедра</span>
-            </label>
-        </div>
-    </div>
-    <div class="filter-item filter-pacient-type filter_select">
-        <div class="filter-title">Больные</div>
-        <div class="filter-items" data-type="pacient-type" data-filter-select-block>
-            <label>
-            <input type="checkbox" name="filter-pacient-type" data-value="kolyasochniki" data-filter-select-item>
-            <span>Колясочники</span>
-        </label>
-            <label>
-            <input type="checkbox" name="filter-pacient-type" data-value="hodyachie" data-filter-select-item>
-            <span>Ходячие</span>
-        </label>
-            <label>
-            <input type="checkbox" name="filter-pacient-type" data-value="legachie" data-filter-select-item>
-            <span>Лежачие</span>
-        </label>
-            <label>
-            <input type="checkbox" name="filter-pacient-type" data-value="tyagelobolnie" data-filter-select-item>
-            <span>Тяжелобольные</span>
-        </label>
-            <label>
-            <input type="checkbox" name="filter-pacient-type" data-value="children" data-filter-select-item>
-            <span>Дети и подростки</span>
-        </label>
-        </div>
-    </div>
-    <div class="filter-item filter-city filter_select">
-        <div class="filter-title">Город</div>
-        <div class="filter-city-select filter-select">
-            Москва и область
-        </div>
-        <div class="filter-city-popup filter-popup" data-type="city" data-filter-select-block>
-            <label>
-                <input type="checkbox" name="filter-city" value="mdata-oscow-and-region" data-filter-select-item>
-                <span>Москва и область</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-city" data-value="andreevka" data-filter-select-item>
-                <span>Андреевка</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-city" data-value="balashiha" data-filter-select-item>
-                <span>Балашиха</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-city" data-value="barviha" data-filter-select-item>
-                <span>Барвиха</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-city" data-value="bronnici" data-filter-select-item>
-                <span>Бронницы</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-city" data-value="vidnoe" data-filter-select-item>
-                <span>Видное</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-city" data-value="butovo" data-filter-select-item>
-                <span>Бутово</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-city" data-value="luberci" data-filter-select-item>
-                <span>Люберцы</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-city" data-value="voroneg" data-filter-select-item>
-                <span>Воронеж</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-city" data-value="kazan" data-filter-select-item>
-                <span>Казань</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-city" data-value="reutov" data-filter-select-item>
-                <span>Реутов</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-city" data-value="odincovo" data-filter-select-item>
-                <span>Одинцово</span>
-            </label>
-            <label>
-                <input type="checkbox" name="filter-city" data-value="korolyov" data-filter-select-item>
-                <span>Королев</span>
-            </label>
-            <div class="filter-city-btns">
-                <button class="btn">Выбрать</button>
-                <a href="#">Сбросить</a>
-            </div>
-        </div>
-    </div>
-    <div class="filter-item filter-region filter_select">
-        <div class="filter-title">Направление</div>
-        <div class="filter-items" data-type="region" data-filter-select-block>
-            <label>
-                    <input type="checkbox" name="filter-region" data-value="sever" data-filter-select-item>
-                    <span>Север</span>
-                </label>
-            <label>
-                    <input type="checkbox" name="filter-region" data-value="yug" data-filter-select-item>
-                    <span>Юг</span>
-                </label>
-            <label>
-                    <input type="checkbox" name="filter-region" data-value="vostok" data-filter-select-item>
-                    <span>Восток</span>
-                </label>
-            <label>
-                    <input type="checkbox" name="filter-region" data-value="zapad" data-filter-select-item>
-                    <span>Запад</span>
-                </label>
-        </div>
-    </div>
-    <div class="filter-item filter-hospis-type filter_checkbox">
-        <div class="filter-title">Тип</div>
-        <div class="filter-items" data-type="hospis-type">
-            <label>
-                <input type="radio" name="filter-hospis-type" data-value="gosudarstvennie" data-filter-checkbox-item>
-                <span class="hospis-type-text">Государственные</span>
-            </label>
-            <label>
-                <input type="radio" name="filter-hospis-type" data-value="chastnie" data-filter-checkbox-item>
-                <span class="hospis-type-text">Частные</span>
-            </label>
-        </div>
-    </div>
-    <div class="filter-item filter-btns">
-        <div class="filter-search">
-            <button class="btn" data-filter-button>Найти</button>
-        </div>
-        <div class="filter-reset">
-            <a href="#">Сбросить</a>
-        </div>
-    </div>
+<div class="filter-wrap filter-desctop filter" data-filter-wrapper>
+
+	<div class="filter_select-checkbox-wrapper">
+		<div class="filter-item filter-price filter_checkbox">
+			<div class="filter-title">Цена (за сутки)</div>
+			<div class="filter-items" data-type="price">
+			{% for label,filter_item in filters %}
+				{% if filter_item.type == 'checkbox' %}
+					{{ this.render('filter_checkbox.twig', {
+						'filter_item':filter_item,
+						'label':label,
+						'filter_active': filter_active
+					}) | raw }}
+				{% endif %}
+			{% endfor %}	
+			</div>
+		</div>
+
+		<div class="filter-item filter-zabolevanie filter_select">
+			<div class="filter-title">Заболевание/осложнение</div>
+			<div class="filter-items" data-type="zabolevanie" data-filter-select-block>
+				<label>
+					<input type="checkbox" name="filter-zabolevanie" data-value="insult" data-filter-select-item>
+					<span>Инсульт</span>
+				</label>
+				<label>
+					<input type="checkbox" name="filter-zabolevanie" data-value="infarkt" data-filter-select-item>
+					<span>Инфаркт</span>
+				</label>
+				<label>
+					<input type="checkbox" name="filter-zabolevanie" data-value="onkologiya" data-filter-select-item>
+					<span>Онкология</span>
+				</label>
+				<label>
+					<input type="checkbox" name="filter-zabolevanie" data-value="parkinson" data-filter-select-item>
+					<span>Паркинсон</span>
+				</label>
+				<label>
+					<input type="checkbox" name="filter-zabolevanie" data-value="alcgeimer" data-filter-select-item>
+					<span>Альцгеймер</span>
+				</label>
+				<label>
+					<input type="checkbox" name="filter-zabolevanie" data-value="demenciya" data-filter-select-item>
+					<span>Деменция</span>
+				</label>
+				<label>
+					<input type="checkbox" name="filter-zabolevanie" data-value="psiho-zabolevaniya" data-filter-select-item>
+					<span>Психические заболевания</span>
+				</label>
+				<label>
+					<input type="checkbox" name="filter-zabolevanie" data-value="sahar-diabet" data-filter-select-item>
+					<span>Сахарный диабет</span>
+				</label>
+				<label>
+					<input type="checkbox" name="filter-zabolevanie" data-value="perelom-bedra" data-filter-select-item>
+					<span>Перелом шейки бедра</span>
+				</label>
+			</div>
+		</div>
+
+		<div class="filter-item filter-pacient-type filter_select">
+			<div class="filter-title">Больные</div>
+			<div class="filter-items" data-type="pacient-type" data-filter-select-block>
+				<label>
+				<input type="checkbox" name="filter-pacient-type" data-value="kolyasochniki" data-filter-select-item>
+				<span>Колясочники</span>
+			</label>
+				<label>
+				<input type="checkbox" name="filter-pacient-type" data-value="hodyachie" data-filter-select-item>
+				<span>Ходячие</span>
+			</label>
+				<label>
+				<input type="checkbox" name="filter-pacient-type" data-value="legachie" data-filter-select-item>
+				<span>Лежачие</span>
+			</label>
+				<label>
+				<input type="checkbox" name="filter-pacient-type" data-value="tyagelobolnie" data-filter-select-item>
+				<span>Тяжелобольные</span>
+			</label>
+				<label>
+				<input type="checkbox" name="filter-pacient-type" data-value="children" data-filter-select-item>
+				<span>Дети и подростки</span>
+			</label>
+			</div>
+		</div>
+
+		<div class="filter-item filter-city filter_select">
+			<div class="filter-title">Город</div>
+			<div class="filter-city-select filter-select">
+				Москва и область
+			</div>
+			<div class="filter-city-popup filter-popup" data-type="city" data-filter-select-block>
+					<label>
+						<input type="checkbox" name="filter-city" value="moscow-and-region">
+						<span>Москва и область</span>
+					</label>
+					{% for label,filter_item in filters %}
+						{% if filter_item.type == 'select' %}
+							{{ this.render('filter_select.twig', {
+								'filter_item':filter_item,
+								'label':label,
+								'filter_active': filter_active
+							}) | raw }}
+						{% endif %}
+					{% endfor %}	
+				<div class="filter-city-btns">
+					<button class="btn">Выбрать</button>
+					<a href="#">Сбросить</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="filter-item filter-region filter_select">
+			<div class="filter-title">Направление</div>
+			<div class="filter-items" data-type="region" data-filter-select-block>
+				<label>
+						<input type="checkbox" name="filter-region" data-value="sever" data-filter-select-item>
+						<span>Север</span>
+					</label>
+				<label>
+						<input type="checkbox" name="filter-region" data-value="yug" data-filter-select-item>
+						<span>Юг</span>
+					</label>
+				<label>
+						<input type="checkbox" name="filter-region" data-value="vostok" data-filter-select-item>
+						<span>Восток</span>
+					</label>
+				<label>
+						<input type="checkbox" name="filter-region" data-value="zapad" data-filter-select-item>
+						<span>Запад</span>
+					</label>
+			</div>
+		</div>
+
+		<div class="filter-item filter-hospis-type filter_checkbox">
+			<div class="filter-title">Тип</div>
+			<div class="filter-items" data-type="hospis-type">
+				<label>
+					<input type="radio" name="filter-hospis-type" data-value="gosudarstvennie" data-filter-checkbox-item>
+					<span class="hospis-type-text">Государственные</span>
+				</label>
+				<label>
+					<input type="radio" name="filter-hospis-type" data-value="chastnie" data-filter-checkbox-item>
+					<span class="hospis-type-text">Частные</span>
+				</label>
+			</div>
+		</div>
+
+		<div class="filter-item filter-btns">
+			<div class="filter-search">
+				<button class="btn" data-filter-button>Найти</button>
+			</div>
+			<div class="filter-reset">
+				<a href="#">Сбросить</a>
+			</div>
+		</div>
+
+	</div>
 </div>

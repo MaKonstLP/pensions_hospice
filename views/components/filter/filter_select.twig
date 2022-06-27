@@ -1,4 +1,4 @@
-<div class="filter_select">
+{# <div class="filter_select">
 	<p class="filter_label">{{filter_item.name}}</p>
 	<div class="filter_select_block" data-type="{{label}}" data-filter-select-block>
 		<div class="filter_select_current" data-filter-select-current>
@@ -18,4 +18,11 @@
 			{% endfor %}
 		</div>
 	</div>
-</div>
+</div> #}
+
+{% for key,value in filter_item.items %}
+	<label>
+		<input class="filter_select_item {{filter_item.active[key] is defined ? '_active':''}}" type="checkbox" data-value="{{key}}" data-filter-select-item>
+		<span><p title="{{value}}">{{value}}</p></span>
+	</label>
+{% endfor %}

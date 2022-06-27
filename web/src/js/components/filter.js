@@ -283,10 +283,10 @@ export default class Filter {
 					// currentArray[keys[i]] - а это свойство, доступное по этому ключу
 
 					if (filter == 'district') {
-						console.log(11123344);
-						console.log('data-id');
-						console.log(keys[i]);
-						console.log(currentArray[keys[i]]);
+						// console.log(11123344);
+						// console.log('data-id');
+						// console.log(keys[i]);
+						// console.log(currentArray[keys[i]]);
 					}
 
 					$(`[data-id='${keys[i]}']`).removeClass('_disabled');
@@ -310,7 +310,6 @@ export default class Filter {
 			data: data,
 			success: function (response) {
 				self.refreshFilterItems(JSON.parse(response));
-				console.log(JSON.parse(response));
 			},
 			error: function (response) {
 				console.log('error');

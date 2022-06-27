@@ -9,7 +9,6 @@ export default class Listing {
         this.block = $block;
         this.filter = new Filter($('[data-filter-wrapper]'));
         //this.yaMap = new YaMapAll(this.filter);
-        console.log(2);
 
         //КЛИК ПО КНОПКЕ "ПОДОБРАТЬ"
         $('[data-filter-button]').on('click', function() {
@@ -19,6 +18,10 @@ export default class Listing {
         //КЛИК ПО ПАГИНАЦИИ
         $('body').on('click', '[data-pagination-wrapper] [data-listing-pagitem]', function() {
             self.reloadListing($(this).data('page-id'));
+
+            let paginationButtonPageId = Number($('[data-pagination-wrapper] button').attr('data-page-id'));
+            paginationButtonPageId++;
+            $('[data-pagination-wrapper]').find('button').attr('data-page-id', paginationButtonPageId);
         });
         // console.log(this);
 
@@ -42,14 +45,27 @@ export default class Listing {
         self.filter.filterListingSubmit(page);
         self.filter.promise.then(
             response => {
-                console.log(response.listing);
                 //ym(66603799,'reachGoal','filter');
                 //dataLayer.push({'event': 'event-to-ga', 'eventCategory' : 'Search', 'eventAction' : 'Filter'});
-                $('[data-listing-list]').html(response.listing);
+                let listingHtml = $('[data-listing-list]').html();
+
+                if(response.pagination == ''){
+                    $('[data-pagination-wrapper]').hide();
+                }else{
+                    $('[data-pagination-wrapper]').show();
+                }
+
+                if(page > 1 && response.pagination !== ''){
+                    $('[data-listing-list]').html(listingHtml + response.listing);
+                }else{
+                    $('[data-listing-list]').html(response.listing);
+                }
+
                 $('[data-listing-title]').html(response.title);
                 $('[data-listing-text-top]').html(response.text_top);
                 $('[data-listing-text-bottom]').html(response.text_bottom);
-                $('[data-pagination-wrapper]').html(response.pagination);
+                // $('[data-pagination-wrapper]').html(response.pagination);
+                
                 self.block.removeClass('_loading');
                 //$('html,body').animate({ scrollTop: $('.items_list').offset().top - 160 }, 400);
                 //history.pushState({}, '', '/ploshhadki/' + response.url);

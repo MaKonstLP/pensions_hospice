@@ -55,7 +55,7 @@
 
 	<div class="content_loading"></div> #}
 
-	{{ this.render('//components/generic/home_listing.twig', {'items':items, 'filter':filter}) | raw}}
+	{{ this.render('//components/generic/home_listing.twig', {'items':items, 'filter':filter, 'pagination':pagination}) | raw}}
 	
     {{ this.render('//components/generic/home_map.twig') | raw}}
 

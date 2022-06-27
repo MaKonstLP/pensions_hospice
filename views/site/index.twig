@@ -5,7 +5,7 @@
 		
         {{ this.render('//components/generic/home_banner.twig', { 'top_banner_form':top_banner_form }) | raw}}
 
-        {{ this.render('//components/generic/home_listing.twig', {'items':items}) | raw}}
+        {{ this.render('//components/generic/home_listing.twig', {'items':items, 'filter':filter, 'pagination':pagination}) | raw}}
 	
         {{ this.render('//components/generic/home_map.twig') | raw}}
 
