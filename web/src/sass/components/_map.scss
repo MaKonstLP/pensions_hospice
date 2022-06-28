@@ -32,7 +32,7 @@
     .map-swiper{
         max-width: 360px;
         .swiper-slide{
-            background: #fff;
+            background: $clrBgWhite;
         }
         @include for-laptop {
             max-height: 200px;
@@ -59,7 +59,7 @@
     }
     .list-item-content{
         position: relative;
-        background: #FFFFFF;
+        background: $clrBgWhite;
         padding: 20px 20px;
         @include for-laptop {
             max-height: 227px;
@@ -162,12 +162,12 @@
     display: none;
 }
 .map-icon{
-    background: #00B2FF;
+    background: $clrButtonNormal;
     width: fit-content;
     height: 30px;
     white-space: nowrap;
     border-radius: 5px;
-    color: #fff;
+    color: $clrColorWhite;
     display: flex;
     align-items: center;
     padding: 0 10px;
@@ -178,7 +178,7 @@
     &::after{
         position: absolute;
         content: '';
-        border-top: 14px solid #00b2ff;
+        border-top: 14px solid $clrButtonNormal;
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-bottom: 10px solid transparent;

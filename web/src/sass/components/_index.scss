@@ -202,7 +202,7 @@ section.answers-questions .container {
 }
 
 .answers-questions-slide>div {
-    border: 1px solid #E5E5E5;
+    border: 1px solid $checkBoxBorder;
     border-radius: 5px;
     padding: 46px 80px 40px 80px;
     margin-bottom: 30px;
@@ -258,7 +258,7 @@ section.answers-questions .container {
     font-weight: 400;
     font-size: 14px;
     line-height: 170%;
-    color: #686868;
+    color: $clrLightGrey;
     @include for-mobile {
         line-height: 130%;
     }
@@ -392,13 +392,13 @@ section.answers-questions .container {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #fff;
+    color: $clrColorWhite;
 }
 .good-to-know-items .item-desc {
     position: absolute;
     left: 20px;
     bottom: 16px;
-    color: #ffffff;
+    color: $clrColorWhite;
 }
 
 .good-to-know-items .item-desc .item-date {
@@ -531,13 +531,13 @@ section.home-bottom-banner {
 section.home-bottom-banner .free-consultation-right textarea {
     width: 100%;
     height: 100px;
-    background: #FFFFFF;
+    background: $clrBgWhite;
     border-radius: 5px;
     border: none;
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
-    color: #919191;
+    color: $clrVeryLightGrey;
     padding: 10px;
 }
 
@@ -550,6 +550,6 @@ section.home-bottom-banner .free-consultation-right input[type='checkbox']+label
 }
 
 section.home-bottom-banner .free-consultation-right input[type='checkbox']+label a {
-    color: #ffffff;
+    color: $clrColorWhite;
     text-decoration: underline;
 }

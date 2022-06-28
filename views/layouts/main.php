@@ -9,6 +9,7 @@ use common\models\Subdomen;
 use frontend\modules\hospice\widgets\FirstMenu;
 use frontend\modules\hospice\widgets\SecondMenu;
 use frontend\modules\hospice\widgets\FooterMenu;
+use yii\widgets\Breadcrumbs;
 
 AppAsset::register($this);
 ?>
@@ -123,6 +124,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
 
         <?php 
+
+
+
             if ((Yii::$app->controller->id !== 'site'))  { ?>
             <section class="breadcrumbs-section">
                 <div class="breadcrumbs">

@@ -199,7 +199,7 @@ ol li:before {
     font-size: 26px;
     line-height: 31px;
     text-align: center;
-    color: #FFFFFF;
+    color: $clrColorWhite;
     text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
     @include for-lowdesc {
         font-size: 26px;
@@ -217,7 +217,7 @@ ol li:before {
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    color: #FFFFFF;
+    color: $clrColorWhite;
     text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
     max-width: 420px;
     margin: 10px 0 25px 0;
@@ -232,7 +232,7 @@ ol li:before {
 }
 
 .post-form-accept a {
-    color: #ffffff;
+    color: $clrColorWhite;
 }
 
 .post-form-btn {
@@ -278,7 +278,7 @@ ol li:before {
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
-    color: #919191;
+    color: $clrVeryLightGrey;
 }
 
 .post-form-form .form-row textarea:focus {

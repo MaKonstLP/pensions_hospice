@@ -57,7 +57,7 @@
         font-weight: 500;
         font-size: 16px;
         line-height: 140%;
-        color: #00B2FF;
+        color: $clrButtonNormal;
         border-bottom: 1px dashed;
     }
 }
@@ -105,8 +105,8 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border: 1px solid #00B2FF;
-                color: #00B2FF;
+                border: 1px solid $clrButtonNormal;
+                color: $clrButtonNormal;
                 border-radius: 5px;
                 font-weight: 400;
                 font-size: 14px;
@@ -118,8 +118,8 @@
                     padding: 8px 5px;
                 }
                 &:hover {
-                    color: #ffffff;
-                    background: #00B2FF;
+                    color: $clrColorWhite;
+                    background: $clrButtonNormal;
                     transition: 0.2s;
                 }
             }
@@ -156,6 +156,7 @@
 
 .listing-list-item {
     display: flex;
+    width: 100%;
     max-width: 680px;
     max-height: 291px;
     position: relative;
@@ -166,8 +167,8 @@
     position: absolute;
     left: 0;
     z-index: 10;
-    color: #ffffff;
-    background: #2EAF00;
+    color: $clrColorWhite;
+    background: $clrGreen;
     padding: 10px;
     border-top-left-radius: 5px;
     font-family: 'Inter-Bold';
@@ -193,7 +194,7 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 120%;
-    color: #00B2FF;
+    color: $clrButtonNormal;
     text-decoration: underline;
     @include for-laptop {
         font-size: 16px;
@@ -206,7 +207,7 @@
         font-weight: 400;
         font-size: 13px;
         line-height: 110%;
-        color: #686868;
+        color: $clrLightGrey;
         
     }
 }
@@ -222,7 +223,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 100%;
-    color: #686868;
+    color: $clrLightGrey;
     margin: 5px 0 17px 0;
 }
 
@@ -267,4 +268,8 @@
     button {
         height: 45px;
     }
+    
+}
+.home-listing-more-btn.hide{
+    display: none;
 }

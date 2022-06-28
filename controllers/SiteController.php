@@ -14,6 +14,7 @@ use frontend\modules\hospice\models\ElasticItems;
 use common\models\Seo;
 use common\models\PansionMain;
 use frontend\modules\hospice\widgets\TopBannerFormWidget;
+use frontend\modules\hospice\widgets\PaginationWidget;
 
 class SiteController extends Controller
 {
@@ -32,21 +33,28 @@ class SiteController extends Controller
         $seo = $this->getSeo('index');
         $this->setSeo($seo);
 
+        $elastic_model = new ElasticItems;
+        $items = new ItemsFilterElastic([], 6, 1, false, 'restaurants', $elastic_model);
+        $top_banner_form = TopBannerFormWidget::widget();
+
         $filter = FilterWidget::widget([
             'filter_active' => [],
             'filter_model' => $filter_model
         ]);
 
-        $elastic_model = new ElasticItems;
-        $items = new ItemsFilterElastic([], 6, 1, false, 'restaurants', $elastic_model);
+        $pagination = PaginationWidget::widget([
+			'total' => $items->pages,
+			'current' => 1,
+		]);
+
         
-        $top_banner_form = TopBannerFormWidget::widget();
 
         return $this->render('index.twig', [
             'top_banner_form' => $top_banner_form,
             'items' => $items->items,
             'filter' => $filter,
             'count' => $items->total,
+            'pagination' => $pagination,
             // 'mainWidget' => $mainWidget,
             'seo' => $seo,
             'subid' => isset(Yii::$app->params['subdomen_id']) ? Yii::$app->params['subdomen_id'] : false

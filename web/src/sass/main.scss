@@ -350,7 +350,7 @@ form {
         font-weight: 500;
         font-size: 14px;
         line-height: 17px;
-        color: #919191;
+        color: $clrVeryLightGrey;
         padding: 10px;
         border: 1px solid transparent;
     }
@@ -391,17 +391,17 @@ form {
         outline: none;
     }
     .help-block{
-        color: #FF7E7E;
+        color: $errorInputs;
         font-weight: 400;
         font-size: 12px;
         line-height: 120%;
         position: absolute;
     }
     .has-error input[type='checkbox']+label::before{
-        border: 1px solid #FF7E7E;
+        border: 1px solid $errorInputs;
     }
     .has-error input:not([type='checkbox']){
-        border: 1px solid #FF7E7E;
+        border: 1px solid $errorInputs;
     }
 }
 
@@ -434,7 +434,7 @@ form {
 }
 .form-response{
     font-size: 12px;
-    color:#fff;
+    color:$clrColorWhite;
 }
 .swiper-pagination-bullet {
     width: 12px;

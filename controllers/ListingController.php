@@ -8,8 +8,8 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use frontend\widgets\FilterWidget;
-use frontend\widgets\PaginationWidget;
-// use frontend\modules\hospice\widgets\PaginationWidget;
+// use frontend\widgets\PaginationWidget;
+use frontend\modules\hospice\widgets\PaginationWidget;
 use frontend\components\ParamsFromQuery;
 use frontend\components\QueryFromSlice;
 use frontend\modules\hospice\components\Breadcrumbs;
@@ -151,14 +151,16 @@ class ListingController extends Controller
 
 	public function actionAjaxFilter(){
 		$params = $this->parseGetQuery(json_decode($_GET['filter'], true), $this->filter_model, $this->slices_model);
-
+		$params_per_page = json_decode($_GET['filter'], true);
 		$elastic_model = new ElasticItems;
-		$items = new ItemsFilterElastic($params['params_filter'], $this->per_page, $params['page'], false, 'restaurants', $elastic_model);
+		$items = new ItemsFilterElastic($params['params_filter'], $params_per_page['index_per_page'], $params['page'], false, 'restaurants', $elastic_model);
 
 		$pagination = PaginationWidget::widget([
 			'total' => $items->pages,
 			'current' => $params['page'],
 		]);
+
+		$hide_pagination_class = $params['page'] >= $items->pages ? 'hide' : '';
 
 		substr($params['listing_url'], 0, 1) == '?' ? $breadcrumbs = Breadcrumbs::get_breadcrumbs(1) : $breadcrumbs = Breadcrumbs::get_breadcrumbs(2);
 		$slice_url = ParamsFromQuery::isSlice(json_decode($_GET['filter'], true));
@@ -195,7 +197,8 @@ class ListingController extends Controller
 			'title' => $title,
 			'text_top' => $text_top,
 			'text_bottom' => $text_bottom,
-			'seo_title' => $seo['title']
+			'seo_title' => $seo['title'],
+			'hide_pagination_class' => $hide_pagination_class
 		]);
 	}
 

@@ -15,13 +15,19 @@ export default class Listing {
             self.reloadListing();
         });
 
+        //КЛИК ПО КНОПКЕ "СБРОСИТЬ"
+		$('[data-filter-cancel]').on('click', function () {
+			self.reloadListing();
+
+			if ($('[data-filter-button]').hasClass('_disabled')) {
+				$('[data-filter-button]').removeClass('_disabled');
+			}
+
+		});
+
         //КЛИК ПО ПАГИНАЦИИ
         $('body').on('click', '[data-pagination-wrapper] [data-listing-pagitem]', function() {
             self.reloadListing($(this).data('page-id'));
-
-            let paginationButtonPageId = Number($('[data-pagination-wrapper] button').attr('data-page-id'));
-            paginationButtonPageId++;
-            $('[data-pagination-wrapper]').find('button').attr('data-page-id', paginationButtonPageId);
         });
         // console.log(this);
 
@@ -40,20 +46,14 @@ export default class Listing {
 
     reloadListing(page = 1) {
         let self = this;
-
+        let listing_per_page = 8;
         self.block.addClass('_loading');
-        self.filter.filterListingSubmit(page);
+        self.filter.filterListingSubmit(page, listing_per_page);
         self.filter.promise.then(
             response => {
                 //ym(66603799,'reachGoal','filter');
                 //dataLayer.push({'event': 'event-to-ga', 'eventCategory' : 'Search', 'eventAction' : 'Filter'});
                 let listingHtml = $('[data-listing-list]').html();
-
-                if(response.pagination == ''){
-                    $('[data-pagination-wrapper]').hide();
-                }else{
-                    $('[data-pagination-wrapper]').show();
-                }
 
                 if(page > 1 && response.pagination !== ''){
                     $('[data-listing-list]').html(listingHtml + response.listing);
@@ -64,8 +64,12 @@ export default class Listing {
                 $('[data-listing-title]').html(response.title);
                 $('[data-listing-text-top]').html(response.text_top);
                 $('[data-listing-text-bottom]').html(response.text_bottom);
-                // $('[data-pagination-wrapper]').html(response.pagination);
-                
+                $('[data-pagination-wrapper]').html(response.pagination);
+
+                if(response.hide_pagination_class == 'hide'){
+                    $('.home-listing-more-btn').addClass('hide');
+                }
+
                 self.block.removeClass('_loading');
                 //$('html,body').animate({ scrollTop: $('.items_list').offset().top - 160 }, 400);
                 //history.pushState({}, '', '/ploshhadki/' + response.url);

@@ -118,11 +118,11 @@ div[data-page-type="listing"] {
     }
 }
 
-.filter-price input[type='radio']:checked+span {
+.filter-price input[type='radio']._checked+span {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #212121;
+    border: 1px solid $clrBlack;
     transition: 0.2s;
 }
 
@@ -203,21 +203,21 @@ div[data-page-type="listing"] {
     display: flex;
     width: 20px;
     height: 20px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid $checkBoxBorder;
     border-radius: 5px;
     margin-right: 10px;
     transition: 0.1s;
 }
 
-.filter-zabolevanie .filter-items input:checked+span::before,
-.filter-pacient-type .filter-items input:checked+span::before,
-.filter-region .filter-items input:checked+span::before {
-    background: #fff;
+.filter-zabolevanie .filter-items input._active+span::before,
+.filter-pacient-type .filter-items input._active+span::before,
+.filter-region .filter-items input._active+span::before {
+    background: $clrBgWhite;
     content: url(/image/icons/accept.svg);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #212121;
+    border: 1px solid $clrBlack;
     transition: 0.1s;
 }
 
@@ -226,8 +226,8 @@ div[data-page-type="listing"] {
     padding: 10px;
     display: flex;
     align-items: center;
-    background: #FFFFFF;
-    border: 1px solid #E5E5E5;
+    background: $clrBgWhite;
+    border: 1px solid $checkBoxBorder;
     border-radius: 5px;
     font-weight: 500;
     font-size: 13px;
@@ -247,9 +247,9 @@ div[data-page-type="listing"] {
 }
 
 .filter-popup {
-    border: 1px solid #E5E5E5;
+    border: 1px solid $checkBoxBorder;
     border-radius: 5px;
-    background: #fff;
+    background: $clrBgWhite;
     margin-top: 2px;
     display: flex;
     justify-content: space-between;
@@ -295,14 +295,14 @@ div[data-page-type="listing"] {
     height: 16px;
     right: 0;
     top: 0;
-    background: rgb(255,255,255);
+    background: $clrBgWhite;
     background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,1) 100%);
 }
 
 .filter-city-popup label:first-child {
     width: 100%;
     padding-bottom: 15px;
-    border-bottom: 1px solid #E5E5E5;
+    border-bottom: 1px solid $checkBoxBorder;
 }
 
 .filter-city-popup input[type='checkbox'] {
@@ -316,23 +316,23 @@ div[data-page-type="listing"] {
     display: flex;
     width: 16px;
     height: 16px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid $checkBoxBorder;
     border-radius: 5px;
     margin-right: 5px;
 }
 
-.filter-city-popup input:checked+span::before {
+.filter-city-popup input._active+span::before {
     background: url(/image/icons/accept.svg) no-repeat center;
     background-size: 85%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #212121;
+    border: 1px solid $clrBlack;
 }
 
 .filter-city-btns {
     padding-top: 13px;
-    border-top: 1px solid #E5E5E5;
+    border-top: 1px solid $checkBoxBorder;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -354,7 +354,7 @@ div[data-page-type="listing"] {
     font-size: 12px;
     line-height: 100%;
     font-family: 'Inter-Bold';
-    color: #00B2FF;
+    color: $clrButtonNormal;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -411,7 +411,7 @@ div[data-page-type="listing"] {
     margin: 0 10px 0 0;
     width: 16px;
     height: 16px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid $checkBoxBorder;
     border-radius: 50%;
     left: 0;
 }
@@ -421,13 +421,13 @@ div[data-page-type="listing"] {
     position: absolute;
     width: 8px;
     height: 8px;
-    background: #000;
+    background: $clrBlack;
     border-radius: 50%;
     opacity: 0;
     left: 4px;
 }
 
-.filter-hospis-type input[type='radio']:checked+.hospis-type-text::after {
+.filter-hospis-type input[type='radio']._checked+.hospis-type-text::after {
     opacity: 1;
 }
 
@@ -455,8 +455,9 @@ div[data-page-type="listing"] {
 .filter-btns {
     .filter-more-paramters span,
     .filter-reset a {
-        color: #00B2FF;
+        color: $clrButtonNormal;
         border-bottom: 1px dashed;
+        cursor: pointer;
         @include for-laptop {
             font-weight: 500;
             font-size: 13px;

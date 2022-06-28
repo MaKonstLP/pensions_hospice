@@ -102,7 +102,7 @@
             </div>
             <div class="filter-city-popup filter-popup" data-type="city" data-filter-select-block>
                 <label>
-                    <input type="checkbox" name="filter-city" value="moscow-and-region">
+                    <input type="checkbox" name="filter-city" data-value="moscow-and-region" data-filter-select-item>
                     <span>Москва и область</span>
                 </label>
                     {% for label,filter_item in filters %}
@@ -167,10 +167,10 @@
                 <span>Все параметры</span>
             </div> 
             <div class="filter-search">
-                <button class="btn">Найти</button>
+                <button class="btn" data-filter-button>Найти</button>
             </div>
             <div class="filter-reset">
-                <a href="#">Сбросить</a>
+                <a data-filter-cancel>Сбросить</a>
             </div>
         </div>
         

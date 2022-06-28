@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\graduation\widgets;
+namespace frontend\modules\hospice\widgets;
 
 use Yii;
 use yii\bootstrap\Widget;
@@ -13,35 +13,43 @@ class PaginationWidget extends Widget
 
     public function run()
     {
-    	$buttons = '<div class="items_pagination">';
+		
+    	// $buttons = '<div class="items_pagination">';
+    	$buttons = '';
+
     	if($this->total > 1){
-    		if($this->total > 5){
-    			if($this->current <= 3){
-    				for ($i = 1; $i <= 4; ++$i) {
-			            $buttons .= $this->renderPageButton($i, '', $i == $this->current ? '_active' : '');           
-			        }
-			        $buttons .= $this->renderPageButton($this->total, '_last', '');
-    			}
-    			elseif($this->current >= ($this->total - 2)){
-    				$buttons .= $this->renderPageButton(1, '_first', '');
-    				for ($i = $this->total - 3; $i <= $this->total; ++$i) {
-			            $buttons .= $this->renderPageButton($i, '', $i == $this->current ? '_active' : '');           
-			        }			        
-    			}
-    			else{
-    				$buttons .= $this->renderPageButton(1, '_first', ''); 
-    				for ($i = $this->current - 1; $i <= $this->current + 1; ++$i) {
-			            $buttons .= $this->renderPageButton($i, '', $i == $this->current ? '_active' : '');           
-			        }
-			        $buttons .= $this->renderPageButton($this->total, '_last', ''); 
-    			}
-    		}
-    		else{
-    			for ($i = 1; $i <= $this->total; ++$i) {
-		            $buttons .= $this->renderPageButton($i, '', $i == $this->current ? '_active' : '');           
-		        }
-    		}
-    		$buttons .= '</div>';
+    		// if($this->total > 5){
+    		// 	if($this->current <= 3){
+    		// 		for ($i = 1; $i <= 4; ++$i) {
+			//             $buttons .= $this->renderPageButton($i, '', $i == $this->current ? '_active' : '');           
+			//         }
+			//         $buttons .= $this->renderPageButton($this->total, '_last', '');
+    		// 	}
+    		// 	elseif($this->current >= ($this->total - 2)){
+    		// 		$buttons .= $this->renderPageButton(1, '_first', '');
+    		// 		for ($i = $this->total - 3; $i <= $this->total; ++$i) {
+			//             $buttons .= $this->renderPageButton($i, '', $i == $this->current ? '_active' : '');           
+			//         }			        
+    		// 	}
+    		// 	else{
+    		// 		$buttons .= $this->renderPageButton(1, '_first', ''); 
+    		// 		for ($i = $this->current - 1; $i <= $this->current + 1; ++$i) {
+			//             $buttons .= $this->renderPageButton($i, '', $i == $this->current ? '_active' : '');           
+			//         }
+			//         $buttons .= $this->renderPageButton($this->total, '_last', ''); 
+    		// 	}
+    		// }
+    		// else{
+    		// 	for ($i = 1; $i <= $this->total; ++$i) {
+		    //         $buttons .= $this->renderPageButton($i, '', $i == $this->current ? '_active' : '');           
+		    //     }
+    		// }
+			if($this->current < $this->total){
+				$buttons .= $this->renderPageButton($this->current + 1, '', ''); 
+			}else{
+				$buttons .= $this->renderPageButton($this->total, '', '');
+			}
+    		// $buttons .= '</div></div>';
     		return $buttons;
     	}
     	else{
@@ -49,8 +57,10 @@ class PaginationWidget extends Widget
     	}
     }
 
-    private function renderPageButton($page, $class, $active)
-    {
-    	return '<div class="items_pagination_item '.$active.' '.$class.'" data-page-id="'.$page.'" data-listing-pagitem></div>';
+    private function renderPageButton($page, $class, $active){
+
+    	// return '<div class="items_pagination_item '.$active.' '.$class.'" data-page-id="'.$page.'" data-listing-pagitem></div>';
+
+		return '<button data-info="'.$this->total.'" class="btn-white '.$active.' '.$class.'" data-page-id="'.$page.'" data-listing-pagitem>Показать еще</button>';
     }
 }

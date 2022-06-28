@@ -60,7 +60,7 @@ section.single-content {
     width: 50%;
     max-width: 540px;
     height: 590px;
-    background: #FFFFFF;
+    background: $clrBgWhite;
     border: 1px solid rgba(0, 178, 255, 0.2);
     border-radius: 5px;
     display: flex;
@@ -114,7 +114,7 @@ section.single-content {
     font-size: 18px;
     line-height: 110%;
     text-align: center;
-    color: #686868;
+    color: $clrLightGrey;
     margin: 10px 0 70px 10px;
     @include for-lowdesc {
         font-size: 16px;
@@ -150,7 +150,7 @@ section.single-content {
     font-size: 18px;
     line-height: 100%;
     text-align: center;
-    color: #686868;
+    color: $clrLightGrey;
     margin: 7px 0 30px 0;
     @include for-lowdesc {
         margin: 7px 0 15px 0;
@@ -231,7 +231,7 @@ section.single-content {
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
-    color: #686868;
+    color: $clrLightGrey;
 }
 
 .single-top-links {
@@ -453,7 +453,7 @@ section.single-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #FFFFFF;
+    background: $clrBgWhite;
     border: 1px solid rgba(0, 178, 255, 0.2);
     border-radius: 5px;
     text-align: center;
@@ -485,7 +485,7 @@ section.single-content {
     font-weight: 400;
     font-size: 18px;
     line-height: 130%;
-    color: #686868;
+    color: $clrLightGrey;
 }
 
 .single-prices-list .item-price {
@@ -520,7 +520,7 @@ section.single-content {
 .testimonial-item {
     display: flex;
     justify-content: space-between;
-    border: 1px solid #E5E5E5;
+    border: 1px solid $checkBoxBorder;
     border-radius: 5px;
     padding: 25px 40px 25px 20px;
     @include for-mobile {

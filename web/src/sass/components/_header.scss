@@ -70,7 +70,7 @@ section.header {
 
 .mobile-btn-call {
     a {
-        color: #ffffff;
+        color: $clrColorWhite;
         padding: 5px 10px;
     }
 }
@@ -82,7 +82,7 @@ section.header {
         display: block;
         width: 20px;
         height: 2px;
-        background: #000;
+        background: $clrBlack;
     }
     span:not(:last-child) {
         margin-bottom: 3px;
@@ -90,8 +90,8 @@ section.header {
 }
 
 .mobile-menu-wrap {
-    background: #00B2FF;
-    color: #ffffff;
+    background: $clrButtonNormal;
+    color: $clrColorWhite;
     padding: 50px 30px 64px 30px;
     position: relative;
     max-height: 539px;
@@ -102,7 +102,7 @@ section.header {
     display: none;
     z-index: 10;
     a {
-        color: #ffffff;
+        color: $clrColorWhite;
     }
 }
 
@@ -166,7 +166,7 @@ section.header {
         font-weight: 500;
         font-size: 16px;
         line-height: 19px;
-        color: #212121;
+        color: $clrBlack;
     }
 }
 
@@ -260,7 +260,7 @@ section.header {
     height: 70px;
     @include for-lowdesc {
         padding: 0 40px;
-        background: #fff;
+        background: $clrBgWhite;
         border-radius: 5px;
         height: 50px;
     }
@@ -290,14 +290,14 @@ section.header {
         align-items: center;
     }
     li.active{
-        border-bottom: 5px solid #00B2FF;
+        border-bottom: 5px solid $clrButtonNormal;
         padding: 0 15px;
         @include for-lowlap {
-            border-bottom: 3px solid #00B2FF;
+            border-bottom: 3px solid $clrButtonNormal;
         }
     }
     li.active a{
-        color: #00B2FF;
+        color: $clrButtonNormal;
     }
     a {
         font-weight: 500;
@@ -324,6 +324,6 @@ section.header {
         font-size: 11px;
         line-height: 120%;
         text-transform: uppercase;
-        color: #686868;
+        color: $clrLightGrey;
     }
 }

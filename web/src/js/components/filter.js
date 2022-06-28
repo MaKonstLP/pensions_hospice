@@ -68,7 +68,7 @@ export default class Filter {
             if($(e.target).hasClass('filter-select')){
                 filterPopup.toggleClass('active');
             }
-            if(filterField){
+            if($(e.target).hasClass('filter-city-select')){
                 filterField.toggleClass('active');
             }
         });
@@ -78,6 +78,29 @@ export default class Filter {
             self.showAllSelect();
             $(this).remove();
         });
+
+        //КЛИК ПО КНОПКЕ СБРОСИТЬ
+		this.$filter.find('[data-filter-cancel]').on('click', function () {
+			$(this).closest('[data-filter-wrapper]').find('[data-filter-select-item]._active').removeClass('_active');
+			$(this).closest('[data-filter-wrapper]').find('[data-filter-checkbox-item]._checked').removeClass('_checked');
+
+			let selectBlocks = $('[data-filter-select-block]');
+			let checkboxes = $('[data-filter-checkbox-item]');
+
+			//сброс всех данных из селектов
+			selectBlocks.each(function () {
+				delete self.state[$(this).data('type')];
+			});
+			//сброс всех данных из чекбоксов
+			checkboxes.each(function () {
+				delete self.state[$(this).data('type')];
+			});
+
+			self.selectStateRefresh($('[data-filter-select-block]'));
+			// self.state = {};
+
+			// self.reloadTotalCount();
+		});
     }
 
     init() {
@@ -92,9 +115,10 @@ export default class Filter {
         });
     }
 
-    filterListingSubmit(page = 1) {
+    filterListingSubmit(page = 1, index_per_page) {
         let self = this;
         self.state.page = page;
+        self.state.index_per_page = index_per_page;
 
         let data = {
             'filter': JSON.stringify(self.state)
@@ -260,8 +284,9 @@ export default class Filter {
 	refreshFilterItems(disabledItemsList) {
 		var self = this;
 
-		// $('[data-filter-wrapper] [data-filter-select-item]._disabled').removeClass('_disabled');
-
+		$('[data-filter-wrapper] [data-filter-select-item]._disabled').removeClass('_disabled');
+        console.log(disabledItemsList);
+        
 		for (var filter in disabledItemsList) {
 			$(`[data-filter-select-block][data-type='${filter}'] [data-filter-select-item]`).addClass('_disabled');
 			$(`[data-filter-select-block][data-type='${filter}'] [data-filter-select-item] span`).html('');
@@ -272,7 +297,7 @@ export default class Filter {
 			if (typeof currentArray === 'string') {
 				currentArray = currentArray.split(',');
 				for (var item in currentArray) {
-					// $(`[data-value='${currentArray[item]}']`).removeClass('_disabled');
+					$(`[data-value='${currentArray[item]}']`).removeClass('_disabled');
 				}
 			} else if (typeof currentArray === 'object') {
 				let keys = Object.keys(currentArray)
