@@ -13,9 +13,11 @@ class LicenziiController extends Controller
         $this->view->params['menu'] = 'licenzii';
 		// $seo = $this->getSeo('licenzii');
         // $this->setSeo($seo);
-
+        $this->view->title = 'Лицензии';
+        
 		return $this->render('index.twig', array(
 			// 'seo' => $seo,
+            'title' => $this->view->title,
 			'year' => date('Y') + 1,
 			// 'city_rod' => Yii::$app->params['subdomen_rod']
 		));

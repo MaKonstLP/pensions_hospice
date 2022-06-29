@@ -123,19 +123,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
     </section>
 
+
+        
         <?php 
+        $this->params['breadcrumbs'][] = [
+            'label' => $this->title, 
+            // 'url' => [''], 
+            ];
 
-
-
-            if ((Yii::$app->controller->id !== 'site'))  { ?>
+        if ((Yii::$app->controller->id !== 'site'))  { ?>
             <section class="breadcrumbs-section">
+                <?php 
+                    echo Breadcrumbs::widget([
+                    'options' => [
+                        'class' => 'breadcrumbs',
+                    ],
+                    'homeLink' => [
+                        'label' => Yii::t('yii', 'Home'),
+                        'url' => ['/site/index'],
+                        'class' => 'home',
+                        'template' => '{link}',
+                    ],
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                    'itemTemplate' => '<span class="breadcrumbs-separator">|</span><span>{link}</span>',
+                    'activeItemTemplate' => '<span class="breadcrumbs-separator">|</span><span class="active">{link}</span>',
+                    'tag' => 'div',
+                    'encodeLabels' => true
+                ]);
+                ?>
+            </section>
+        <?php }
+
+
+
+            //if ((Yii::$app->controller->id !== 'site'))  { ?>
+            <!-- <section class="breadcrumbs-section">
                 <div class="breadcrumbs">
                     <a href="/">Главная</a>
                     <span class="breadcrumbs-separator">|</span>
                     <span>Хосписы</span>
                 </div>
-            </section>
-            <?php }
+            </section> -->
+            <?php //}
 
         ?>
 

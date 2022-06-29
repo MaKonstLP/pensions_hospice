@@ -101,6 +101,7 @@ class ListingController extends Controller
 	{
 		$elastic_model = new ElasticItems;
 		$items = new ItemsFilterElastic($params_filter, $per_page, $page, false, 'restaurants', $elastic_model);
+		$this->view->title = 'Хосписы';
 
 		if($page > 1){
 			$seo['text_top'] = '';
@@ -130,6 +131,7 @@ class ListingController extends Controller
 		$main_flag = ($seo_type == 'listing' and count($params_filter) == 0);
 
 		return $this->render('index.twig', array(
+			'title' => $this->view->title,
 			'items' => $items->items,
 			'filter' => $filter,
 			'pagination' => $pagination,
@@ -234,7 +236,7 @@ class ListingController extends Controller
 	}
 
 	private function setSeo($seo, $page, $canonical){
-		$this->view->title = $seo['title'];
+		
 		$this->view->params['desc'] = $seo['description'];
 		if($page != 1){
 			$this->view->params['canonical'] = $canonical;

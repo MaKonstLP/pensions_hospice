@@ -13,17 +13,23 @@ class InformaciyaController extends Controller
         $this->view->params['menu'] = 'informaciya';
 		// $seo = $this->getSeo('licenzii');
         // $this->setSeo($seo);
+        $this->view->title = 'Информация';
 
 		return $this->render('index.twig', array(
 			// 'seo' => $seo,
+            'title' => $this->view->title,
 			'year' => date('Y') + 1,
 			// 'city_rod' => Yii::$app->params['subdomen_rod']
 		));
 	}
 
     public function actionArticle(){
+
+        $this->view->title = 'Информация';
+
         return $this->render('article.twig', array(
 			// 'seo' => $seo,
+            'title' => $this->view->title,
 			'year' => date('Y') + 1,
 			// 'city_rod' => Yii::$app->params['subdomen_rod']
 		));

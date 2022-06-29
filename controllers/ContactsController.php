@@ -13,9 +13,11 @@ class ContactsController extends Controller
         $this->view->params['menu'] = 'kontakty';
 		// $seo = $this->getSeo('kontakty');
         // $this->setSeo($seo);
+        $this->view->title = 'Контакты';
 
 		return $this->render('index.twig', array(
 			// 'seo' => $seo,
+            'title' => $this->view->title,
 			'year' => date('Y') + 1,
 			// 'city_rod' => Yii::$app->params['subdomen_rod']
 		));

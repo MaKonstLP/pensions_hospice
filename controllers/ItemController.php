@@ -29,6 +29,8 @@ class ItemController extends Controller
 
 		$items = new ItemsFilterElastic([], 6, 1, false, 'restaurants', $elastic_model);
 
+		$this->view->title = $item['hits']['hits'][0]['pansion_name'];
+
 		//$seo = new Seo('item', 1, 0, $item, 'rest');
 		//$seo = $seo->seo;
         //$this->setSeo($seo);

@@ -32,7 +32,7 @@ class SiteController extends Controller
         $slices_model = Slices::find()->all();
         $seo = $this->getSeo('index');
         $this->setSeo($seo);
-
+        
         $elastic_model = new ElasticItems;
         $items = new ItemsFilterElastic([], 6, 1, false, 'restaurants', $elastic_model);
         $top_banner_form = TopBannerFormWidget::widget();
