@@ -90,6 +90,7 @@
 				Москва и область
 			</div>
 			<div class="filter-city-popup filter-popup" data-type="city" data-filter-select-block>
+				<div class="filter-city-popup-scroll">					
 					<label>
 						<input type="checkbox" name="filter-city" data-value="moscow-and-region" data-filter-select-item>
 						<span>Москва и область</span>
@@ -103,9 +104,10 @@
 							}) | raw }}
 						{% endif %}
 					{% endfor %}	
+				</div>
 				<div class="filter-city-btns">
-					<button class="btn">Выбрать</button>
-					<a href="#">Сбросить</a>
+					<button class="btn" data-filter-button>Выбрать</button>
+					<a data-filter-cancel>Сбросить</a>
 				</div>
 			</div>
 		</div>

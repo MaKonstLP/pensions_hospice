@@ -99,7 +99,8 @@ export default class Filter {
 			self.selectStateRefresh($('[data-filter-select-block]'));
 			// self.state = {};
 
-			// self.reloadTotalCount();
+			self.reloadTotalCount();
+            self.getFilterAvalable();
 		});
     }
 
@@ -243,10 +244,10 @@ export default class Filter {
 		this.promise.then(
 			response => {
 				if (response.total == 0) {
-					$('[data-filter-button]').html('Показать (0)');
+					$('[data-filter-button]').not('.filter-city-btns .btn').html('Показать (0)');
 					$('[data-filter-button]').addClass('_disabled');
 				} else {
-					$('[data-filter-button]').html('Показать (' + response.total + ')');
+					$('[data-filter-button]').not('.filter-city-btns .btn').html('Показать (' + response.total + ')');
 					$('[data-filter-button]').removeClass('_disabled');
 				}
 			}
@@ -285,7 +286,6 @@ export default class Filter {
 		var self = this;
 
 		$('[data-filter-wrapper] [data-filter-select-item]._disabled').removeClass('_disabled');
-        console.log(disabledItemsList);
         
 		for (var filter in disabledItemsList) {
 			$(`[data-filter-select-block][data-type='${filter}'] [data-filter-select-item]`).addClass('_disabled');
@@ -303,15 +303,11 @@ export default class Filter {
 				let keys = Object.keys(currentArray)
 
 				for (var i = 0, l = keys.length; i < l; i++) {
-					// console.log(keys[i] + ' is ' + currentArray[keys[i]]);
 					// keys[i] - ключ
 					// currentArray[keys[i]] - а это свойство, доступное по этому ключу
 
 					if (filter == 'district') {
-						// console.log(11123344);
-						// console.log('data-id');
-						// console.log(keys[i]);
-						// console.log(currentArray[keys[i]]);
+
 					}
 
 					$(`[data-id='${keys[i]}']`).removeClass('_disabled');

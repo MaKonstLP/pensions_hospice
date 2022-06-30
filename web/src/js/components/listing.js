@@ -17,7 +17,7 @@ export default class Listing {
 
         //КЛИК ПО КНОПКЕ "СБРОСИТЬ"
 		$('[data-filter-cancel]').on('click', function () {
-			self.reloadListing();
+			//self.reloadListing();
 
 			if ($('[data-filter-button]').hasClass('_disabled')) {
 				$('[data-filter-button]').removeClass('_disabled');
@@ -29,7 +29,6 @@ export default class Listing {
         $('body').on('click', '[data-pagination-wrapper] [data-listing-pagitem]', function() {
             self.reloadListing($(this).data('page-id'));
         });
-        // console.log(this);
 
         let swiper = new Swiper('.home-swiper', {
             loop: true,

@@ -417,6 +417,268 @@ section.answers-questions .container {
     }
 }
 
+section.home-banner {
+    background: url(/image/banner-top.png) no-repeat center;
+    height: 400px;
+    margin-bottom: 50px;
+    @include for-lowdesc {
+        height: 400px;
+    }
+    @include for-lowlap {
+        height: 340px;
+    }
+    @include for-mobile {
+        height: 322px;
+    }
+}
+
+.free-consultation {
+    width: 100%;
+    max-width: 810px;
+    height: 100%;
+    background: rgba(39, 52, 0, 0.46);
+    display: flex;
+    margin: 0 auto;
+    padding: 20px 63px;
+    align-items: center;
+    justify-content: space-around;
+    @include for-lowlap {
+        padding: 20px 53px 20px 20px;
+    }
+    @include for-mobile {
+        flex-direction: column;
+        padding: 40px 0px;
+        min-height: 322px;
+    }
+}
+
+.free-consultation-left {
+    max-width: 297px;
+}
+
+.consultation-title {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: right;
+    color: $clrColorWhite;
+    font-family: 'Inter-Bold';
+    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    margin-bottom: 14px;
+    @include for-lowlap {
+        font-size: 34px;
+        line-height: 41px;
+    }
+    @include for-laptop {
+        font-size: 26px;
+        line-height: 100%;
+    }
+    @include for-mobile {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}
+
+.consultation-desc {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: right;
+    color: $clrColorWhite;
+    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    @include for-laptop {
+        font-size: 16px;
+        line-height: 19px;
+    }
+    @include for-mobile {
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        max-width: 320px;
+    }
+}
+
+.free-consultation-center {
+    position: relative;
+    margin-left: 51px;
+    margin-right: 63px;
+    &:after,
+    &:before {
+        position: absolute;
+        content: '';
+        width: 1px;
+        background: rgba(255, 255, 255, 0.8);
+        height: 155px;
+        @include for-lowlap {
+            height: 125px;
+        }
+    }
+    &::before {
+        top: 30px;
+    }
+    &::after {
+        bottom: 30px;
+    }
+    img {
+        position: absolute;
+        top: calc(50% - 15px);
+        width: auto;
+        transform: translateX(-14px);
+        max-width: fit-content;
+    }
+    @include for-lowlap {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    @include for-mobile {
+        display: none;
+    }
+}
+
+.home-bottom-banner .free-consultation-right {
+    width: 40%;
+    max-width: 265px;
+    @include for-laptop {
+        width: 100%;
+        max-width: 240px;
+    }
+    @include for-mobile {
+        width: 100%;
+        max-width: 265px;
+    }
+}
+
+.free-consultation-right {
+    width: 40%;
+    max-width: 240px;
+    .form-title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        font-family: 'Inter-Bold';
+        color: $clrColorWhite;
+        @include for-mobile {
+            display: none;
+        }
+    }
+    .form-input {
+        margin: 15px 0 14px 0;
+    }
+    @include for-laptop {
+        width: 100%;
+        max-width: 240px;
+    }
+    @include for-mobile {
+        width: 100%;
+    }
+    .form-submit{
+        margin-top: 24px;
+        @include for-mobile {
+            margin-top: 15px;
+        }
+    }
+}
+
+form {
+    input[type='text'],
+    input[type='e-mail'] {
+        width: 100%;
+        height: 40px;
+        background: $clrColorWhite;
+        border-radius: 5px;
+        border: none;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: $clrVeryLightGrey;
+        padding: 10px;
+        border: 1px solid transparent;
+    }
+    input[type='checkbox'] {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    input[type='checkbox']+label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        cursor: pointer;
+    }
+    input[type='checkbox']+label::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border-radius: 5px;
+        margin-right: 8px;
+        background: $clrColorWhite;
+        border: 1px solid #e5e5e5;
+        transition: 0.2s;
+    }
+    input[type='checkbox']:checked+label::before {
+        background: $clrColorWhite;
+        content: url(/image/icons/accept.svg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $clrBlack;
+        transition: 0.2s;
+    }
+    input:focus {
+        outline: none;
+    }
+    .help-block{
+        color: $errorInputs;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 120%;
+        position: absolute;
+    }
+    .has-error input[type='checkbox']+label::before{
+        border: 1px solid $errorInputs;
+    }
+    .has-error input:not([type='checkbox']){
+        border: 1px solid $errorInputs;
+    }
+}
+
+.form-accept-desc {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    color: $clrColorWhite;
+    max-width: 238px;
+}
+.form-accept-check{
+    line-height: 12px;
+}
+.swiper {
+    max-width: 360px;
+    height: 291px;
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    img {
+        width: auto;
+        max-width: fit-content;
+    }
+    @include for-lowdesc {
+        max-width: 455px;
+    }
+}
+.form-response{
+    font-size: 12px;
+    color:$clrColorWhite;
+}
+
 section.home-bottom-banner {
     background-image: url(/image/banner-footer.png);
     background-repeat: no-repeat;

@@ -131,6 +131,7 @@ class ListingController extends Controller
 		$main_flag = ($seo_type == 'listing' and count($params_filter) == 0);
 
 		return $this->render('index.twig', array(
+			'page' => $page,
 			'title' => $this->view->title,
 			'items' => $items->items,
 			'filter' => $filter,
@@ -200,7 +201,8 @@ class ListingController extends Controller
 			'text_top' => $text_top,
 			'text_bottom' => $text_bottom,
 			'seo_title' => $seo['title'],
-			'hide_pagination_class' => $hide_pagination_class
+			'hide_pagination_class' => $hide_pagination_class,
+			'total' => $items->total,
 		]);
 	}
 

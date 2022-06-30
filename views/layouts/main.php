@@ -11,6 +11,7 @@ use frontend\modules\hospice\widgets\SecondMenu;
 use frontend\modules\hospice\widgets\FooterMenu;
 use yii\widgets\Breadcrumbs;
 
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
