@@ -5,7 +5,7 @@ use Yii;
 use yii\web\Controller;
 use common\models\Seo;
 
-class ContactsController extends Controller
+class KontaktyController extends Controller
 {
 
 	public function actionIndex(){

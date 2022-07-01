@@ -94,9 +94,10 @@
 					<label>
 						<input type="checkbox" name="filter-city" data-value="moscow-and-region" data-filter-select-item>
 						<span>Москва и область</span>
+						
 					</label>
 					{% for label,filter_item in filters %}
-						{% if filter_item.type == 'select' %}
+						{% if filter_item.type == 'select' and filter_item.name == 'Город' %}
 							{{ this.render('filter_select.twig', {
 								'filter_item':filter_item,
 								'label':label,

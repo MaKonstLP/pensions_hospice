@@ -69,6 +69,8 @@ export default class YaMapContacts{
     }
   
     init() {
+      console.log('contacts');
+      
       this.script('//api-maps.yandex.ru/2.1/?lang=ru_RU').then(() => {
           const ymaps = global.ymaps;
           ymaps.ready(function(){

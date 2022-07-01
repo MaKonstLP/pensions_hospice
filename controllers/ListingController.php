@@ -101,6 +101,7 @@ class ListingController extends Controller
 	{
 		$elastic_model = new ElasticItems;
 		$items = new ItemsFilterElastic($params_filter, $per_page, $page, false, 'restaurants', $elastic_model);
+		
 		$this->view->title = 'Хосписы';
 
 		if($page > 1){

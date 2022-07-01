@@ -244,11 +244,11 @@ export default class Filter {
 		this.promise.then(
 			response => {
 				if (response.total == 0) {
-					$('[data-filter-button]').not('.filter-city-btns .btn').html('Показать (0)');
-					$('[data-filter-button]').addClass('_disabled');
+					$('[data-filter-button]').not('.filter-city-btns .btn').html('Показать (0)').closest('.filter-search').addClass('has-result');
+					$('[data-filter-button]').prop("disabled",true);
 				} else {
-					$('[data-filter-button]').not('.filter-city-btns .btn').html('Показать (' + response.total + ')');
-					$('[data-filter-button]').removeClass('_disabled');
+					$('[data-filter-button]').not('.filter-city-btns .btn').html('Показать (' + response.total + ')').closest('.filter-search').addClass('has-result');
+					$('[data-filter-button]').prop("disabled",false);
 				}
 			}
 		);

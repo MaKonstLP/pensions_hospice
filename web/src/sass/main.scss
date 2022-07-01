@@ -105,16 +105,11 @@ select {
     src: url('/fonts/Inter-Bold.otf');
 }
 
-[data-page-type] {
-    flex: 1 0 auto;
-}
 .wrap {
     max-width: 1660px;
     margin: 0 auto;
     padding: 0 15px;
-    display: flex;
-	flex-direction: column;
-	min-height: 100%;
+    
     @include wrap-xs-mobile {
         max-width: 290px;
     }
