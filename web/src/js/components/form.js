@@ -147,11 +147,12 @@ export default class Form {
 
 			} else {
 				$field.addClass('_invalid');
-				var form_error = $field.data('error') || 'Заполните поле';
+				var form_error = $field.data('error') || 'Поле заполнено некорректно';
 				var error_message = custom_error || form_error;
 
 				if ($field.siblings('.form_input_error').length  == 0) {
-					$field.parent('.elementWrap').append('<div class="form_input_error">' + error_message + '</div>');
+					$field.parent('.form-input').append('<div class="form_input_error">' + error_message + '</div>');
+					$field.parent('.form-accept-check').append('<div class="form_input_error">' + error_message + '</div>');
 				} else {
 					$field.siblings('.form_input_error').html(error_message);
 				}

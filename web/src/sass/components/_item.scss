@@ -239,9 +239,50 @@ section.single-content {
     justify-content: space-between;
     max-width: 1050px;
     margin-top: 20px;
+    @include for-lowdesc {
+        max-width: 780px;
+    }
+    @include for-lowlap {
+        max-width: 900px;
+    }
+    .btn-white{
+        border:1px solid rgba(0, 178, 255, 0.5);
+        @include for-lowdesc {
+            height: 27px;
+            font-size: 14px;
+            padding: 10px;
+        }
+        @include for-lowlap {
+            font-size: 16px;
+            height: 33px;
+        }
+    }
     @include for-laptop {
         overflow: scroll;
         width: 105%;
+        padding-bottom: 6px;
+    }
+}
+
+.single-top-links::-webkit-scrollbar {
+    @include for-laptop {
+    width: 1px;
+    height: 2px;
+    background-color: #f9f9fd;
+    }
+}
+.single-top-links::-webkit-scrollbar-thumb {
+    @include for-laptop {
+    border-radius: 10px;
+    background-color: $clrButtonNormal;
+    }
+}
+  
+.single-top-links::-webkit-scrollbar-track {
+    @include for-laptop {
+    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background-color: #f9f9fd;
     }
 }
 
@@ -277,7 +318,7 @@ section.single-content {
 .single-condition {
     padding: 90px 0 0 0;
     @include for-lowlap {
-        padding: 50px 0 0 0;
+        padding: 44px 0 0 0;
     }
 }
 

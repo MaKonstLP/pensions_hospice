@@ -565,6 +565,7 @@ section.home-banner {
     }
     .form-input {
         margin: 15px 0 14px 0;
+        position: relative;
     }
     @include for-laptop {
         width: 100%;
@@ -657,6 +658,7 @@ form {
 }
 .form-accept-check{
     line-height: 12px;
+    position: relative;
 }
 .swiper {
     max-width: 360px;
