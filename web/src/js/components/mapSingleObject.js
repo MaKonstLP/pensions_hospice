@@ -76,7 +76,7 @@ export default class YaMapSingleObject{
     this.script('//api-maps.yandex.ru/2.1/?lang=ru_RU').then(() => {
         const ymaps = global.ymaps;
         ymaps.ready(function(){
-          let map = document.querySelector(".map");
+          let map = document.querySelector("#map");
           let myMap = new ymaps.Map(map, {center: [55.763118, 37.633787], zoom: 12, controls: []},
                       {suppressMapOpenBlock: true});
 

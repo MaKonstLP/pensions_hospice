@@ -1,13 +1,10 @@
-
-
 <div data-page-type="index">
 
-		
         {{ this.render('//components/generic/home_banner.twig', { 'top_banner_form':top_banner_form }) | raw}}
 
-        {{ this.render('//components/generic/home_listing.twig', {'items':items, 'filter':filter, 'pagination':pagination}) | raw}}
+        {{ this.render('//components/generic/listing_list.twig', {'items':items, 'filter':filter, 'pagination':pagination}) | raw}}
 	
-        {{ this.render('//components/generic/home_map.twig') | raw}}
+        {{ this.render('//components/generic/map.twig') | raw}}
 
         {{ this.render('//components/generic/best_hospises.twig', {'items':items}) | raw}}
 
@@ -15,118 +12,6 @@
 
         {{ this.render('//components/generic/good_to_know.twig') | raw}}
 
-        {{ this.render('//components/generic/home_bottom_banner.twig') | raw}}
+        {{ this.render('//components/generic/bottom_banner.twig') | raw}}
 
 </div>
-
-
-    {# <div class="top_slider_wrapper">
-
-        <div class="top_slider">
-            <div class="swiper-container swiper_top">
-
-                <div class="swiper-wrapper"> #}
-
-                    {# {% for image in item.restaurant_images %}
-                        <div class="swiper-slide">
-                            <img src="{{image.subpath}}=w710-h472-n-l95" alt="Фото №{{loop.index}} зала {{item.restaurant_name}}"/>
-                        </div>
-                    {% endfor %} #}
-
-					<!-- УДАЛИТЬ ЭТОТ БЛОК НАЧАЛО -->
-
-					{# <div class="swiper-slide">
-						<img src="/image/test_slider_pic.png" alt="ТЕСТ"/>
-					</div>
-
-					<div class="swiper-slide">
-						<img src="/image/test_slider_pic.png" alt="ТЕСТ"/>
-					</div>
-
-					<div class="swiper-slide">
-						<img src="/image/test_slider_pic.png" alt="ТЕСТ"/>
-					</div>
-					
-					<div class="swiper-slide">
-						<img src="/image/test_slider_pic.png" alt="ТЕСТ"/>
-					</div>
-
-					<div class="swiper-slide">
-						<img src="/image/test_slider_pic.png" alt="ТЕСТ"/>
-					</div> #}
-
-					<!-- УДАЛИТЬ ЭТОТ БЛОК КОНЕЦ -->
-{# 
-                </div>
-                <div class="top-swiper-button-prev"></div>
-                <div class="top-swiper-button-next"></div>
-                <div class="top-swiper-pagination swiper-pagination"></div>
-            </div>
-        </div> #}
-
-		{# {{ this.render('//components/generic/restaurant_title.twig', {'seo':seo}) | raw }} #}
-
-
-		<!-- УДАЛИТЬ ЭТОТ БЛОК НАЧАЛО -->
-
-		{# <div class="content_block" data-listing-title>
-			
-			<div class="title">
-
-				<h1>ВЫПУСКНОЙ 2020 В САНКТ-ПЕТЕРБУРГЕ</h1>
-			
-				<div class="title_desc">
-					<p>Где провести выпускной в 2020 году? Здесь вы можете легко подобрать и заказать площадку для выпускного вечера 11 и 9 классов в Санкт-Петербурге.</p>
-					<p>В случае непогоды по периметру заакрываются шторы, которые не пропускают воду и ветер, и предоставляются газовые и электронные обогреватели. Понтон содержит отдельный подъезд и личную парковку на 20 машиномест, собственно что выделяет ему превосходство перед другими площадками.</p>
-				</div> #}
-
-				<!-- <h1>TEST TITLE</h1> -->
-
-				<!-- <div class="title_desc">
-					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque tenetur non aspernatur obcaecati quisquam nesciunt blanditiis temporibus. Dolor</p>
-					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque tenetur non aspernatur obcaecati quisquam nesciunt blanditiis temporibus. Dolorum placeat accusantium, repellat quibusdam eos in! Nulla quo repudiandae sint dolor asperiores commodi quidem nostrum odit aut neque i</p>
-				</div> -->
-			
-			{# </div>
-
-		</div> #}
-
-		<!-- УДАЛИТЬ ЭТОТ БЛОК КОНЕЦ -->
-
-
-
-    {# </div>
-
-	<div class="show_filter_button">
-		<p>Фильтр заведений</p>
-	</div> #}
-
-	{# <div class="listing_and_filter_wrapper">
-
-		<div class="filter_wrapper">
-			{{filter | raw }}
-		 </div> 
-
-		<div class="items_list_listing" data-listing-wrapper>
-			<div class="items_list" data-listing-list>
-
-				{{ this.render('//components/generic/listing.twig', {'items':items, 'img_alt':seo.img_alt}) | raw }}
-
-			</div>
-		</div>
-	</div>  #}
-
-	{# <div class="content_block listing_paragraph" data-listing-text-top>
-		<div class="seo_text" data-seo-text>
-			{{seo.text_bottom | raw }}
-			<div class="seo_text_control" data-seo-control>
-				<p class="_link">Показать полностью</p>
-			</div>
-		</div>
-	</div> #}
-
-	{# <div class="content_block form_booking_wrapper">
-
-        {{ this.render('//components/generic/form_booking1.twig', {'items':other_rooms}) | raw }}
-
-    </div> #}

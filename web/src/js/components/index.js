@@ -72,7 +72,7 @@ export default class Index {
 
         });
 
-        let swiper = new Swiper('.home-swiper', {
+        let swiper = new Swiper('.listing-swiper', {
             loop: true,
             pagination: {
                 el: '.swiper-pagination',

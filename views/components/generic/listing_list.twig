@@ -1,4 +1,4 @@
-   <section class="home-listing">
+   <section class="listing">
             <div class="container">
 
                 <div class="sidebar">
@@ -7,11 +7,11 @@
                   {# {{ this.render('//components/filter/filter_mobile.twig') | raw}} #}
                 </div>
 
-                <div class="home-listing-wrap">
-                    <div class="home-listing-title">
+                <div class="listing-wrap">
+                    <div class="listing-title">
                         <h1>Хосписы Москвы и Московской области</h1>
                     </div>
-                    <div class="home-listing-text top more-text">
+                    <div class="listing-text top more-text">
                         <p>
                             Люди почтенного возраста часто утрачивают способность к самообслуживанию и нуждаются в круглосуточном уходе и квалифицированной медицинской помощи. Все это вы можете дать им, подобрав достойный пансионат для пожилых в Московской области. На страницах
                             нашего каталога вы найдете бюджетные и элитные варианты, специализированные учреждения по уходу за лежачими постояльцами, дома-интернаты и реабилитационные центры, способные вернуть человека к активной жизни после инфарктов,
@@ -19,7 +19,7 @@
                         </p>
                         <span class="more-text-link">Читать далее</span>
                     </div>
-                    <div class="home-listing-sorting">
+                    <div class="listing-sorting">
                         <ul class="sorting-menu">
                             <li><a href="#">Химки <span>(5)</span></a></li>
                             <li><a href="#">Люберцы <span>(13)</span></a></li>
@@ -32,17 +32,17 @@
                         </ul>
                     </div>
 
-                    <div class="home-listing-list" data-listing-list>
+                    <div class="listing-list" data-listing-list>
                                 
                         {% for item in items %}
 
-                        <div class="listing-list-item">
+                        <div class="listing-list-item" data-pansion-id="{{item.pansion_id}}">
                             <div class="slide-recommended">
                                 <img src="/image/icons/star-recomended.svg" alt="">
                                 <span>Рекомендуем</span>
                             </div>
                             <div class="list-item-slider">
-                                <div class="swiper home-swiper">
+                                <div class="swiper listing-swiper">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <img src="/image/houses-listing/house2.png" alt="">
@@ -87,7 +87,7 @@
                                     </ul>
                                 </div>
                                 <div class="list-item-btns">
-                                    <button class="btn">Забронировать</button>
+                                    <button class="single-item-order btn">Забронировать</button>
                                     <a class="btn-white" href="/catalog/{{item.pansion_url}}">О хосписе</a>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@
 
                     </div>
 
-                    <div class="home-listing-more-btn">
+                    <div class="listing-more-btn">
                         <div data-pagination-wrapper>
                             {{pagination | raw }}
                         </div>
@@ -106,13 +106,15 @@
             
                 </div>
             </div>
-
-            <div class="home-listing-text bottom more-text">
-                <p>
-                    Люди почтенного возраста часто утрачивают способность к самообслуживанию и нуждаются в круглосуточном уходе и квалифицированной медицинской помощи. Все это вы можете дать им, подобрав достойный пансионат для пожилых в Московской области. На страницах
-                    нашего каталога вы найдете бюджетные и элитные варианты, специализированные учреждения по уходу за лежачими постояльцами, дома-интернаты и реабилитационные центры, способные вернуть человека к активной жизни после инфарктов,
-                    инсультов, перелома шейки бедра и эндопротезирования суставов.
-                </p>
-                <span class="more-text-link">Читать далее</span>
+            <div class="container">
+                <div class="listing-text bottom more-text">
+                    <p>
+                        Люди почтенного возраста часто утрачивают способность к самообслуживанию и нуждаются в круглосуточном уходе и квалифицированной медицинской помощи. Все это вы можете дать им, подобрав достойный пансионат для пожилых в Московской области. На страницах
+                        нашего каталога вы найдете бюджетные и элитные варианты, специализированные учреждения по уходу за лежачими постояльцами, дома-интернаты и реабилитационные центры, способные вернуть человека к активной жизни после инфарктов,
+                        инсультов, перелома шейки бедра и эндопротезирования суставов.
+                    </p>
+                    <span class="more-text-link">Читать далее</span>
+                </div>
             </div>
+            
         </section>

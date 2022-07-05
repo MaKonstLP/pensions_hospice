@@ -244,7 +244,7 @@
                                     Цена за месяц: от 45000 рублей
                                 </div>
                                 <div class="single-top-desc-btn">
-                                    <button class="btn">Забронировать</button>
+                                    <button class="single-item-order btn">Забронировать</button>
                                 </div>
                             </div>
 
@@ -265,31 +265,31 @@
 
                     <div class="single-top-links">
                         <div class="links-item">
-                            <a href="#" class="btn-white">Условия размещения</a>
+                            <a href="#condition-link" class="btn-white scroll-to">Условия размещения</a>
                         </div>
                         <div class="links-item">
-                            <a href="#" class="btn-white">Удобства</a>
+                            <a href="#comforts-link" class="btn-white scroll-to">Удобства</a>
                         </div>
                         <div class="links-item">
-                            <a href="#" class="btn-white">Заболевания</a>
+                            <a href="#diseases-link" class="btn-white scroll-to">Заболевания</a>
                         </div>
                         <div class="links-item">
-                            <a href="#" class="btn-white">Документы</a>
+                            <a href="#documents-link" class="btn-white scroll-to">Документы</a>
                         </div>
                         <div class="links-item">
-                            <a href="#" class="btn-white">Цены</a>
+                            <a href="#prices-link" class="btn-white scroll-to">Цены</a>
                         </div>
                         <div class="links-item">
-                            <a href="#" class="btn-white">Отзывы</a>
+                            <a href="#testimonial-link" class="btn-white scroll-to">Отзывы</a>
                         </div>
                         <div class="links-item">
-                            <a href="#" class="btn-white">Как добраться</a>
+                            <a href="#" class="btn-white scroll-to">Как добраться</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="single-wrap">
-                    <div class="single-condition">
+                    <div id="condition-link" class="single-condition">
                         <div class="single-condition-title single-title">
                             Условия размещения
                         </div>
@@ -306,7 +306,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="single-comforts">
+                    <div id="comforts-link" class="single-comforts">
                         <div class="single-comforts-title single-title">
                             Удобства
                         </div>
@@ -418,7 +418,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="single-diseases">
+                    <div id="diseases-link" class="single-diseases">
                         <div class="single-diseases-title single-title">
                             Заболевания
                         </div>
@@ -434,7 +434,7 @@
                             <div>Перелом шейки бедра</div>
                         </div>
                     </div>
-                    <div class="single-documents">
+                    <div id="documents-link" class="single-documents">
                         <div class="single-documents-title single-title">
                             Документы
                         </div>
@@ -445,7 +445,7 @@
                             <div style="background-image: url(/image/documents/doc4.png)"></div>
                         </div>
                     </div>
-                    <div class="single-prices">
+                    <div id="prices-link" class="single-prices">
                         <div class="single-prices-title single-title">
                             Цены
                         </div>
@@ -479,7 +479,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="single-testimonial">
+                    <div id="testimonial-link" class="single-testimonial">
                         <div class="single-testimonial-title single-title">
                             Отзывы
                         </div>
@@ -494,7 +494,7 @@
                                         <div class="rating-star" style="background-image: url(/image/icons/star-rating.svg);"></div>
                                         <div class="rating-star" style="background-image: url(/image/icons/star-rating.svg);"></div>
                                         <div class="rating-star" style="background-image: url(/image/icons/star-rating.svg);"></div>
-                                        <div class="rating-star" style="background-image: url(/image/icons/star-rating.svg);"></div>
+                                        <div class="rating-star" style="background-image: url(/image/icons/star-rating-gray.svg);"></div>
                                     </div>
                                     <div class="item-desc-text">
                                         <p>
@@ -590,47 +590,49 @@
             </div>
         </section>
 
-        <section class="home-bottom-banner">
+        <section class="bottom-banner">
             <div class="container">
-                <div class="free-consultation">
-                    <div class="free-consultation-left">
-                        <div class="consultation-title">Поможем подобрать место, в котором пациенту будет комфортно</div>
-                        <div class="consultation-desc">
-                            <p>Оставьте важную информацию о состоянии больного и свои контакты</p>
-                            <p>Мы свяжемся в ближайшее время</p>
+                <div class="bottom-banner-bg">
+                    <div class="banner-wrap">
+                        <div class="banner-wrap-left">
+                            <div class="consultation-title">Поможем подобрать место, в котором пациенту будет комфортно</div>
+                            <div class="consultation-desc">
+                                <p>Оставьте важную информацию о состоянии больного и свои контакты</p>
+                                <p>Мы свяжемся в ближайшее время</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="free-consultation-center">
-                        <img src="/image/logo-white.png" alt="logo">
-                    </div>
-                    <div class="free-consultation-right">
-                        <div class="form_wrapper">
-                            <form action="/ajax/form/" class="consultation-form" data-type="item">
-                                <div class="form-title">Подобрать место</div>
-                                <div class="form-input">
-                                    <input type="text" name="consultation-contact" placeholder="Email/телефон" data-required>
-                                </div>
-                                <div class="form-input">
-                                    <input type="text" name="consultation-name" placeholder="Ваше имя" data-required>
-                                </div>
-                                <div class="form-input">
-                                    <textarea type="text" name="consultation-info" placeholder="Дополнительная информация"></textarea>
-                                </div>
-                                <div class="form-accept">
-                                    <div class="form-accept-check form-accept-check-bottom _active" data-action="form_checkbox" data-form-privacy>
-                                        <input type="checkbox" name="policy" id="form-accept-check-bottom" data-required>
-                                        <label class="form-accept-desc _link" for="form-accept-check-bottom">
-                                            <span>Я согласен с условиями обработки <a href="#">персональных данных</a></span>
-                                        </label>
+                        <div class="banner-wrap-center">
+                            <img src="/image/logo-white.png" alt="logo">
+                        </div>
+                        <div class="banner-wrap-right">
+                            <div class="form_wrapper">
+                                <form action="/ajax/form/" class="consultation-form" data-type="item">
+                                    <div class="form-title">Подобрать место</div>
+                                    <div class="form-input">
+                                        <input type="text" name="consultation-contact" placeholder="Email/телефон" data-required>
                                     </div>
-                                </div>
-                                <div class="form-submit">
-                                    <button class="btn" type="submit">Подобрать</button>
-                                </div>
-                            </form>
+                                    <div class="form-input">
+                                        <input type="text" name="consultation-name" placeholder="Ваше имя" data-required>
+                                    </div>
+                                    <div class="form-input">
+                                        <textarea type="text" name="consultation-info" placeholder="Дополнительная информация"></textarea>
+                                    </div>
+                                    <div class="form-accept">
+                                        <div class="form-accept-check form-accept-check-bottom _active" data-action="form_checkbox" data-form-privacy>
+                                            <input type="checkbox" name="policy" id="form-accept-check-bottom" data-required>
+                                            <label class="form-accept-desc _link" for="form-accept-check-bottom">
+                                                <span>Я согласен с условиями обработки <a href="#">персональных данных</a></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-submit">
+                                        <button class="btn" type="submit">Подобрать</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </div>    
             </div>
         </section>
 
@@ -643,7 +645,7 @@
 
                     {% for item in items|slice(0,2) %}
 
-                    <div class="listing-list-item">
+                    <div class="listing-list-item" data-pansion-id="{{item.pansion_id}}">
                         <div class="slide-recommended">
                             <img src="/image/icons/star-recomended.svg" alt="">
                             <span>Рекомендуем</span>
@@ -684,7 +686,7 @@
                             </div>
 
                             <div class="list-item-btns">
-                                <button class="btn">Забронировать</button>
+                                <button class="single-item-order btn">Забронировать</button>
                                  <a class="btn-white" href="{{item.pansion_url}}">О хосписе</a>
                             </div>
                         </div>

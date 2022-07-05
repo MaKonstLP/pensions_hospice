@@ -48,7 +48,16 @@ export default class Item {
         $('[data-book-email-reload]').on('click', function() {
             $(this).closest('.object_book_email').removeClass('_success');
             $(this).closest('.object_book_email').addClass('_form');
-        })
+        });
+
+        //скролл по якорю
+        $("a.scroll-to").on("click", function(e){
+            e.preventDefault();
+            var anchor = $(this).attr('href');
+            $('html, body').stop().animate({
+                scrollTop: $(anchor).offset().top
+            }, 800);
+        });
 
         var topSlider = new Swiper('.swiper_top', {
 

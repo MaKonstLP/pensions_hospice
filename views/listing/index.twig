@@ -55,9 +55,9 @@
 
 	<div class="content_loading"></div> #}
 
-	{{ this.render('//components/generic/home_listing.twig', {'items':items, 'filter':filter, 'pagination':pagination}) | raw}}
+	{{ this.render('//components/generic/listing_list.twig', {'items':items, 'filter':filter, 'pagination':pagination}) | raw}}
 	
-    {{ this.render('//components/generic/home_map.twig') | raw}}
+    {{ this.render('//components/generic/map.twig') | raw}}
 
-	{{ this.render('//components/generic/home_bottom_banner.twig') | raw}}
+	{{ this.render('//components/generic/bottom_banner.twig') | raw}}
 </div>

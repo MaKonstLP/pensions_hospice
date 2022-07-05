@@ -7,7 +7,7 @@
 
                     {% for item in items|slice(0,2) %}
 
-                    <div class="listing-list-item">
+                    <div class="listing-list-item" data-pansion-id="{{item.pansion_id}}">
                         <div class="slide-recommended">
                             <img src="./image/icons/star-recomended.svg" alt="">
                             <span>Рекомендуем</span>
@@ -48,7 +48,7 @@
                             </div>
 
                             <div class="list-item-btns">
-                                <button class="btn">Забронировать</button>
+                                <button class="single-item-order btn">Забронировать</button>
                                 <a class="btn-white" href="{{item.pansion_url}}">О хосписе</a>
                             </div>
                         </div>

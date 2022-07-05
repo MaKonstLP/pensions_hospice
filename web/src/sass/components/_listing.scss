@@ -1,4 +1,4 @@
-.home-listing .container {
+.listing .container {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -8,7 +8,7 @@
     }
 }
 
-.home-listing-wrap {
+.listing-wrap {
     max-width: 1380px;
     @include for-lowdesc {
         max-width: 930px;
@@ -16,9 +16,12 @@
     @include for-lowlap {
         max-width: 670px;
     }
+    @include for-mobile {
+        max-width: 100%;
+    }
 }
 
-.home-listing-title h1 {
+.listing-title h1 {
     font-family: 'Inter-Bold';
     font-weight: 700;
     font-size: 36px;
@@ -62,14 +65,14 @@
     }
 }
 
-.home-listing-text.top {
+.listing-text.top {
     margin: 20px 0 30px 0;
     @include for-mobile {
         margin: 10px 0 30px 0;
     }
 }
 
-.home-listing-text.bottom {
+.listing-text.bottom {
     margin: 90px auto;
     max-width: 1380px;
     @include for-lowlap {
@@ -80,12 +83,12 @@
     }
 }
 
-.home-listing-sorting {
+.listing-sorting {
     width: 100%;
     max-width: 977px;
 }
 
-.home-listing-sorting{
+.listing-sorting{
     .sorting-menu {
         display: flex;
         align-items: center;
@@ -135,7 +138,7 @@
     }
 }
 
-.home-listing-list {
+.listing-list {
     padding: 40px 0 0 0;
     display: flex;
     flex-wrap: wrap;
@@ -145,7 +148,7 @@
     }
 }
 
-.home-listing-wrap {
+.listing-wrap {
     .listing-list-item {
         @include for-lowdesc {
             max-width: 455px;
@@ -157,7 +160,7 @@
             max-width: 325px;
         }
         @include for-mobile {
-            max-width: 306px;
+            max-width: 100%;
         }
     }
 }
@@ -169,6 +172,14 @@
     max-height: 291px;
     position: relative;
     margin-bottom: 30px;
+    .swiper{
+        @include for-lowlap {
+            height: 230px;
+        }
+        @include for-mobile {
+            height: 198px;
+        }
+    }
 }
 
 .slide-recommended {
@@ -266,7 +277,7 @@
     }
 }
 
-.home-listing-more-btn {
+.listing-more-btn {
     max-width: 155px;
     height: 45px;
     font-family: 'Inter-Bold';
@@ -279,6 +290,6 @@
     }
     
 }
-.home-listing-more-btn.hide{
+.listing-more-btn.hide{
     display: none;
 }

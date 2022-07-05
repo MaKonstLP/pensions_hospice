@@ -134,6 +134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         if ((Yii::$app->controller->id !== 'site'))  { ?>
             <section class="breadcrumbs-section">
+                <div class="container">
                 <?php 
                     echo Breadcrumbs::widget([
                     'options' => [
@@ -152,22 +153,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     'encodeLabels' => true
                 ]);
                 ?>
-            </section>
-        <?php }
-
-
-
-            //if ((Yii::$app->controller->id !== 'site'))  { ?>
-            <!-- <section class="breadcrumbs-section">
-                <div class="breadcrumbs">
-                    <a href="/">Главная</a>
-                    <span class="breadcrumbs-separator">|</span>
-                    <span>Хосписы</span>
                 </div>
-            </section> -->
-            <?php //}
-
-        ?>
+            </section>
+        <?php } ?>
 
         
         <!-- <header>
@@ -533,7 +521,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div> 
 
 <?php $this->endBody() ?>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&amp;display=swap&amp;subset=cyrillic" rel="stylesheet">
 </body>
 </html>
 <?php $this->endPage() ?>

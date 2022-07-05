@@ -1,37 +1,39 @@
-  <section class="home-banner">
+<section class="home-banner">
 
             <div class="container">
-                <div class="free-consultation">
-                    <div class="free-consultation-left">
-                        <div class="consultation-title">Бесплатная консультация</div>
-                        <div class="consultation-desc">
-                            Ответим на все вопросы о том, как оформить пациента в хоспис
+                <div class=" home-banner-bg">
+                    <div class="banner-wrap">
+                        <div class="banner-wrap-left">
+                            <div class="consultation-title">Бесплатная консультация</div>
+                            <div class="consultation-desc">
+                                Ответим на все вопросы о том, как оформить пациента в хоспис
+                            </div>
                         </div>
-                    </div>
-                    <div class="free-consultation-center">
-                        <img src="./image/logo-white.png" alt="logo">
-                    </div>
-                    <div class="free-consultation-right">
-                        <div class="form-title">Есть вопросы?</div>
-                        {# {{ top_banner_form | raw }} #}
-                        <div class="form_wrapper">
-                            <form action="/ajax/form/" class="consultation-form" data-type="main">
-                                
-                                <div class="form-input">
-                                    <input type="text" name="consultation-contact" id="consultation-form" placeholder="Email/телефон" data-required>
-                                </div>
-                                <div class="form-accept">
-                                    <div class="form-accept-check _active" data-action="form_checkbox" data-form-privacy>
-                                        <input type="checkbox" name="policy" id="form-accept-check" data-required>
-                                        <label class="form-accept-desc _link" for="form-accept-check">Я согласен с условиями обработки персональных данных</label>
+                        <div class="banner-wrap-center">
+                            <img src="./image/logo-white.png" alt="logo">
+                        </div>
+                        <div class="banner-wrap-right">
+                            <div class="form-title">Есть вопросы?</div>
+                            {# {{ top_banner_form | raw }} #}
+                            <div class="form_wrapper">
+                                <form action="/ajax/form/" class="consultation-form" data-type="main">
+                                    
+                                    <div class="form-input">
+                                        <input type="text" name="consultation-contact" id="consultation-form" placeholder="Email/телефон" data-required>
                                     </div>
-                                </div>
-                                <div class="form-submit">
-                                    <button class="btn" type="submit">Отправить</button>
-                                </div>
-                            </form>
+                                    <div class="form-accept">
+                                        <div class="form-accept-check _active" data-action="form_checkbox" data-form-privacy>
+                                            <input type="checkbox" name="policy" id="form-accept-check" data-required>
+                                            <label class="form-accept-desc _link" for="form-accept-check">Я согласен с условиями обработки персональных данных</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-submit">
+                                        <button class="btn" type="submit">Отправить</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </div>    
             </div>
-        </section>
+</section>

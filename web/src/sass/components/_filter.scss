@@ -9,11 +9,11 @@ div[data-page-type="listing"] {
         max-width: 211px;
     }
     @include for-laptop {
-        max-width: 500px;
+        max-width: 76%;
         margin-bottom: 40px;
     }
     @include for-mobile {
-        max-width: 330px;
+        max-width: 100%;
         margin-bottom: 50px;
     }
 }
@@ -30,7 +30,7 @@ div[data-page-type="listing"] {
     @include for-laptop {
         display: block;
     }
-    form {
+    .filter_select-checkbox-wrapper {
         @include for-laptop {
             display: flex;
             flex-wrap: wrap;
@@ -40,12 +40,12 @@ div[data-page-type="listing"] {
             @include for-laptop {
                 margin-bottom: 25px;
                 width: 50%;
-                max-width: 240px;
+                max-width: 46.31%;
             }
             @include for-mobile {
                 margin-bottom: 25px;
                 width: 100%;
-                max-width: 330px;
+                max-width: 100%;
             }
         }
     }
@@ -127,7 +127,7 @@ div[data-page-type="listing"] {
 }
 
 .filter-mobile {
-    form {
+    .filter_select-checkbox-wrapper {
         .filter-pacient-type,
         .filter-hospis-type,
         .filter-region {
@@ -142,7 +142,7 @@ div[data-page-type="listing"] {
 }
 
 .filter-mobile {
-    form {
+    .filter_select-checkbox-wrapper {
         .filter-pacient-type {
             @include for-laptop {
                 visibility: visible;
@@ -155,7 +155,7 @@ div[data-page-type="listing"] {
 }
 
 .active-all {
-    form {
+    .filter_select-checkbox-wrapper {
         .filter-pacient-type,
         .filter-hospis-type,
         .filter-region {
@@ -491,8 +491,8 @@ div[data-page-type="listing"] {
     }
 }
 .filter-btns {
-    .filter-more-paramters span,
-    .filter-reset a {
+    .filter-reset a,
+    .filter-more-parameters span{
         color: $clrButtonNormal;
         border-bottom: 1px dashed;
         cursor: pointer;
@@ -502,7 +502,7 @@ div[data-page-type="listing"] {
             line-height: 16px;
         }
     }
-    .filter-more-paramters span {
+    .filter-more-parameters span {
         @include for-laptop {
             margin-bottom: 15px;
             display: block;

@@ -60,7 +60,7 @@ section.header {
 
 .mobile-menu-btn-wrap {
     display: none;
-    @include for-laptop {
+    @include for-lowlap {
         display: block;
     }
     @include for-mobile {

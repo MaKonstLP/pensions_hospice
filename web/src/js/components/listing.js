@@ -30,7 +30,7 @@ export default class Listing {
             self.reloadListing($(this).data('page-id'));
         });
 
-        let swiper = new Swiper('.home-swiper', {
+        let swiper = new Swiper('.listing-swiper', {
             loop: true,
             pagination: {
                 el: '.swiper-pagination',
@@ -66,7 +66,7 @@ export default class Listing {
                 $('[data-pagination-wrapper]').html(response.pagination);
 
                 if(response.hide_pagination_class == 'hide'){
-                    $('.home-listing-more-btn').addClass('hide');
+                    $('.listing-more-btn').addClass('hide');
                 }
 
                 self.block.removeClass('_loading');
